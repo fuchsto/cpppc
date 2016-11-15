@@ -1,0 +1,113 @@
+Fragebogen zu Lehrveranstaltungen im Wintersemester 2016/17
+Lehr- und Forschungseinheit NM
+
+Rücksendung bis Freitag, 15. April 2016 an Dr. Jan Johannsen
+(geschaeftsstelle@ifi.lmu.de).
+
+Bitte geben Sie alle Veranstaltungen an, die Ihre LFE im Wintersemester anbieten wird.
+Wenn möglich, fügen Sie auch Veranstaltungen von Lehrbeauftragten hinzu, die von Ihrer
+LFE betreut werden.
+
+Jede LFE sollte mindestens eine Lehrveranstaltung im Master oder
+fortgeschrittenen Bachelor auf Englisch anbieten.
+
+Bereits bekannte Veranstaltungen sind voreingetragen, am Ende des Dokuments befindet
+sich ein leerer Fragebogen.
+Folgende Technikvarianten können beantragt werden. Bitte beachten Sie, dass
+bestimmte Medien nicht in allen Räumen vorhanden sind, so dass ggf. Ihre
+Raum- und Medienwünsche in Widerspruch zueinander stehen können. Wenn Sie
+Ihren eigenen Beamer verwenden, geben Sie in der Liste bitte keinen Beamer
+an.
+
+MF (Mikrofon)
+MP (Mikroport, tragbares Mikrofon)
+DE (Dia einzel)
+DD (Dia doppel)
+BE (Beamer, Evtl. zusätzlich benötigte Technik wie Videorecorder etc.
+    beantragen Sie bitte im Bemerkungsfeld.)
+IN (Internetanschluß)
+OH (Overhead)
+EX (Experimentalausstattung)
+
+Fragebogen:
+
+===============================================================================
+
+A)	für das Vorlesungsverzeichnis:
+
+  1)	Titel der Veranstaltung
+      Praktikum: Advanced Software Development in Modern C++
+
+  2)	Semester-Wochenstunden (V+Ü)
+	    2+4
+
+  3)	Dozent für Eintrag im VLV, ggf. getrennt für Vorlesung und Übung
+	    Kranzlmüller, Fuchs
+
+
+B)  für die Stundenplanung:
+
+  4)	Wer steht tatsächlich im Hörsaal? (Nur für Zwecke der Stundenplanung)
+      Fuchs
+
+  5)	Wer hält die Übung tatsächlich? (Nur für Zwecke der Stundenplanung)
+	    Fuchs
+
+  6)	Zeitwunsch
+	    Fr 13-16
+
+
+C)	für den Raumantrag:
+
+  7)	Zahl der Hörer
+	    8
+
+  8)	Benötigte Hörsaaltechnik (MF, MP, DE, DD, BE, IN, OH, EX)
+	    BE, IN
+
+  9)	Wunsch für Ort (Oettingenstr., Theresienstr., Amalienstr., etc.)
+      Raum bereits vorhanden.
+
+  10)	Bemerkungen
+      Kann bei Bedarf auch in Englisch angeboten werden.
+
+
+D)	Für das kommentierte VLV:
+
+  11)	URL der WWW-Seite
+	    http://www.nm.ifi.lmu.de/cpppc
+
+  12)	Inhalt der Lehrveranstaltung
+      Motiviert durch die steigende Relevanz paralleler und verteilter
+      Software-Anwendungen und der Etablierung des C++11 - Standards in der
+      Industrie werden im Praktikum vorwiegend folgende Inhalte vermittelt:
+      * Das Typsystem in C++11
+      * Konzepte der C++ Standard Template Library
+      * Resource Management
+      * Parallel I/O
+      * Allokatoren
+      * Multi-threading Konzepte
+      * Entwurf und Implementierung benutzerdefinierter Container für
+        parallele und verteilte Anwendungen
+      Im ersten Teil der Veranstaltung werden Übungsaufgaben zu den
+      Themenblöcken von den Teilnehmern einzeln bearbeitet.
+      Die Bearbeitung der Übungsaufgaben ist für die erfolgreiche Teilnahme
+      Pflicht.
+      Im zweiten Teil der Veranstaltung werden Programmierprojekte bearbeitet,
+      in denen die erlernten Kenntnisse unter Betreuuung angewandt werden.
+
+  13) Zielgruppe
+      Das Praktikum richtet sich an Studenten in Master- und
+      Bachelor-Studiengängen Informatik und Medieninformatik.
+
+  14)	Benötigte Vorkenntnisse
+      * Vorkenntnisse aus der Vorlesung "Einführung in die Programmierung"
+      * Erfolgreiche Teilnahme am Systempraktikum im Bachelor oder
+        vergleichbare Vorkenntnisse.
+      * Grundkenntnisse einer imperativen Programmiersprache (z.B. C/C++, Java)
+      * Rechtzeitige Anmeldung
+
+  15)	Literatur (fakultative Angabe)
+      * Professional C++, Second Edition. Gregoire, Solter, Kleper.
+      * Effective Modern C++. Scott Meyers.
+

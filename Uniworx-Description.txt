@@ -1,0 +1,81 @@
+Praktikum: Advanced Software Development in Modern C++
+
+Im Rahmen des Praktikums wird die Programmiersprache C++ ausgehend von ihren größten Stärken untersucht: Der maschinennahen Systemprogrammierung und die Abstraktion durch formale Konzepte in einem Turing-vollständigen Typsystem.
+In C++11 wurde die Ausdrucksmächtigkeit erhöht und gleichzeitig die Komplexität der Syntax erheblich reduziert.
+Die Herausforderungen für Software-Entwickler verschieben sich hierbei zu formalen und konzeptionellen Problemstellungen, besonders im Zusammenhang mit Nebenläufigkeit. Mit diesen befassen wir uns zunächst im Stil eines wöchentlichen Workshops und schließlich in freien Projektarbeiten.
+
+Teilnahmevoraussetzungen:
+
+- Grundlagenkenntnisse in C, zum Beispiel aus dem Systempraktikum an unserem Lehrstuhl
+- Erste Erfahrungen, aber ausdrücklich *keine* fortgeschrittenen Kenntnisse in C++
+
+Wir empfehlen die vorherige erfolgreiche Teilnahme an den Vorlesungen
+
+- Programmierung und Modellierung
+- Algorithmen und Datenstrukturen
+- Rechnerarchitektur
+- Rechnernetze und verteilte Systeme
+- Formale Spezifikation und Verifikation
+
+Bewerbung: Sa 20.08.2016, 03:00 bis Do 20.10.2016, 00:00
+
+Betreuende Assistenten
+
+Tobias Fuchs
+Bewerbung
+
+Hinweise: Die Aufgabenstellungen im Praktikum verlangen hohes Engagement und Eigeninitiative von den Teilnehmern.
+Konsequenterweise wird dem in der Prüfungsleistung mit 12 ECTS (Bachelor und Master) Rechnung getragen.
+
+Der Veranstaltungszeitraum schließt das gesamte Wintersemester 16/17 ein, das heißt *einschließlich vorlesungsfreier Zeit*.
+
+In den Semesterferien werden Projektarbeiten in Einzel- oder Gruppenarbeit umgesetzt und abschließend in einer Blockveranstaltung präsentiert.
+Abgesehen von den Vortragsterminen werden aber voraussichtlich keine Präsenztermine nach der Vorlesungszeit stattfinden und stattdessen Betreuungstermine individuell vereinbart.
+
+Aufgrund der intensiven persönlichen Betreuung der Teilnehmer ist die Anzahl der Plätze stark begrenzt.
+
+Was uns in einem Bewerbungstext zum Beispiel überzeugt:
+
+- Interesse an formaler Abstraktion, zum Beispiel auch an funktionale Programmierung
+- Freude daran, aus Hardware mehr rauszuholen als andere
+- Eine Gegenargumentation zu Java 
+- ...
+
+
+
+
+
+Im Rahmen des Praktikums wird die Programmiersprache C++ ausgehend von ihren größten Stärken untersucht: Der maschinennahen Systemprogrammierung und Abstraktion durch formale Konzepte in einem Turing-vollständigen Typsystem.
+
+Die Schwierigkeit, die Stärken von C++ zu nutzen ohne seinen Schwächen zum Opfer zu fallen ist allerdings berüchtigt.
+Mit dem C++11 - Standard wurden sehr große Fortschritte erzielt: Die Ausdrucksmächtigkeit wurde weiter erhöht aber gleichzeitig die Komplexität der Syntax erheblich reduziert.
+
+Die Herausforderungen für Software-Entwickler verschieben sich jetzt zu formalen und konzeptionellen Problemstellungen, besonders im Zusammenhang mit Nebenläufigkeit.
+
+Die behandelten Themen im Praktikum sind unter anderem:
+
+- Das Typsystem in C++11
+- Funktionale Programmierung
+- Konzepte der C++ Standard Template Library
+- Resourcenverwaltung
+- Parallel I/O
+- Allokatoren
+- Multi-threading Konzepte
+- Container für parallele, verteilte und Echtzeit-Anwendungen
+
+Die Themen werden im ersten Teil des Praktikums im Stil eines wöchentlichen Workshops gemeinsam formal untersucht und in Code erprobt.
+Im zweiten Teil setzen die Teilnehmer unter Betreuung eigene freie - aber anspruchsvolle - Softwareprojekte um, die zum Abschluß in einer Blockveranstaltung präsentiert werden.
+
+
+Teilnahmevoraussetzungen:
+
+- Stabile Grundlagenkenntnisse in C, zum Beispiel aus dem Systempraktikum an unserem Lehrstuhl
+- Erste Erfahrungen, aber ausdrücklich *keine* fortgeschrittenen Kenntnisse in C++
+
+Wir empfehlen die vorherige erfolgreiche Teilnahme an den Vorlesungen
+
+- Programmierung und Modellierung
+- Algorithmen und Datenstrukturen
+- Rechnerarchitektur
+- Rechnernetze und verteilte Systeme
+- Formale Spezifikation und Verifikation
