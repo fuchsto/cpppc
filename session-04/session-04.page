@@ -27,6 +27,9 @@ category: course notes, cpppc
 - All STL algorithms are compatible, no need to reinvent +50 algorithms for the
   user-defined class template `BucketVector`
 
+- What if we wanted to specify a user-defined variant of an algorithm?
+  $\Rightarrow$ template specialization
+
 
 # Temporary Copies and const-Correctness
 
