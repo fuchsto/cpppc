@@ -10,9 +10,22 @@ category: course notes, cpppc
 
 ## Function Templates
 
+- Demonstration of STL algorithm interfaces like `std::copy`, `std::transform`,
+  `std::find`
+
+- Implementing `std::find_if` with lambda expression
+
 
 ## Template Parameter Deduction
 
+- Template parameters deduced from parameter types
+- Return value deduced from result type
+
+
+## BucketVector implementation
+
+- All STL algorithms are compatible, no need to reinvent +50 algorithms for the
+  user-defined class template `BucketVector`
 
 
 # Temporary Copies and const-Correctness
