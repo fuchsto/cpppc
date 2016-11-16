@@ -21,4 +21,6 @@ Guidelines:
 
 - [ISO C++ Library Design Guidelines](https://isocpp.org/wiki/library_design_guidelines/library-design-guidelines)
 
+Further Resources:
 
+- [Peter Gottschling's Modern C++ Examples](https://github.com/petergottschling/discovering_modern_cpp)
