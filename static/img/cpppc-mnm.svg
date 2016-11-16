@@ -11,11 +11,14 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="314.60599"
-   height="168.66139"
+   height="153.53856"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.5 r10040"
-   sodipodi:docname="cpppc-mnm.svg">
+   sodipodi:docname="cpppc-mnm.svg"
+   inkscape:export-filename="C:\Users\fuchsto\Workspaces\LMU\cpppc.git\static\img\logo.png"
+   inkscape:export-xdpi="55.053673"
+   inkscape:export-ydpi="55.053673">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -26,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="336.53384"
-     inkscape:cy="46.424265"
+     inkscape:cx="414.72692"
+     inkscape:cy="172.8169"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -57,21 +60,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-283.98648,4.0929673)">
-    <text
-       xml:space="preserve"
-       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:CMU Sans Serif;-inkscape-font-specification:Sans"
-       x="283.78949"
-       y="144.56842"
-       id="text2985"
-       sodipodi:linespacing="125%"
-       inkscape:export-filename="C:\Users\fuchsto\Desktop\cpppc-mnm.png"
-       inkscape:export-xdpi="133.82739"
-       inkscape:export-ydpi="133.82739"><tspan
-         sodipodi:role="line"
-         id="tspan2987"
-         x="283.78949"
-         y="144.56842"
-         style="font-size:144px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#f43636;fill-opacity:1;font-family:CodingFontTobi;-inkscape-font-specification:CodingFontTobi">cpppc</tspan></text>
     <image
        y="-2.0929673"
        x="285.98648"
@@ -1537,8 +1525,39 @@ iQCwNWs6l9GIr9PH6GPe+7yM+PV3FX07h3SUlCsuU7EG/BG68WSI5nQzijY0B4BFiT5R9CknygYc
 "
        height="83.111351"
        width="310.60599"
-       inkscape:export-filename="C:\Users\fuchsto\Desktop\cpppc-mnm.png"
-       inkscape:export-xdpi="133.82739"
-       inkscape:export-ydpi="133.82739" />
+       inkscape:export-filename="C:\Users\fuchsto\Workspaces\LMU\cpppc.git\static\img\logo.png"
+       inkscape:export-xdpi="57.93708"
+       inkscape:export-ydpi="57.93708"
+       style="opacity:0.80500016;fill:none;stroke:none" />
+    <text
+       xml:space="preserve"
+       style="font-size:106px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Ubuntu Mono derivative Powerlin;-inkscape-font-specification:Ubuntu Mono derivative Powerlin"
+       x="353.39642"
+       y="130.4993"
+       id="text2985"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\fuchsto\Workspaces\LMU\cpppc.git\static\img\logo.png"
+       inkscape:export-xdpi="57.93708"
+       inkscape:export-ydpi="57.93708"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="353.39642"
+         y="130.4993"
+         style="font-size:74px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Gill Sans MT;-inkscape-font-specification:Gill Sans MT">cpppc</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:CMU Sans Serif;-inkscape-font-specification:Sans"
+       x="318.43613"
+       y="-269.79675"
+       id="text2985-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="C:\Users\fuchsto\Workspaces\LMU\cpppc.git\static\img\logo.png"
+       inkscape:export-xdpi="57.93708"
+       inkscape:export-ydpi="57.93708"><tspan
+         sodipodi:role="line"
+         id="tspan2987-8"
+         x="318.43613"
+         y="-269.79675"
+         style="font-size:106px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#f43636;fill-opacity:1;font-family:OCR A Extended;-inkscape-font-specification:OCR A Extended Bold">cpppc</tspan></text>
   </g>
 </svg>
