@@ -31,6 +31,14 @@ category: course notes, cpppc
   $\Rightarrow$ template specialization
 
 
+
+# Type Deduction
+
+- The `auto` keyword
+- Deduction of return types
+
+
+
 # Temporary Copies and const-Correctness
 
 ## Return-Value Optimization
@@ -45,13 +53,6 @@ category: course notes, cpppc
 - *Composition over Inheritance* principle: compose type from behavioral aspects
 - Duck-typing and relevance of concepts
 - Template default arguments
-
-
-# Type Deduction
-
-- The `auto` keyword
-- Deduction of return types
-
 
 # Overloading, Overwriting, Specialization
 
