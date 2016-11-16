@@ -1,0 +1,51 @@
+---
+format: Markdown
+title: Session 04
+category: course notes, cpppc
+...
+
+# Introduction to C++ Templates
+
+
+
+## Function Templates
+
+
+## Template Parameter Deduction
+
+
+
+# Temporary Copies and const-Correctness
+
+## Return-Value Optimization
+
+- Use references when possible, but only when possible.
+- Help the compiler to use return value optimization (RVO)
+
+
+
+# Policies vs. Inheritance
+
+- *Composition over Inheritance* principle: compose type from behavioral aspects
+- Duck-typing and relevance of concepts
+- Template default arguments
+
+
+# Type Deduction
+
+- The `auto` keyword
+- Deduction of return types
+
+
+# Overloading, Overwriting, Specialization
+
+
+## Combinations: Tag Dispatching
+
+
+# SFINAE
+
+## Type traits
+
+## `std::enable_if`
+
