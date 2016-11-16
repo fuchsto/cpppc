@@ -3,9 +3,6 @@ format: Markdown
 title: Advanced C++ - Winter Term 2016/2017
 ...
 
-
-![STL Containers](/stl_containers.png)
-
 - [Session 01](/session-01/session-01)
 - [Session 02](/session-02/session-02) - [Assignment 01](/assignment-01/assignment-01)
 - [Session 03](/session-03/session-03) - [Assignment 02](/assignment-02/assignment-02)
@@ -25,4 +22,4 @@ Guidelines:
 - [ISO C++ Library Design Guidelines](https://isocpp.org/wiki/library_design_guidelines/library-design-guidelines)
 
 
-
+![STL Containers](/stl_containers.png)
