@@ -4,9 +4,13 @@ title: Session 04
 category: course notes, cpppc
 ...
 
-# Introduction to C++ Templates
+# Rule of Zero
+
+- Do we need Rule of Three in class template `Measurements` from assigment 02?
+- Default constructor, assignment, destructor
 
 
+# More Templates
 
 ## Function Templates
 
