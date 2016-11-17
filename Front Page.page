@@ -24,3 +24,4 @@ Guidelines:
 Further Resources:
 
 - [Peter Gottschling's Modern C++ Examples](https://github.com/petergottschling/discovering_modern_cpp)
+- [Undefined vs. Unspecified](http://en.cppreference.com/w/cpp/language/ub)
