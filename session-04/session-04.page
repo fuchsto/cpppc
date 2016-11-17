@@ -4,14 +4,42 @@ title: Session 04
 category: course notes, cpppc
 ...
 
-# Introduction to C++ Templates
+# Rule of Zero
+
+- Do we need Rule of Three in class template `Measurements` from assigment 02?
+- Default constructor, assignment, destructor
 
 
+# More Templates
 
 ## Function Templates
 
+- Demonstration of STL algorithm interfaces like `std::copy`, `std::transform`,
+  `std::find`
+
+- Implementing `std::find_if` with lambda expression
+
 
 ## Template Parameter Deduction
+
+- Template parameters deduced from parameter types
+- Return value deduced from result type
+
+
+## BucketVector implementation
+
+- All STL algorithms are compatible, no need to reinvent +50 algorithms for the
+  user-defined class template `BucketVector`
+
+- What if we wanted to specify a user-defined variant of an algorithm?
+  $\Rightarrow$ template specialization
+
+
+
+# Type Deduction
+
+- The `auto` keyword
+- Deduction of return types
 
 
 
@@ -29,13 +57,6 @@ category: course notes, cpppc
 - *Composition over Inheritance* principle: compose type from behavioral aspects
 - Duck-typing and relevance of concepts
 - Template default arguments
-
-
-# Type Deduction
-
-- The `auto` keyword
-- Deduction of return types
-
 
 # Overloading, Overwriting, Specialization
 
