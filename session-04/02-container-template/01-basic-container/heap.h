@@ -85,6 +85,7 @@ public:
     }
   }
 
+  // Q: Why const?
   void modify() const {
     for (auto it = begin(); it != end(); ++it) {
       *it += 2;

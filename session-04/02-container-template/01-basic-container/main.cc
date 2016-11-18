@@ -18,7 +18,6 @@ int main(int argc, char * argv[])
   typedef Heap<double> DoubleHeap;
   typedef Heap<long>   LongHeap;
 
-#if 0
   DoubleHeap dh_0("double_heap_0", 3, 100.0);
   DoubleHeap dh_1("double_heap_1", 3, 100.0);
   DoubleHeap dh_2("double_heap_2", 2, 200.0);
@@ -34,9 +33,7 @@ int main(int argc, char * argv[])
   for (auto elem : dh_it) {
     cout << "element: " << elem << endl;
   }
-#endif
 
-  DoubleHeap dh_it("double_heap_it", 7, 10.0);
   dh_it.print();
   dh_it.modify();
   cout << "Modified:" << endl;
