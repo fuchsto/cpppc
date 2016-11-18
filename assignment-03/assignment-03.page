@@ -26,7 +26,7 @@ References:
 - [C++ Algorithm Library](http://en.cppreference.com/w/cpp/algorithm)
 
 
-## find_mean_rep
+## 3-1-1: find_mean_rep
 
 Implement a function template `cpppc::find_mean_rep` which accepts a range specified
 by two iterators in the `InputIterator` category and returns an iterator to the
@@ -47,7 +47,7 @@ auto closest_to_mean_it = cpppc::find_mean_rep(v.begin(), v.end());
 // -> iterator at index 3 (|21-30| = 9)
 ~~~
 
-## histogram
+## 3-1-2: histogram
 
 Implement a function template `cpppc::histogram` which accepts a range specified
 by two iterators in the `ForwardIterator` category and replaces each value by the
@@ -81,7 +81,7 @@ auto hist_end = cpppc::histogram(v.begin(), v.end());
 ~~~
 
 
-## cluster
+## 3-1-3: cluster
 
 Implement a function template `cpppc::cluster` which accepts a range specified
 by two iterators in the `RandomAccessIterator` category and an arbitrary number
