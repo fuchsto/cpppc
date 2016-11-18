@@ -2,6 +2,8 @@
 #define BUCKET_HEAP_ITERATOR_H__
 
 #include <iterator>
+#include <stdexcept>
+
 
 namespace cpppc {
 
@@ -53,6 +55,7 @@ class BucketHeapIterator {
 
   inline reference operator*() const {
     // Q: Implement this!
+    throw std::runtime_error("BucketHeapIterator.operator*()");
   }
 
   inline reference operator[](int offset) const {
@@ -77,7 +80,7 @@ class BucketHeapIterator {
   }
 
   inline self_t operator--(int) const {
-    // Q: Remember from last session why this is bad style?
+    // Q: Why is this bad style?
     self_t result = *this;
     --result;
     return result;
@@ -89,7 +92,7 @@ class BucketHeapIterator {
   }
 
   inline self_t operator+(int offset) const {
-    // Q: Remember from last session why this is bad style?
+    // Q: Why is this bad style?
     self_t result = *this;
     result += offset;
     return result;
