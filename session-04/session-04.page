@@ -4,10 +4,13 @@ title: Session 04
 category: course notes, cpppc
 ...
 
+[Code Examples for Session 04](/session-04/)
+
 # Rule of Zero
 
 - Do we need Rule of Three in class template `Measurements` from assigment 02?
 - Default constructor, assignment, destructor
+- Rule of zero and default move-constructor/assignment ([reference](http://en.cppreference.com/w/cpp/language/move_assignment))
 
 
 # More Templates
@@ -16,8 +19,9 @@ category: course notes, cpppc
 
 - Demonstration of STL algorithm interfaces like `std::copy`, `std::transform`,
   `std::find`
-
-- Implementing `std::find_if` with lambda expression
+- `std::sort` for `std::list`?
+- Implementing `find_nth`
+- Implementing `find_if` with lambda expression
 
 
 ## Template Parameter Deduction

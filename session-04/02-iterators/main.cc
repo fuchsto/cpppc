@@ -66,5 +66,16 @@ int main(int argc, char * argv[])
     cout << endl;
   }
 
+  // Q: How about stl_lst?
+  stl_arr.back() = 1.0;
+  std::sort(stl_arr.begin(), stl_arr.end());
+
+  cout << "for_each(stl_arr): ";
+  std::for_each(stl_arr.begin(), stl_arr.end(),
+                [](const val_t & v) {
+                  cout << v << " ";
+                });
+  cout << endl;
+
   return EXIT_SUCCESS;
 }

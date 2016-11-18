@@ -66,8 +66,9 @@ Implement **depth-first search** and **breadth-first-search** as policies used i
 
 ## 2-2: Allocation Policy for Tree\<T\>
 
-## 2-3: Lazy Evaluation: List Expressions
+## 2-3: Lazy Evaluation: List Comprehension
 
+- See [this article on Wikipedia](https://en.wikipedia.org/wiki/List_comprehension#C.2B.2B)
 - Specify series of values as lambda depending on arbitrary parameters and previous
   elements in the series
 
