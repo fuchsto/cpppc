@@ -74,7 +74,8 @@ int v = i[0];         // <- fails! Random access (operator[]) is not supported b
                       //    bidirectional iterators
 it += 10              // <- fails! Corresponds to random access
 std::advance(it, 10); // <- works! Programmer requested "manual" advance of the
-                      //    iterator. Corresponds to invoking ++it 10 times
+                      //    iterator. Corresponds to invoking ++it 10 times i.e.
+                      //    O(k = 10) complexity
 ~~~
 
 The container `std::vector` provides iterators in the `RandomAccessIterator`
@@ -85,7 +86,8 @@ std::vector<int> vec;
 // ... initialize vec with some values ...
 auto it = vec.begin();
 int v   = it[10];      // <- works! Random access is provided
-it     += 10;          // <- works! Corresponds to random access 
+it     += 10;          // <- works! Corresponds to random access
+std::advance(it, 10);  // <- works! Corresponds to it += 10 i.e. O(1) complexity
 ~~~
 
 ## STL Algorithms
