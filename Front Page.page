@@ -17,12 +17,13 @@ title: Advanced C++ - Winter Term 2016/2017
 
 Selected Talks:
 
-- [Ben Deane “Using Types Effectively"](https://www.youtube.com/watch?v=ojZbFIQSdl8)
-- [Marshall Clow “STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ)
-- [Greg Law “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg)
-- [Fedor Pikus “The speed of concurrency (is lock-free faster?)"](https://www.youtube.com/watch?v=9hJkWwHDDxs)
-- ["WG21-SG14 – Making C++ better for games, embedded and financial developers"](https://www.youtube.com/watch?v=dMupATOJKWc)
-- [Jason Jurecka “Game engine using STD C++ 11"](https://www.youtube.com/watch?v=8AjRD6mU96s)
+- [Ben Deane - “Using Types Effectively"](https://www.youtube.com/watch?v=ojZbFIQSdl8)
+- [Marshall Clow - “STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ)
+- [Greg Law - “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg)
+- [Fedor Pikus - “The speed of concurrency (is lock-free faster?)"](https://www.youtube.com/watch?v=9hJkWwHDDxs)
+- ["Making C++ better for games, embedded and financial developers"](https://www.youtube.com/watch?v=dMupATOJKWc)
+- [Jason Jurecka - “Game engine using STD C++ 11"](https://www.youtube.com/watch?v=8AjRD6mU96s)
+- [Andrei Alexandrescu - "Variadic Templates are Funadic"](https://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Variadic-Templates-are-Funadic)
 
 Guidelines:
 
