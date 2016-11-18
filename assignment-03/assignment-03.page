@@ -36,7 +36,7 @@ element in the range that is closest to the mean of the range.
 
 ~~~c++
 template <typename InputIter>
-InputIter find_mean_reap(InputIter first, InputIter last);
+InputIter find_mean_rep(InputIter first, InputIter last);
 ~~~
 
 **Example:**
