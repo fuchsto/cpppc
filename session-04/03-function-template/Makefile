@@ -1,15 +1,14 @@
 
-CC=g++
-CFLAGS=--std=c++11 -Wall -Wextra -pedantic
+CC=clang++
+CFLAGS=--std=c++11 -Wall -Wextra -pedantic -g
 LDFLAGS=-lrt
 
-OBJS = heap.o main.o
+OBJS = main.o
 
 .DEFAULT: all
 all: $(OBJS) main.a
 
 run: main.a
-	clear
 	./main.a
 
 %.o: %.cc
