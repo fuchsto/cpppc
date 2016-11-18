@@ -30,13 +30,35 @@ a class with default operations specified by the compiler. \
 Note that there is no default definition of comparison operators.
 
 
-# Function Templates
+# Iterator Concepts
 
-- Demonstration of STL algorithm interfaces like `std::copy`, `std::transform`,
-  `std::find`
-- `std::sort` for `std::list`?
-- Implementing `find_nth`
-- Implementing `find_if` with lambda expression
+Algorithms and containers are entirely decoupled concepts in the C++ Standard
+Template Library. That is: algorithms are agnostic of containers and are implemented against iterator ranges, not for specific container types.
+
+You should follow this approach as strictly as possible in your own implementations.
+
+As an example, the `std::fill` algorithm works for any range `(first, last[`
+specified by any iterator implementation that satisfies the `ForwardIterator`
+concept:
+
+~~~c++
+val_t                      c_arr[NElem];
+std::array<val_t, NElem>   stl_arr;
+std::vector<val_t>         stl_vec(NElem);
+std::list<val_t>           stl_lst(NElem);
+
+std::fill(c_arr,           c_arr + NElem, 1.23);
+std::fill(stl_arr.begin(), stl_arr.end(), 2.34);
+std::fill(stl_vec.begin(), stl_vec.end(), 3.45);
+std::fill(stl_lst.begin(), stl_lst.end(), 4.56);
+~~~
+
+
+## Iterator Categories
+
+
+## STL Algorithms
+
 
 
 # Template Parameter Deduction
@@ -45,7 +67,9 @@ Note that there is no default definition of comparison operators.
 - Return value deduced from result type
 
 
-# BucketVector implementation
+# Custom Iterators
+
+Example: `BucketList`
 
 - All STL algorithms are compatible, no need to reinvent +50 algorithms for the
   user-defined class template `BucketVector`
