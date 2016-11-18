@@ -22,7 +22,7 @@ BucketHeap<Element>::BucketHeap(
   LOG("BucketHeap", this << " Constructor (" << name << ", "
                                              << size << ")");
   if (size > 0) {
-    grow(size);
+    grow(size, base_val);
   }
 }
 
