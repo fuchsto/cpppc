@@ -18,8 +18,9 @@ category: course notes, cpppc
 
 - Demonstration of STL algorithm interfaces like `std::copy`, `std::transform`,
   `std::find`
-
-- Implementing `std::find_if` with lambda expression
+- `std::sort` for `std::list`?
+- Implementing `find_nth`
+- Implementing `find_if` with lambda expression
 
 
 ## Template Parameter Deduction
