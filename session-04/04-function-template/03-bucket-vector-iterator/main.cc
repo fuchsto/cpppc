@@ -16,6 +16,11 @@ using cpppc::BucketVector;
 template <typename SeqContainerType>
 void print_values(const SeqContainerType & sc)
 {
+  // Methods used in the iterator interface:
+  //   - operator*
+  //   - operator!=
+  //
+  // --> ForwardIterator is sufficient
   std::cout << "{ ";
   for (auto it = sc.begin(); it != sc.end(); ++it) {
     std::cout << *it << " ";
@@ -56,11 +61,10 @@ int main(int argc, char * argv[])
   }
 
 #if 0
+  // Fails because std::sort expects iterators in the RandomAccessIterator
+  // category (see std::list.sort for an alternative):
   BucketVector<int> v2_s(v2);
   std::sort(v2_s.begin(), v2_s.end());
-
-  cout << "v2_s: ";
-  print_values(v2_s);
 #endif
 
   return EXIT_SUCCESS;

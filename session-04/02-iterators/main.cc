@@ -66,8 +66,6 @@ int main(int argc, char * argv[])
     cout << endl;
   }
 
-  // Q: Let's write find_nth
-
   // Q: How about stl_lst?
   stl_arr.back() = 1.0;
   std::sort(stl_arr.begin(), stl_arr.end());
