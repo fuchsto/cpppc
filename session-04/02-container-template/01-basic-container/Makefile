@@ -3,7 +3,7 @@ CC=g++
 CFLAGS=--std=c++11 -Wall -Wextra -pedantic
 LDFLAGS=-lrt
 
-OBJS = heap.o main.o
+OBJS = main.o
 
 .DEFAULT: all
 all: $(OBJS) main.a

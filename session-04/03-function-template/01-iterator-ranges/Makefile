@@ -9,6 +9,7 @@ OBJS = main.o
 all: $(OBJS) main.a
 
 run: main.a
+	clear
 	./main.a
 
 %.o: %.cc
