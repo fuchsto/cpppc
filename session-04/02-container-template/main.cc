@@ -1,6 +1,6 @@
 #include "macro.h"
 
-#include "vector.h"
+#include "bucket_vector.h"
 
 #include <iostream>
 #include <cstdlib>
@@ -10,7 +10,7 @@
 using std::cout;
 using std::endl;
 
-using cpppc::Vector;
+using cpppc::BucketVector;
 
 template <typename SeqContainerType>
 void print_values(const SeqContainerType & sc)
@@ -27,8 +27,8 @@ int main(int argc, char * argv[])
   wno_unused_(argc);
   wno_unused_(argv);
 
-  Vector<int> v0;
-  Vector<int> v1;
+  BucketVector<int> v0;
+  BucketVector<int> v1;
 
   assert(v0 == v1 && v1 == v0);
 
@@ -54,7 +54,7 @@ int main(int argc, char * argv[])
   assert(v0.at(1) == v1.at(1));
   assert(v0.at(2) == v1.at(2));
 
-  Vector<int> v2(v1);
+  BucketVector<int> v2(v1);
   v2.push_back(4);
   v2.push_back(5);
   v2.push_back(6);

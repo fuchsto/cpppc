@@ -1,6 +1,6 @@
 
 CC=g++
-CFLAGS=--std=c++11 -Wall -Wextra -pedantic
+CFLAGS=--std=c++11 -Wall -Wextra -pedantic -g
 LDFLAGS=-lrt
 
 OBJS = main.o
@@ -9,6 +9,7 @@ OBJS = main.o
 all: $(OBJS) main.a
 
 run: main.a
+	clear
 	./main.a
 
 %.o: %.cc

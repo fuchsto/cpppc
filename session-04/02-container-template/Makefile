@@ -1,5 +1,5 @@
 
-CC=g++
+CC=clang++
 CFLAGS=--std=c++11 -Wall -Wextra -pedantic
 LDFLAGS=-lrt
 
