@@ -8,14 +8,17 @@ category: course notes, cpppc
 
 # Rule of Zero
 
-- Do we need Rule of Three in class template `Measurements` from assigment 02?
-- Default constructor, assignment, destructor
-- Rule of zero and default move-constructor/assignment ([reference](http://en.cppreference.com/w/cpp/language/move_assignment))
+We do not need to follow the *Rule of Three* in class template `Measurements`
+from assigment 02 ([source](/assignment-02/s-02/solution/measurements.h)) because
+all resource management is encapsulated in the `std::vector` member.
+
+As `std::vector` respects the *Rule of Five*, we can safely assume that its
+resources will be acquired and released automatically.
+
+- [On Rule of Zero and move assignment](http://en.cppreference.com/w/cpp/language/move_assignment)
 
 
-# More Templates
-
-## Function Templates
+# Function Templates
 
 - Demonstration of STL algorithm interfaces like `std::copy`, `std::transform`,
   `std::find`
@@ -24,13 +27,13 @@ category: course notes, cpppc
 - Implementing `find_if` with lambda expression
 
 
-## Template Parameter Deduction
+# Template Parameter Deduction
 
 - Template parameters deduced from parameter types
 - Return value deduced from result type
 
 
-## BucketVector implementation
+# BucketVector implementation
 
 - All STL algorithms are compatible, no need to reinvent +50 algorithms for the
   user-defined class template `BucketVector`
