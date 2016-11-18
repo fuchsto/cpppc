@@ -92,6 +92,17 @@ std::advance(it, 10);  // <- works! Corresponds to it += 10 i.e. O(1) complexity
 
 ## STL Algorithms
 
+First, have a look a the [complete overview of all algorithm interfaces defined in the STL](http://en.cppreference.com/w/cpp/algorithm).
+Every algorithm interface specifies the required cateogory of its iterator arguments.
+
+For example:
+
+- `std::min_element`
+  ([reference](http://en.cppreference.com/w/cpp/algorithm/min_element))
+  expects iterators in the `ForwardIterator` category
+- `std::sort`
+  ([reference](http://en.cppreference.com/w/cpp/algorithm/sort))
+  requires random access iterators.
 
 
 # Template Parameter Deduction
