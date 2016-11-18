@@ -6,7 +6,6 @@ categories: cpppc, teaching
 
 **C++ Programming Course, Winter Term 2016**
 
-
 # 3-0: Prerequisites
 
 ## SFINAE, enable_if
@@ -17,6 +16,10 @@ categories: cpppc, teaching
 
 Your implementations should be a combination of functions provided by the STL
 and must not contain explicit loops like `for` or `while`.
+
+References:
+
+- [C++ Algorithm Library](http://en.cppreference.com/w/cpp/algorithm)
 
 
 ## find_mean_rep
