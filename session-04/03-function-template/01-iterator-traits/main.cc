@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cassert>
+#include <algorithm>
 
 
 using std::cout;
@@ -30,35 +31,37 @@ int main(int argc, char * argv[])
   BucketVector<int> v0;
   BucketVector<int> v1;
 
-  assert(v0 == v1 && v1 == v0);
-
-  assert(v0.size() == 0 && v0.empty());
-  assert(v1.size() == 0 && v1.empty());
-
   v0.push_back(1);
   v0.push_back(2);
   v0.push_back(3);
-  print_values(v0);
-
-  assert(v0.size() == 3 && !v0.empty());
-  assert(v0.at(0) == 1);
-  assert(v0.at(1) == 2);
-  assert(v0.at(2) == 3);
 
   v1 = v0;
+
+  cout << "v1: ";
   print_values(v1);
 
-  assert(v0 == v1 && v1 == v0);
-
-  assert(v0.at(0) == v1.at(0));
-  assert(v0.at(1) == v1.at(1));
-  assert(v0.at(2) == v1.at(2));
-
   BucketVector<int> v2(v1);
-  v2.push_back(4);
-  v2.push_back(5);
   v2.push_back(6);
+  v2.push_back(5);
+  v2.push_back(4);
+
+  cout << "v2: ";
   print_values(v2);
+
+  auto it_found_4 = std::find(v2.begin(), v2.end(), 4);
+  if (it_found_4 == v2.end()) {
+    cout << "value 4 not found in v2!" << endl;
+  } else {
+    cout << "value 4 found in v2" << endl;
+  }
+
+#if 0
+  BucketVector<int> v2_s(v2);
+  std::sort(v2_s.begin(), v2_s.end());
+
+  cout << "v2_s: ";
+  print_values(v2_s);
+#endif
 
   return EXIT_SUCCESS;
 }

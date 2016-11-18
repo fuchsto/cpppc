@@ -3,7 +3,10 @@
 
 #include <vector>
 #include <stdexcept>
+#include <iterator>
 
+// References:
+// - http://www.drdobbs.com/stl-generic-programming-writing-your-ow/184401417
 
 namespace cpppc {
 
@@ -13,7 +16,16 @@ namespace detail {
   class BucketVectorIterator
   {
     typedef BucketVectorIterator<BucketVectorT> self_t;
-    typedef typename BucketVectorT::value_type  value_type;
+
+  public:
+
+    // see: http://www.cplusplus.com/reference/iterator/ForwardIterator/
+    using iterator_category = std::forward_iterator_tag;
+
+    using value_type        = typename BucketVectorT::value_type;
+    using difference_type   = std::ptrdiff_t;
+    using reference         = value_type &;
+    using pointer           = value_type *;
 
   public:
 
