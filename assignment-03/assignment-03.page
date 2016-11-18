@@ -117,9 +117,39 @@ std::for_each(cluster_odd_first, cluster_prime_first,
 cout << endl;
 ~~~
 
-# 3-2: Custom Container / Iterators
+# 3-2: Custom Container / Iterator
 
-Implement a sparse array container.
+Implement a sparse array container that satisfies the `std::array` interface.
+
+A sparse array is a usually large array with only a few elements different
+from a default value like 0. Instead of allocating memory for all values, only
+non-default values are stored.
+
+Different from vectors, arrays are static containers so their size cannot be
+changed after instantiation.
+
+References:
+
+- [std::array in the C++ Standard Template Library](http://en.cppreference.com/w/cpp/container/array)
+
+~~~c++
+int default = 0;
+cpppc::sparse_array<int, 10000> sa(default); // no values in `sa` yet
+size_t sa_size = sa.size();                  // -> 10000
+assert(sa[345] == 0);                        // returns `default` if no value
+                                             // set at position
+
+sa[230] = 23;
+assert(sa[230] == 23);
+
+sa[420] = 42;
+// two values stored in `sa`
+
+// Must be compatible with STL algorithms:
+
+auto found_42 = std::find(sa.begin(), sa.end(), 42);
+// -> iterator at 'virtual' position 420
+~~~
 
 
 # 3-X: Challenges
