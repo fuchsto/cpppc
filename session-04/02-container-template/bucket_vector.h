@@ -7,10 +7,6 @@
 
 namespace cpppc {
 
-// Forward-declaration
-// template <typename ValueType>
-// class BucketVector;
-
 namespace detail {
 
   template <class BucketVectorT>
@@ -21,7 +17,7 @@ namespace detail {
 
   public:
 
-    BucketVectorIterator(BucketVectorT * const bv)
+    BucketVectorIterator(BucketVectorT * bv)
     : _bucket_vector(bv)
     { }
 
@@ -75,8 +71,8 @@ namespace detail {
 
   private:
 
-    BucketVectorT * const _bucket_vector;
-    int                   _position        = 0;
+    BucketVectorT * _bucket_vector;
+    int             _position        = 0;
   };
 
 }
