@@ -56,6 +56,37 @@ std::fill(stl_lst.begin(), stl_lst.end(), 4.56);
 
 ## Iterator Categories
 
+Iterators are classified into categories as illustrated
+[in this overview](http://en.cppreference.com/w/cpp/iterator#Iterator_categories).
+
+**Some examples:**
+
+The container `std::list` provides iterators in the `BidirectionalIterator`
+category:
+
+~~~c++
+std::list<int> lst;
+// ... initialize lst with some values ...
+auto it = lst.begin();
+++it;                 // <- move forward
+--it;                 // <- move backwards (bidirectional)
+int v = i[0];         // <- fails! Random access (operator[]) is not supported by
+                      //    bidirectional iterators
+it += 10              // <- fails! Corresponds to random access
+std::advance(it, 10); // <- works! Programmer requested "manual" advance of the
+                      //    iterator. Corresponds to invoking ++it 10 times
+~~~
+
+The container `std::vector` provides iterators in the `RandomAccessIterator`
+category:
+
+~~~c++
+std::vector<int> vec;
+// ... initialize vec with some values ...
+auto it = vec.begin();
+int v   = it[10];      // <- works! Random access is provided
+it     += 10;          // <- works! Corresponds to random access 
+~~~
 
 ## STL Algorithms
 
