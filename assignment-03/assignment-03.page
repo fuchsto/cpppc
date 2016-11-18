@@ -119,9 +119,11 @@ cout << endl;
 
 # 3-2: Custom Iterators
 
-# 3-X
 
-# 3-X-1: Skip List
+# 3-X: Challenges
+
+
+## 3-X-1: Skip List
 
 Implement a Skip List data structure as sequential container providing a random
 access iterator interface.
@@ -130,5 +132,6 @@ References:
 
 - [*Skip Lists: A Probabilistic Alternative to Balanced Trees*. W. Pugh, 1990](/docs/skiplist.pdf)
 
-# 3-X: List Comprehension
+
+## 3-X-2: List Comprehension
 
