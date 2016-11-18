@@ -1,78 +1,8 @@
-# Skip List
+---
+format: Markdown
+title: Assignment 3: Iterators, Function Templates
+categories: cpppc, teaching
+...
 
+**C++ Programming Course, Winter Term 2016**
 
-# 1: The ordered_set\<T,C\> Class Template
-
-Implement a class template `ordered_set<T,C>` that represents a set container with
-elements of type `T` ordered by a comparison function `C`.
-
-In a set, every value is only present once (different from a multiset).
-
-The `ordered_set` type is a sequential container. That is: its elements can be
-iterated in a sequential fashion and methods `begin()` and `end()` define the iteration
-space of the container elements.
-
-You can refer to the specification of `std::set` for detailed semantics:
-[http://en.cppreference.com/w/cpp/container/set]()
-
-
-Usage example: 
-
-~~~c++
-ordered_set<int, std::less<int>()> iset;
-iset.insert(60);
-iset.insert(10);
-iset.insert(40);
-iset.insert(20);
-
-iset.at(40) = 100; // position of element changes!
-
-for (auto it = iset.begin(); it != iset.end(); ++it) {
-  std::cout << *it << " ";
-}
-std::cout << std::endl;
-~~~
-
-Output:
-
-~~~
-10 20 60 100
-~~~
-
-Definition of the `OrderedSet` concept:
-
-Signature               | Synopsis
------------------------ | --------------------------------------------------------------
-`begin()          -> i` | returns iterator referencing the first element in the set, \
-                          or `.end()` if the set is empty
-`end()            -> i` | returns iterator past the final element in the set
-`insert(v)        -> i` | insert value `v` in the list at in-order position if not \
-                          present in the set \
-                          returns iterator referencing the element with value `v`
-`at(v)            -> i` | returns iterator referencing the element with value `v` or \
-                          `.end()` if value is not contained in the set
-`size()           -> n` | total number of elements `n` in the set
-`remove(i)            ` | removes element referenced by iterator `i` from the set
-
-
-
-# 2: More Policies
-
-## 2-1: Iteration Policy for Tree\<T\>
-
-Implement **depth-first search** and **breadth-first-search** as policies used in
-`Tree::iterator` types.
-
-
-## 2-2: Allocation Policy for Tree\<T\>
-
-## 2-3: Lazy Evaluation: List Comprehension
-
-- See [this article on Wikipedia](https://en.wikipedia.org/wiki/List_comprehension#C.2B.2B)
-- Specify series of values as lambda depending on arbitrary parameters and previous
-  elements in the series
-
-## 2-X: Cache-Optimized Allocation
-
-Allocation policy where sub-trees of a specific size are stored in blocks of
-contiguous memory.
