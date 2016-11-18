@@ -4,6 +4,8 @@ title: Session 04
 category: course notes, cpppc
 ...
 
+[Code Examples for Session 04](/session-04/)
+
 # Rule of Zero
 
 - Do we need Rule of Three in class template `Measurements` from assigment 02?
