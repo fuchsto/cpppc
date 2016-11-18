@@ -117,7 +117,9 @@ std::for_each(cluster_odd_first, cluster_prime_first,
 cout << endl;
 ~~~
 
-# 3-2: Custom Iterators
+# 3-2: Custom Container / Iterators
+
+Implement a sparse array container.
 
 
 # 3-X: Challenges
