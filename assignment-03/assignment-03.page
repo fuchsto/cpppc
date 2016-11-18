@@ -47,7 +47,29 @@ auto closest_to_mean_it = cpppc::find_mean_rep(v.begin(), v.end());
 // -> iterator at index 3 (|21-30| = 9)
 ~~~
 
+## cluster
 
+Implement a function template `cpppc::cluster` which accepts a range specified
+by two iterators in the `RandomAccessIterator` category and an arbitrary number
+of predicates (functions that return `true` or `false` depending on a single value).
+
+~~~c++
+template<typename RAIter, typename Predicate>
+std::vector<std::pair<RAIter>>
+cluster(RAIter first, RAIter last, Predicate p0, ...);
+~~~
+
+**Example:**
+
+~~~c++
+auto clusters             = cpppc::cluster(v.begin(), v.end(), is_odd, is_prime);
+auto cluster_odd_first    = clusters[0];
+auto cluster_prime_first  = clusters[1];
+
+std::for_each(cluster_odd_first, cluster_prime_first,
+              [](int v) { cout << v << " "; });
+cout << endl;
+~~~
 
 # 3-2: Custom Iterators
 
