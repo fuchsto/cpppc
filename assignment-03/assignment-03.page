@@ -17,6 +17,10 @@ categories: cpppc, teaching
 Your implementations should be a combination of functions provided by the STL
 and must not contain explicit loops like `for` or `while`.
 
+You may use any algorithm interface defined in the C++11 standard.
+For example, you may use `std::minmax` (C++11) in your implementations, but not
+`std::for_each_n` (C++17).
+
 References:
 
 - [C++ Algorithm Library](http://en.cppreference.com/w/cpp/algorithm)
