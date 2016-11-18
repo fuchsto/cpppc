@@ -10,7 +10,7 @@ category: course notes, cpppc
 
 - Do we need Rule of Three in class template `Measurements` from assigment 02?
 - Default constructor, assignment, destructor
-- Rule of zero and default move-constructor/assignment ([reference](http://en.cppreference.com/w/cpp/language/move_assignment)
+- Rule of zero and default move-constructor/assignment ([reference](http://en.cppreference.com/w/cpp/language/move_assignment))
 
 
 # More Templates
