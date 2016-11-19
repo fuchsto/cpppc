@@ -4,7 +4,9 @@
 #include <algorithm>
 #include <numeric>
 #include <vector>
+#include <cmath>
 
+namespace cpppc {
 
 template <class Iter>
 Iter find_mean_rep(Iter first, Iter last) {
@@ -17,12 +19,17 @@ Iter find_mean_rep(Iter first, Iter last) {
                 [&](const value_t & val) {
                   diffs.push_back(std::abs(val - mean));
                });
+  LOG_MESSAGE("find_mean_rep: diffs:{ %s }",
+              range_to_string(diffs.begin(), diffs.end()).c_str());
   auto result(first);
-  std::advance(
-    result,
-    std::distance(diffs.begin(),
-                  std::min_element(diffs.begin(), diffs.end())));
+  auto mean_rep_pos = std::distance(diffs.begin(),
+                                    std::min_element(diffs.begin(),
+                                                     diffs.end()));
+  LOG_MESSAGE("find_mean_rep: pos:%d", mean_rep_pos);
+  std::advance(result, mean_rep_pos);
   return result;
 }
+
+} // namespace cpppc
 
 #endif // CPPPC__S03__FIND_MEAN_REP_H__INCLUDED
