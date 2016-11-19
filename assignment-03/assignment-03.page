@@ -115,7 +115,8 @@ cout << endl;
 
 # 3-2: Custom Container / Iterator
 
-Implement a sparse array container that satisfies the `std::array` interface.
+Implement a [sparse array](https://en.wikipedia.org/wiki/Sparse_array)
+container that satisfies the `std::array` interface.
 
 A sparse array is a usually large array with only a few elements different
 from a default value like 0. Instead of allocating memory for all values, only
