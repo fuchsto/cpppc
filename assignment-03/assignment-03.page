@@ -18,9 +18,12 @@ For example, you may use `std::minmax` (C++11) in your implementations, but not
 
 References:
 
-- [Talk by Marshall Clow: “STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ)
-- [C++ Algorithm Library](http://en.cppreference.com/w/cpp/algorithm)
-
+- Talk by Marshall Clow: “STL Algorithms - why you should use them, and how to write your own"
+  [https://www.youtube.com/watch?v=h4Jl1fk3MkQ]()
+- C++ Algorithm Library:
+  [http://en.cppreference.com/w/cpp/algorithm]()
+- C++ Iterator Library:
+  [http://en.cppreference.com/w/cpp/header/iterator]()
 
 ## 3-1-1: find_mean_rep
 
@@ -100,7 +103,8 @@ changed, but elements cannot be added or removed.
 
 References:
 
-- [std::array in the C++ Standard Template Library](http://en.cppreference.com/w/cpp/container/array)
+- std::array in the C++ Standard Template Library:
+  [http://en.cppreference.com/w/cpp/container/array]()
 
 ~~~c++
 int default = 0;
@@ -139,8 +143,9 @@ interface based on a Skip List data structure.
 
 References: 
 
-- [Specification of std::map](http://en.cppreference.com/w/cpp/container/map)
-- [*Skip Lists: A Probabilistic Alternative to Balanced Trees*. W. Pugh, 1990](/docs/skiplist.pdf)
+- Specification of std::map: [http://en.cppreference.com/w/cpp/container/map]()
+- *Skip Lists: A Probabilistic Alternative to Balanced Trees*. W. Pugh, 1990.
+  [http://cpppc.pub.lab.nm.ifi.lmu.de/docs/skiplist.pdf]()
 
 
 ## 3-X-2: List Comprehension
