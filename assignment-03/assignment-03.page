@@ -128,7 +128,7 @@ auto found_42 = std::find(sa.begin(), sa.end(), 42);
 **Notes:**
 
 - Your implementation has to detect assignment of a value reference. Try a
-  [temporary proxy](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Temporary_Proxy).
+  temporary proxy: [https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Temporary_Proxy]().
 - Obviously, the `sparse_array` cannot provide direct access to its
   underlying array (as it doesn't exist) so method `data()` is not provided.
 
