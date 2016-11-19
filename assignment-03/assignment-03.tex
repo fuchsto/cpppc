@@ -1,0 +1,272 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdftitle={Assignment 3: Iterators, Function Templates},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\title{Assignment 3: Iterators, Function Templates}
+\date{}
+
+\begin{document}
+\maketitle
+
+\textbf{C++ Programming Course, Winter Term 2016}
+
+\section{3-1: Algorithms / Function
+Templates}\label{algorithms-function-templates}
+
+Your implementations should be a combination of functions provided by
+the STL and must not contain explicit loops like \texttt{for} or
+\texttt{while}.
+
+You may use any algorithm interface defined in the C++11 standard. For
+example, you may use \texttt{std::minmax} (C++11) in your
+implementations, but not \texttt{std::for\_each\_n} (C++17).
+
+References:
+
+\begin{itemize}
+\tightlist
+\item
+  Talk by Marshall Clow: ``STL Algorithms - why you should use them, and
+  how to write your own''
+  \url{https://www.youtube.com/watch?v=h4Jl1fk3MkQ}
+\item
+  C++ Algorithm Library:
+  \url{http://en.cppreference.com/w/cpp/algorithm}
+\item
+  C++ Iterator Library:
+  \url{http://en.cppreference.com/w/cpp/header/iterator}
+\end{itemize}
+
+\subsection{3-1-1: find\_mean\_rep}\label{find_mean_rep}
+
+Implement a function template \texttt{cpppc::find\_mean\_rep} which
+accepts a range specified by two iterators in the \texttt{InputIterator}
+category and returns an iterator to the element in the range that is
+closest to the mean of the range.
+
+Your implementation should be automatically more efficient for random
+access iterator ranges without specialization.
+
+\textbf{Function interface:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{template} \NormalTok{<}\KeywordTok{typename} \NormalTok{InputIter>}
+\NormalTok{InputIter find_mean_rep(InputIter first, InputIter last);}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Example:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{std::}\NormalTok{vector<}\DataTypeTok{int}\NormalTok{> v \{ }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{40}\NormalTok{, }\DecValTok{50} \NormalTok{\}; }\CommentTok{// mean: 21}
+\KeywordTok{auto} \NormalTok{closest_to_mean_it = cpppc::find_mean_rep(v.begin(), v.end());}
+\CommentTok{// -> iterator at index 3 (|21-30| = 9)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{3-1-2: histogram
+(RandomAccessIterator)}\label{histogram-randomaccessiterator}
+
+Implement a function template \texttt{cpppc::histogram} which accepts a
+range specified by two iterators in the \texttt{InputIterator} category
+and replaces each value by the number of its occurrences in the range.
+Values are unique in the result histogram and ordered by their first
+occurrence in the range. The function returns an iterator past the final
+element in the histogram.
+
+Only integer values (int, long, size\_t, \ldots{}) have to be supported.
+
+\textbf{Function interface:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{template} \NormalTok{<}\KeywordTok{typename} \NormalTok{RAIt>}
+\NormalTok{RAIt histogram(RAIt first, RAIt last);}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Example:}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\BuiltInTok{std::}\NormalTok{vector<}\DataTypeTok{int}\NormalTok{> v \{ }\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7} \NormalTok{\};}
+\KeywordTok{auto} \NormalTok{hist_end = cpppc::histogram(v.begin(), v.end());}
+\CommentTok{// -> 1: 2 occurences}
+\CommentTok{//    5: 3 occurences}
+\CommentTok{//    5: skipped}
+\CommentTok{//    ...}
+\CommentTok{// -> \{ 2, 3, 1, 1, 1 \}  <- occurrences}
+\CommentTok{//      ^  ^  ^  ^  ^}
+\CommentTok{//      |  |  |  |  |}
+\CommentTok{//      1  5  3  4  7    <- value}
+\CommentTok{//}
+\CommentTok{// -> returns iterator at position 5}
+\end{Highlighting}
+\end{Shaded}
+
+\section{3-2: Custom Container /
+Iterator}\label{custom-container-iterator}
+
+Implement a sparse array (see
+\url{https://en.wikipedia.org/wiki/Sparse_array}) container that
+satisfies the \texttt{std::array} interface.
+
+A sparse array is a usually large array with most elements set to a
+default value like 0. Instead of allocating memory for all values, only
+non-default values are actually allocated.
+
+Different from vectors, arrays are static containers so their size does
+not change after instantiation. The values of its elements can be
+iterated and changed, but elements cannot be added or removed.
+
+References:
+
+\begin{itemize}
+\tightlist
+\item
+  std::array in the C++ Standard Template Library:
+  \url{http://en.cppreference.com/w/cpp/container/array}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{int} \ControlFlowTok{default} \NormalTok{= }\DecValTok{0}\NormalTok{;}
+\NormalTok{cpppc::sparse_array<}\DataTypeTok{int}\NormalTok{, }\DecValTok{10000}\NormalTok{> sa(}\ControlFlowTok{default}\NormalTok{);}
+\CommentTok{// no actual values in `sa` yet, all set to default}
+\DataTypeTok{size_t} \NormalTok{sa_size = sa.size(); }\CommentTok{// -> 10000}
+\NormalTok{assert(sa[}\DecValTok{345}\NormalTok{] == }\DecValTok{0}\NormalTok{);       }\CommentTok{// returns `default` if no value}
+                            \CommentTok{// set at position}
+
+\NormalTok{sa[}\DecValTok{230}\NormalTok{] = }\DecValTok{23}\NormalTok{;}
+\NormalTok{assert(sa[}\DecValTok{230}\NormalTok{] == }\DecValTok{23}\NormalTok{);}
+
+\NormalTok{sa[}\DecValTok{420}\NormalTok{] = }\DecValTok{42}\NormalTok{;}
+\CommentTok{// two values stored in `sa`}
+
+\CommentTok{// Must be compatible with STL algorithms:}
+
+\KeywordTok{auto} \NormalTok{found_42 = }\BuiltInTok{std::}\NormalTok{find(sa.begin(), sa.end(), }\DecValTok{42}\NormalTok{);}
+\CommentTok{// -> iterator at 'virtual' position 420 (the second 'real' value)}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Notes:}
+
+\begin{itemize}
+\tightlist
+\item
+  Your implementation has to detect assignment of a value reference. Try
+  a temporary proxy:
+  \url{https://en.wikibooks.org/wiki/More_C++_Idioms/Temporary_Proxy}.
+\item
+  Obviously, the \texttt{sparse\_array} cannot provide direct access to
+  its underlying array (as it doesn't exist) so method \texttt{data()}
+  is not provided.
+\end{itemize}
+
+\section{3-X: Challenges}\label{x-challenges}
+
+\subsection{3-X-1: Skip List}\label{x-1-skip-list}
+
+Implement a class template \texttt{cpppc::map} that satisfies the
+\texttt{std::map} container interface based on a Skip List data
+structure.
+
+References:
+
+\begin{itemize}
+\tightlist
+\item
+  Specification of std::map:
+  \url{http://en.cppreference.com/w/cpp/container/map}
+\item
+  \emph{Skip Lists: A Probabilistic Alternative to Balanced Trees}. W.
+  Pugh, 1990. \url{http://cpppc.pub.lab.nm.ifi.lmu.de/docs/skiplist.pdf}
+\end{itemize}
+
+\end{document}
