@@ -18,15 +18,21 @@ For example, you may use `std::minmax` (C++11) in your implementations, but not
 
 References:
 
-- [Talk by Marshall Clow: “STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ)
-- [C++ Algorithm Library](http://en.cppreference.com/w/cpp/algorithm)
-
+- Talk by Marshall Clow: “STL Algorithms - why you should use them, and how to write your own"
+  [https://www.youtube.com/watch?v=h4Jl1fk3MkQ]()
+- C++ Algorithm Library:
+  [http://en.cppreference.com/w/cpp/algorithm]()
+- C++ Iterator Library:
+  [http://en.cppreference.com/w/cpp/header/iterator]()
 
 ## 3-1-1: find_mean_rep
 
 Implement a function template `cpppc::find_mean_rep` which accepts a range specified
 by two iterators in the `InputIterator` category and returns an iterator to the
 element in the range that is closest to the mean of the range.
+
+Your implementation should be automatically more efficient for random access iterator
+ranges without specialization.
 
 **Function interface:**
 
@@ -46,11 +52,13 @@ auto closest_to_mean_it = cpppc::find_mean_rep(v.begin(), v.end());
 ## 3-1-2: histogram (RandomAccessIterator)
 
 Implement a function template `cpppc::histogram` which accepts a range specified
-by two iterators in the `RandomAccessIterator` category and replaces each value by the
+by two iterators in the `InputIterator` category and replaces each value by the
 number of its occurrences in the range.
 Values are unique in the result histogram and ordered by their first occurrence
 in the range.
 The function returns an iterator past the final element in the histogram.
+
+Only integer values (int, long, size_t, ...) have to be supported.
 
 **Function interface:**
 
@@ -76,10 +84,6 @@ auto hist_end = cpppc::histogram(v.begin(), v.end());
 // -> returns iterator at position 5
 ~~~
 
-## 3-1-3: histogram (BidirectionalIterator)
-
-Specialize the `cpppc::histogram` algorithm for bidirectional iterators.
-
 
 # 3-2: Custom Container / Iterator
 
@@ -97,7 +101,8 @@ changed, but elements cannot be added or removed.
 
 References:
 
-- [std::array in the C++ Standard Template Library](http://en.cppreference.com/w/cpp/container/array)
+- std::array in the C++ Standard Template Library:
+  [http://en.cppreference.com/w/cpp/container/array]()
 
 ~~~c++
 int default = 0;
@@ -121,7 +126,7 @@ auto found_42 = std::find(sa.begin(), sa.end(), 42);
 **Notes:**
 
 - Your implementation has to detect assignment of a value reference. Try a
-  [temporary proxy](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Temporary_Proxy).
+  temporary proxy: [https://en.wikibooks.org/wiki/More_C++_Idioms/Temporary_Proxy]().
 - Obviously, the `sparse_array` cannot provide direct access to its
   underlying array (as it doesn't exist) so method `data()` is not provided.
 
@@ -136,8 +141,9 @@ interface based on a Skip List data structure.
 
 References: 
 
-- [Specification of std::map](http://en.cppreference.com/w/cpp/container/map)
-- [*Skip Lists: A Probabilistic Alternative to Balanced Trees*. W. Pugh, 1990](/docs/skiplist.pdf)
+- Specification of std::map: [http://en.cppreference.com/w/cpp/container/map]()
+- *Skip Lists: A Probabilistic Alternative to Balanced Trees*. W. Pugh, 1990.
+  [http://cpppc.pub.lab.nm.ifi.lmu.de/docs/skiplist.pdf]()
 
 
 ## 3-X-2: List Comprehension
