@@ -106,10 +106,11 @@ References:
 
 ~~~c++
 int default = 0;
-cpppc::sparse_array<int, 10000> sa(default); // no values in `sa` yet
-size_t sa_size = sa.size();                  // -> 10000
-assert(sa[345] == 0);                        // returns `default` if no value
-                                             // set at position
+cpppc::sparse_array<int, 10000> sa(default);
+// no values in `sa` yet
+size_t sa_size = sa.size(); // -> 10000
+assert(sa[345] == 0);       // returns `default` if no value
+                            // set at position
 
 sa[230] = 23;
 assert(sa[230] == 23);
