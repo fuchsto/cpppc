@@ -7,7 +7,7 @@ categories: cpppc, teaching
 **C++ Programming Course, Winter Term 2016**
 
 
-# 3-1: Designing Function Templates
+# 3-1: Algorithms / Function Templates
 
 Your implementations should be a combination of functions provided by the STL
 and must not contain explicit loops like `for` or `while`.
@@ -18,7 +18,8 @@ For example, you may use `std::minmax` (C++11) in your implementations, but not
 
 References:
 
-- C++ Algorithm Library: [http://en.cppreference.com/w/cpp/algorithm]()
+- [Talk by Marshall Clow: “STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ)
+- [C++ Algorithm Library](http://en.cppreference.com/w/cpp/algorithm)
 
 
 ## 3-1-1: find_mean_rep
@@ -42,10 +43,10 @@ auto closest_to_mean_it = cpppc::find_mean_rep(v.begin(), v.end());
 // -> iterator at index 3 (|21-30| = 9)
 ~~~
 
-## 3-1-2: histogram
+## 3-1-2: histogram (RandomAccessIterator)
 
 Implement a function template `cpppc::histogram` which accepts a range specified
-by two iterators in the `ForwardIterator` category and replaces each value by the
+by two iterators in the `RandomAccessIterator` category and replaces each value by the
 number of its occurrences in the range.
 Values are unique in the result histogram and ordered by their first occurrence
 in the range.
@@ -54,8 +55,8 @@ The function returns an iterator past the final element in the histogram.
 **Function interface:**
 
 ~~~c++
-template <typename ForwardIt>
-ForwardIt histogram(ForwardIt first, ForwardIt last);
+template <typename RAIt>
+RAIt histogram(RAIt first, RAIt last);
 ~~~
 
 **Example:**
@@ -75,26 +76,28 @@ auto hist_end = cpppc::histogram(v.begin(), v.end());
 // -> returns iterator at position 5
 ~~~
 
+## 3-1-3: histogram (BidirectionalIterator)
+
+Specialize the `cpppc::histogram` algorithm for bidirectional iterators.
+
 
 # 3-2: Custom Container / Iterator
 
-Implement a sparse array container that satisfies the `std::array` interface.
+Implement a [sparse array](https://en.wikipedia.org/wiki/Sparse_array)
+container that satisfies the `std::array` interface.
 
-A sparse array is a usually large array with only a few elements different
-from a default value like 0. Instead of allocating memory for all values, only
-non-default values are stored.
+A sparse array is a usually large array with most elements set to a default
+value like 0. Instead of allocating memory for all values, only
+non-default values are actually allocated.
 
-Different from vectors, arrays are static containers so their size cannot be
-changed after instantiation.
-
-**Note:** obviously, the `sparse_array` cannot provide direct access to its
-underlying array (as it doesn't exist) so method `data()` is not provided.
+Different from vectors, arrays are static containers so their size does not
+change after instantiation. The values of its elements can be iterated and
+changed, but elements cannot be added or removed.
 
 
 References:
 
-- std::array in the C++ Standard Template Library:
-  [http://en.cppreference.com/w/cpp/container/array]()
+- [std::array in the C++ Standard Template Library](http://en.cppreference.com/w/cpp/container/array)
 
 ~~~c++
 int default = 0;
@@ -112,8 +115,15 @@ sa[420] = 42;
 // Must be compatible with STL algorithms:
 
 auto found_42 = std::find(sa.begin(), sa.end(), 42);
-// -> iterator at 'virtual' position 420
+// -> iterator at 'virtual' position 420 (the second 'real' value)
 ~~~
+
+**Notes:**
+
+- Your implementation has to detect assignment of a value reference. Try a
+  [temporary proxy](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Temporary_Proxy).
+- Obviously, the `sparse_array` cannot provide direct access to its
+  underlying array (as it doesn't exist) so method `data()` is not provided.
 
 
 # 3-X: Challenges
@@ -126,9 +136,8 @@ interface based on a Skip List data structure.
 
 References: 
 
-- Specification of std::map: [http://en.cppreference.com/w/cpp/container/map]()
-- *Skip Lists: A Probabilistic Alternative to Balanced Trees*. W. Pugh. 1990 
-  [http://cpppc.pub.lab.nm.ifi.lmu.de/docs/skiplist.pdf]()
+- [Specification of std::map](http://en.cppreference.com/w/cpp/container/map)
+- [*Skip Lists: A Probabilistic Alternative to Balanced Trees*. W. Pugh, 1990](/docs/skiplist.pdf)
 
 
 ## 3-X-2: List Comprehension
