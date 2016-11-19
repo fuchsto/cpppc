@@ -118,12 +118,13 @@ cout << endl;
 Implement a [sparse array](https://en.wikipedia.org/wiki/Sparse_array)
 container that satisfies the `std::array` interface.
 
-A sparse array is a usually large array with only a few elements different
-from a default value like 0. Instead of allocating memory for all values, only
-non-default values are stored.
+A sparse array is a usually large array with most elements set to a default
+value like 0. Instead of allocating memory for all values, only
+non-default values are actually allocated.
 
-Different from vectors, arrays are static containers so their size cannot be
-changed after instantiation.
+Different from vectors, arrays are static containers so their size does not
+change after instantiation. The values of its elements can be iterated and
+changed, but elements cannot be added or removed.
 
 
 References:
