@@ -43,10 +43,10 @@ auto closest_to_mean_it = cpppc::find_mean_rep(v.begin(), v.end());
 // -> iterator at index 3 (|21-30| = 9)
 ~~~
 
-## 3-1-2: histogram
+## 3-1-2: histogram (RandomAccessIterator)
 
 Implement a function template `cpppc::histogram` which accepts a range specified
-by two iterators in the `ForwardIterator` category and replaces each value by the
+by two iterators in the `RandomAccessIterator` category and replaces each value by the
 number of its occurrences in the range.
 Values are unique in the result histogram and ordered by their first occurrence
 in the range.
@@ -55,8 +55,8 @@ The function returns an iterator past the final element in the histogram.
 **Function interface:**
 
 ~~~c++
-template <typename ForwardIt>
-ForwardIt histogram(ForwardIt first, ForwardIt last);
+template <typename RAIt>
+RAIt histogram(RAIt first, RAIt last);
 ~~~
 
 **Example:**
@@ -76,42 +76,10 @@ auto hist_end = cpppc::histogram(v.begin(), v.end());
 // -> returns iterator at position 5
 ~~~
 
-## 3-1-3: combine_if
+## 3-1-3: histogram (BidirectionalIterator)
 
-Implement a function template `cpppc::histogram` which accepts
+Specialize the `cpppc::histogram` algorithm for random access iterators.
 
-- a range specified by two iterators in the `ForwardIterator` category
-- a second range of the same size specified by an iterator in the `ForwardIterator`
-  category at the first element in the second range
-- an output range specified by an iterator in the `OutputIterator` category at the
-  first element in the output range
-- a binary predicate accepting a value from the first and second range
-
-
-
-## 3-1-4: cluster
-
-Implement a function template `cpppc::cluster` which accepts a range specified
-by two iterators in the `RandomAccessIterator` category and an arbitrary number
-of predicates (functions that return `true` or `false` depending on a single value).
-
-~~~c++
-template<typename RAIter, typename Predicate>
-std::vector<std::pair<RAIter>>
-cluster(RAIter first, RAIter last, Predicate p0, ...);
-~~~
-
-**Example:**
-
-~~~c++
-auto clusters             = cpppc::cluster(v.begin(), v.end(), is_odd, is_prime);
-auto cluster_odd_first    = clusters[0];
-auto cluster_prime_first  = clusters[1];
-
-std::for_each(cluster_odd_first, cluster_prime_first,
-              [](int v) { cout << v << " "; });
-cout << endl;
-~~~
 
 # 3-2: Custom Container / Iterator
 
