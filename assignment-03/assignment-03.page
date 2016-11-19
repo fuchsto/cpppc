@@ -87,7 +87,7 @@ auto hist_end = cpppc::histogram(v.begin(), v.end());
 
 # 3-2: Custom Container / Iterator
 
-Implement a [sparse array](https://en.wikipedia.org/wiki/Sparse_array)
+Implement a sparse array (see [https://en.wikipedia.org/wiki/Sparse_array]())
 container that satisfies the `std::array` interface.
 
 A sparse array is a usually large array with most elements set to a default
