@@ -18,7 +18,7 @@ For example, you may use `std::minmax` (C++11) in your implementations, but not
 
 References:
 
-- [C++ Algorithm Library](http://en.cppreference.com/w/cpp/algorithm)
+- C++ Algorithm Library: [http://en.cppreference.com/w/cpp/algorithm]()
 
 
 ## 3-1-1: find_mean_rep
