@@ -10,7 +10,6 @@
 #include <iterator>
 #include <array>
 
-
 // you might want to set this to 1 for debugging
 constexpr int NMULT = 100000;
 
@@ -128,13 +127,7 @@ TEST_F(SparseArrayTest, ArrayInterface)
                 sa2.begin() + 16,
                 [&](int v) { ASSERT_EQ(idx *= 2, v); });
 
-  // Fancy way to output a sequence of values to a string:
-  std::ostringstream oss;
-  std::copy(sa2.begin(),
-            sa2.begin() + 16,
-            std::ostream_iterator<int>(oss, " "));
-
   LOG_MESSAGE("SparseArrayTest.ArrayInterface: sa2 = { %s }",
-              oss.str().c_str());
+              range_to_string(sa2.begin(), sa2.begin() + 16).c_str());
 }
 
