@@ -28,6 +28,9 @@ Implement a function template `cpppc::find_mean_rep` which accepts a range speci
 by two iterators in the `InputIterator` category and returns an iterator to the
 element in the range that is closest to the mean of the range.
 
+Your implementation should be automatically more efficient for random access iterator
+ranges without specialization.
+
 **Function interface:**
 
 ~~~c++
