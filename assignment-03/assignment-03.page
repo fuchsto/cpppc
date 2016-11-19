@@ -93,7 +93,8 @@ underlying array (as it doesn't exist) so method `data()` is not provided.
 
 References:
 
-- [std::array in the C++ Standard Template Library](http://en.cppreference.com/w/cpp/container/array)
+- std::array in the C++ Standard Template Library:
+  [http://en.cppreference.com/w/cpp/container/array]()
 
 ~~~c++
 int default = 0;
@@ -125,8 +126,9 @@ interface based on a Skip List data structure.
 
 References: 
 
-- [Specification of std::map](http://en.cppreference.com/w/cpp/container/map)
-- [*Skip Lists: A Probabilistic Alternative to Balanced Trees*. W. Pugh, 1990](/docs/skiplist.pdf)
+- Specification of std::map: [http://en.cppreference.com/w/cpp/container/map]()
+- *Skip Lists: A Probabilistic Alternative to Balanced Trees*. W. Pugh. 1990 
+  [http://cpppc.pub.lab.nm.ifi.lmu.de/docs/skiplist.pdf]()
 
 
 ## 3-X-2: List Comprehension
