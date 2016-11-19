@@ -1,3 +1,18 @@
 - [`array_ref`](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3334.html) as use case for implicit conversion
 
 - longest increasing subsequence
+
+- filter_array:
+
+~~~c++
+filter_array<int> fa { 1, 2, 3, 4, 5, 30, 45, 40, 23, 4 };
+fa.push_filter([](int v) { return v < 10; });
+// -> { 1, 2, 3, 4, 5, 4 }
+fa.size(); // -> 6
+
+fa.push_filter([](int v) { return v < 4; });
+// -> { 1, 2, 3 }
+
+fa.pop_filter().pop_filter(); // or: fa.clear_filters()
+//  { 1, 2, 3, 4, 5, 30, 45, 40, 23, 4 }
+~~~
