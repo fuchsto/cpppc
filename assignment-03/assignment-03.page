@@ -107,7 +107,7 @@ References:
 ~~~c++
 int default = 0;
 cpppc::sparse_array<int, 10000> sa(default);
-// no values in `sa` yet
+// no actual values in `sa` yet, all set to default
 size_t sa_size = sa.size(); // -> 10000
 assert(sa[345] == 0);       // returns `default` if no value
                             // set at position
