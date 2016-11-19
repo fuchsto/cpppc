@@ -118,7 +118,7 @@ concept.
 
 We discussed the example `BucketHeap` [(source)](/session-04/03-container-template/02-custom-iterators/bucket_heap.h) in session 4.
 
-
+This container implements an [Unrolled List](https://en.wikipedia.org/wiki/Unrolled_linked_list) in principle.
 
 - All STL algorithms are compatible, no need to reinvent +50 algorithms for the
   user-defined class template `BucketVector`
