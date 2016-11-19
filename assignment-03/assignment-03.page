@@ -123,6 +123,10 @@ non-default values are stored.
 Different from vectors, arrays are static containers so their size cannot be
 changed after instantiation.
 
+**Note:** obviously, the `sparse_array` cannot provide direct access to its
+underlying array (as it doesn't exist) so method `data()` is not provided.
+
+
 References:
 
 - [std::array in the C++ Standard Template Library](http://en.cppreference.com/w/cpp/container/array)
