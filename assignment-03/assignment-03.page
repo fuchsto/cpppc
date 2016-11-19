@@ -147,7 +147,7 @@ sa[420] = 42;
 // Must be compatible with STL algorithms:
 
 auto found_42 = std::find(sa.begin(), sa.end(), 42);
-// -> iterator at 'virtual' position 420
+// -> iterator at 'virtual' position 420 (the second 'real' value)
 ~~~
 
 **Notes:**
