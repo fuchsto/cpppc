@@ -42,7 +42,7 @@ light of the "standardese" phrasing.
 
 
 
-# 4-1: Lock-based Set
+# 4-1: Lock-based Pool
 
 The most basic container specified in the STL is `std::set`.
 In this assignment, we reduce the set concept even more. A `pool` (or `bag`)
@@ -63,7 +63,7 @@ Implement a thread-safe container `lpool` using lock-based synchronization
 such as `std::mutex` and related constructs like `std::lock_guard`.
 
 
-# 4-2: Atomic Operations
+# 4-2: Lock-free Pool
 
 Implement a variant of the thread-safe pool container `apool` with identical
 behavior, but based on atomic operations.
