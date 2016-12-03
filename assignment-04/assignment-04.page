@@ -69,11 +69,14 @@ Implement a variant of the thread-safe pool container `apool` with identical
 behavior, but based on atomic operations.
 
 A correct solution is surprisingly simple - but not trivial!
+In fact, one would invest three pages in a master's thesis to discuss its correctness.
+
 
 **Hint:**
 
-The C++ container collection in the EMBB library provides lock- and wait-free
-pools which are not based on `std::atomic` of "modern C++", however.
+The C++ container collection in the excellent Siemens EMBB library provides
+lock- and wait-free pools. For compatibility reasons, these are not based on `std::atomic` of "modern C++", however.
+
 Try to understand their basic principle and port it to `C++11`:
 
 - [Siemens EMBB](https://github.com/siemens/embb/tree/benchmark/containers_cpp/include/embb/containers)
