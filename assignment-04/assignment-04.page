@@ -66,7 +66,31 @@ such as `std::mutex` and related constructs like `std::lock_guard`.
 # 4-2: Lock-free Pool
 
 Implement a variant of the thread-safe pool container `apool` with identical
-behavior, but based on atomic operations.
+behavior, but based on atomic operations using `std::atomic`.
+
+http://en.cppreference.com/w/cpp/atomic/atomic
+
+Only the methods listed at the bottom are relevant, the interface of the atomic
+concept is tiny and unsurprising:
+
+~~~c++
+std::atomic<int> a_int;
+
+// ...
+
+void increment(std::atomic<int> & a) {
+  // no mutex required: operator++ is available
+  // as atomic operation for int -> no data race
+  while (some_condition) a++;
+}
+
+std::thread t0(increment, std::ref(a_int));
+std::thread t1(increment, std::ref(a_int));
+
+t0.join();
+t1.join();
+~~~
+
 A correct solution is surprisingly simple - but not trivial!
 In fact, one would invest three pages in a master's thesis to discuss it.
 
