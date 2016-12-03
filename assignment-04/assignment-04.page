@@ -67,8 +67,8 @@ such as `std::mutex` and related constructs like `std::lock_guard`.
 
 Implement a variant of the thread-safe pool container `apool` with identical
 behavior, but based on atomic operations.
-
 A correct solution is surprisingly simple - but not trivial!
+
 In fact, one would invest three pages in a [master's thesis](http://www.mnm-team.org/~fuchst/master_thesis_tobias_fuchs.pdf) to discuss it.
 
 
