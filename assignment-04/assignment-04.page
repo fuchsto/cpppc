@@ -1,6 +1,6 @@
 ---
 format: Markdown
-title: Assignment 4: Threads, Mutex, Atomic
+title: Assignment 4: Thread Safety
 categories: cpppc, teaching
 ...
 
