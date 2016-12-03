@@ -121,7 +121,7 @@ lock- and wait-free pools. For compatibility reasons, these are not based on `st
 
 Try to understand their basic principle and port it to `C++11`:
 
-- [Siemens EMBB](https://github.com/siemens/embb/tree/benchmark/containers_cpp/include/embb/containers)
+- [Siemens EMBB](https://github.com/siemens/embb/tree/master/containers_cpp/include/embb/containers)
 - [EMBB experimental containers](https://github.com/fuchsto/embb/tree/benchmark/containers_cpp/include/embb/containers)
 
 
