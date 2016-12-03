@@ -76,13 +76,16 @@ no `at`, `find`, ...).
 Implement a thread-safe container `lpool` using lock-based synchronization
 such as `std::mutex` and related constructs like `std::lock_guard`.
 
+<http://en.cppreference.com/w/cpp/thread/mutex>
+<http://en.cppreference.com/w/cpp/thread/lock_guard>
+
 
 # 4-2: Lock-free Pool
 
 Implement a variant of the thread-safe pool container `apool` with identical
 behavior, but based on atomic operations using `std::atomic`.
 
-http://en.cppreference.com/w/cpp/atomic/atomic
+<http://en.cppreference.com/w/cpp/atomic/atomic>
 
 Only the methods listed at the bottom are relevant, the interface of the atomic
 concept is tiny and unsurprising:
