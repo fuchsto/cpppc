@@ -10,7 +10,7 @@ categories: cpppc, teaching
 [Source Code](/assignment-04/a-04/)
 
 
-# 4-0: Precursor: Thread-Safety of STL Containers
+# 4-0: Standardese: Thread-Safety of STL Containers
 
 Briefly put: **Modifying operations** on STL containers are not thread safe.
 And with good reason:
@@ -39,6 +39,7 @@ according to the C++ standard.
 The text might be overwhelming and alienating at first, but the more
 examples you write down, the better your eyes will adapt to the blinding
 light of the "standardese" phrasing.
+
 
 
 # 4-1: Lock-based Set
