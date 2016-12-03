@@ -26,7 +26,13 @@ thus, standardize) in a comprehensible way.
 
 To give a plain example:
 What is the correct behavior when a thread calls `std::list.pop_back` on an
-empty, concurrent list? Return std::list.end(), or wait for a `std::list.push`?
+empty, concurrent list?
+
+- Return `std::list.end()`? Of course! Otherwise it would not comply to the
+  regular `std::list`!
+
+- Or: wait for a `std::list.push`? Of course! Otherwise it would be useless for
+  nearly all use cases for concurrent lists!
 
 
 For the forseeable future, we will have to implement concurrent data
