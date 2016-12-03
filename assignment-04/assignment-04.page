@@ -1,18 +1,54 @@
 
-# 4-1: Thread-Safety of STL Containers
+# 4-0: Precursor: Thread-Safety of STL Containers
+
+Briefly put: STL containers are not thread safe. And with good reason:
+Thread safety drastically increases the complexity of even the most
+fundamental operations on containers.
+Extending the C++ standard library by thread-safe container alternatives is
+not feasible either as any single parallel container implementation would
+only satisfy the requirements of singular use cases.
+
+For the forseeable future, we will have to implement concurrent data
+structures ourselves once in a while, at least if we want to maximize
+performance for a specific use case.
 
 
-# 4-3: Atomic Operations
+# 4-1: Lock-based Set
+
+The most basic container specified in the STL is `std::set`.
+In this assignment, we reduce the set concept even more. A `pool` (or `bag`)
+is a set that does not remove and return a *specified* element in its
+`get` operation, but *any* element.
+
+Expression      | Synopsis
+--------------- | ------------------------------------------------------------
+`p.insert(e)   `| Adds element `e` to the pool, error if `e` is already in `p`
+`p.take() -> e `| Removes and returns any element `e` from the pool.
 
 
+Pools are essential to parallel applications but not specified in the STL.
+A pool is neither sequential (i.e. no `begin`, `end`) nor associative (i.e.
+no `at`, `find`, ...).
 
-# 4-3-1: Type Punning
+Implement a thread-safe container `lpool` using lock-based synchronization
+such as `std::mutex` and related constructs like `std::lock_guard`.
 
 
-# 4-X: Lazy Evaluation
+# 4-2: Atomic Operations
 
+Implement a variant of the thread-safe pool container `apool` with identical
+behavior, but based on atomic operations.
 
-# 4-X: Condition Variables
+A correct solution is surprisingly simple - but not trivial!
+
+**Hint:**
+
+The C++ container collection in the EMBB library provides lock- and wait-free
+pools which are not based on `std::atomic` of "modern C++", however.
+Try to understand their basic principle and port it to `C++11`:
+
+- [Siemens EMBB)](https://github.com/siemens/embb/tree/benchmark/containers_cpp/include/embb/containers)
+- [EMBB experimental containers](https://github.com/fuchsto/embb/tree/benchmark/containers_cpp/include/embb/containers)
 
 
 
