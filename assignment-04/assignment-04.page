@@ -16,10 +16,18 @@ Briefly put: **Modifying operations** on STL containers are not thread safe.
 And with good reason:
 
 Thread safety drastically increases the complexity of even the most
-fundamental operations on containers.
+fundamental operations on containers. Already a "simple" thread-safe
+implementation of `std::list.pop_back` easily spans over dozens of lines of code.
+
+
 Extending the C++ standard library by thread-safe container alternatives is
-not feasible either as any single parallel container implementation would
-only satisfy the requirements of singular use cases.
+not feasible either, as concurrent behavior is impossible to standardize
+in a comprehensible way.
+
+To give a plain example:
+What is the correct behavior when a thread calls `std::list.pop_back` on an
+empty, concurrent list? Return std::list.end(), or wait for a `std::list.push`?
+
 
 For the forseeable future, we will have to implement concurrent data
 structures ourselves once in a while, at least if we want to maximize
