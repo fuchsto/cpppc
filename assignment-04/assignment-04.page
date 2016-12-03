@@ -21,8 +21,8 @@ implementation of `std::list.pop_back` easily spans over dozens of lines of code
 
 
 Extending the C++ standard library by thread-safe container alternatives is
-not feasible either, as concurrent behavior is impossible to standardize
-in a comprehensible way.
+not feasible either, as concurrent behavior is impossible to generalize (and
+thus, standardize) in a comprehensible way.
 
 To give a plain example:
 What is the correct behavior when a thread calls `std::list.pop_back` on an
