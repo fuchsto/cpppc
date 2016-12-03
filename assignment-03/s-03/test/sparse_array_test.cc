@@ -11,7 +11,7 @@
 #include <array>
 
 // you might want to set this to 1 for debugging
-constexpr int NMULT = 100000;
+constexpr int NMULT = 1000;
 
 using namespace cpppc;
 
@@ -120,14 +120,14 @@ TEST_F(SparseArrayTest, ArrayInterface)
                 sa2.begin() + 220 + 16,
                 [&](int v) { ASSERT_EQ(idx *= 2, v); });
 
-// std::sort(sa2.begin(), sa2.end());
+  std::sort(sa2.begin(), sa2.end());
 
   idx = 2;
   std::for_each(sa2.begin(),
                 sa2.begin() + 16,
                 [&](int v) { ASSERT_EQ(idx *= 2, v); });
 
-  LOG_MESSAGE("SparseArrayTest.ArrayInterface: sa2 = { %s }",
+  LOG_MESSAGE("SparseArrayTest.ArrayInterface: sa2[0:16] = { %s}",
               range_to_string(sa2.begin(), sa2.begin() + 16).c_str());
 }
 
