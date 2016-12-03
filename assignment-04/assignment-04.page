@@ -1,4 +1,3 @@
-
 # 4-0: Precursor: Thread-Safety of STL Containers
 
 Briefly put: STL containers are not thread safe. And with good reason:
@@ -47,7 +46,7 @@ The C++ container collection in the EMBB library provides lock- and wait-free
 pools which are not based on `std::atomic` of "modern C++", however.
 Try to understand their basic principle and port it to `C++11`:
 
-- [Siemens EMBB)](https://github.com/siemens/embb/tree/benchmark/containers_cpp/include/embb/containers)
+- [Siemens EMBB](https://github.com/siemens/embb/tree/benchmark/containers_cpp/include/embb/containers)
 - [EMBB experimental containers](https://github.com/fuchsto/embb/tree/benchmark/containers_cpp/include/embb/containers)
 
 
