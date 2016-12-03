@@ -73,7 +73,7 @@ In fact, one would invest three pages in a master's thesis to discuss it.
 
 **Hints / Spoilers:**
 
-You can download the thesis [here](http://www.mnm-team.org/~fuchst/master_thesis_tobias_fuchs.pdf).
+You can download the thesis [here](http://www.mnm-team.org/~fuchst/master_thesis_tobias_fuchs.pdf) (pp. 25-28).
 
 The C++ container collection in the excellent Siemens EMBB library provides
 lock- and wait-free pools. For compatibility reasons, these are not based on `std::atomic` of "modern C++", however.
