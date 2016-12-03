@@ -21,4 +21,5 @@ fa.pop_filter().pop_filter(); // or: fa.clear_filters()
 
 - Thread-safe IO
 
+- Allocators
 

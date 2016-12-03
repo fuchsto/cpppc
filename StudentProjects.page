@@ -4,12 +4,40 @@ title: Student Projects
 ...
 
 
-# Parallel Unit Testing
+Dimensions:
 
-# Sparse Containers
+- Parallelism
+- Containers
+- Real-Time
+- Concept Mapping
+  (combining and wrapping representation models)
 
-# Visualization of Real-Time Data
+
+# Application-Driven
+
+## Parallel Unit Testing
+
+## Unified Benchmarks
 
 
+# Leveraging the STL
+
+## Sparse Containers
+
+## Multi-Index Structures for Hardware Topologies
+
+## Multi-Index Structures for Multi-Dimensional Containers
+
+
+# Real-Time and Embedded
+
+## Visualization of Real-Time Data (EMBB, TBB)
+
+## Dataflow Concepts for Audio Signal Synthesis (EMBB, TBB)
+
+
+# Formal Abstractions
+
+## Distance Concept
 
 

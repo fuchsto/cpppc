@@ -120,7 +120,7 @@ TEST_F(SparseArrayTest, ArrayInterface)
                 sa2.begin() + 220 + 16,
                 [&](int v) { ASSERT_EQ(idx *= 2, v); });
 
-  std::sort(sa2.begin(), sa2.end());
+// std::sort(sa2.begin(), sa2.end());
 
   idx = 2;
   std::for_each(sa2.begin(),
