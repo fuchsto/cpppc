@@ -30,14 +30,15 @@ operations. Read the subsection *Thread Safety* on this page **thoroughly**:
 
 <http://en.cppreference.com/w/cpp/container>
 
+Be not afraid.
+
 Find examples for every item in the article to illustrate use cases where
 thread safety is guaranteed, and those that may lead to race conditions
 according to the C++ standard.
 
-The text might be overwhelming first, but the more examples you write down,
-the better your eyes will adapt to the blinding light of the "standardese"
-phrasing.
-
+The text might be overwhelming and alienating at first, but the more
+examples you write down, the better your eyes will adapt to the blinding
+light of the "standardese" phrasing.
 
 
 # 4-1: Lock-based Set
