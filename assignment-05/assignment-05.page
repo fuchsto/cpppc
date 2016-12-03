@@ -1,0 +1,14 @@
+
+# 5-1: The Shopping of the Lambs
+
+In this festive holiday assignment, we implement a model of Black Friday
+madness based on the concurrency concepts of C++11.
+
+A customer (thread) performs the following procedure:
+
+- Stand in line and try to enter a shopping center
+- When customers waited longer than T milliseconds, they try to enter
+  any other shopping center
+- On entry, customers randomly grab products and leave when they have
+  acquired at least one product they cannot afford the next product.
+
