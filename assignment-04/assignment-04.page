@@ -1,3 +1,15 @@
+---
+format: Markdown
+title: Assignment 4: Threads, Mutex, Atomic
+categories: cpppc, teaching
+...
+
+**C++ Programming Course, Winter Term 2016**
+
+
+[Source Code](/assignment-04/a-04/)
+
+
 # 4-0: Precursor: Thread-Safety of STL Containers
 
 Briefly put: STL containers are not thread safe. And with good reason:
