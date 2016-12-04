@@ -97,8 +97,8 @@ std::atomic<int> a_int;
 
 void increment(std::atomic<int> & a) {
   // no mutex required: operator++ is available
-  // as atomic operation for int -> no data race
-  while (some_condition) a++;
+  // as atomic operation for int
+  while (some_condition) ++a;
 }
 
 std::thread t0(increment, std::ref(a_int));
