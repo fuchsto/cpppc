@@ -17,7 +17,7 @@ Dimensions:
 
 ## Parallel Unit Testing
 
-## Unified Benchmarks
+## HPC Benchmark Framework
 
 
 # Leveraging the STL
@@ -40,4 +40,10 @@ Dimensions:
 
 ## Distance Concept
 
+
+# Programming Models
+
+## Task Parallelism (EMBB, TBB, HPX)
+
+## Algorithmic Skeletons (STAPL)
 
