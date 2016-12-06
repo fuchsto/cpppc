@@ -1,14 +1,11 @@
 @import url("screen.css"); /* default gitit screen styles */
 @import url("hk-pyg.css"); /* for syntax highlighting */
 
-#logo img {
-  display: none;
-}
-
 /* Put your custom style modifications here: */
 
 html {
   background-color: #EFEFE9;
+  color: #333333;
 }
 
 body {
@@ -23,8 +20,9 @@ a, a:active, a:visited, a:link {
 
 #logo {
   text-align: center;
-  padding-top: 28px;
+  padding-top: 46px;
   padding-bottom: 10px;
+  margin-left: -10px;
 }
 
 #sidebar.yui-b {
@@ -153,8 +151,13 @@ ul.tabs li.selected a {
 /*  box-shadow: 0px 0px 26px 2px #ff2052; */
 }
 
+h1 > a:link {
+  color: #333333 !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid transparent;
+  color: #333333;
 }
 h1.pageTitle {
   font-size: 197%;
@@ -368,16 +371,16 @@ div#TOC {
 
 code {
   color: #454545;
-  background-color: #f7f7f7;
   font-weight: normal;
-  font-family: monospace,
-  "Lucida Console", "Consolas";
-  padding-left:   0.3em;
-  padding-right:  0.3em;
-  padding-top:    0.2em;
-  padding-bottom: 0.2em;
+  font-family: monospace, "Lucida Console", "Consolas";
+  padding-left:   0.2em;
+  padding-right:  0.2em;
+  padding-top:    0.01em;
+  padding-bottom: 0.01em;
   margin:  0.1em;
   white-space: pre;
+  border: 0;
+  font-size: 93%;
 }
 
 /* Code listings: */
@@ -387,7 +390,7 @@ code {
 }
 
 code {
-  font-size: 100%;
+/*  font-size: 100%; */
 }
 code > span.co {
   font-style: normal;
@@ -401,7 +404,20 @@ table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
 table.sourceCode { width: 100%; }
 td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
 td.sourceCode { background-color: #352f2c; }
-.sourceCode code { color: #252525; background-color: #f7f7f7; font-weight: lighter; font-family: monospace, "Lucida Console", "Consolas"; }
+pre code,
+.sourceCode code,
+code.sourceCode {
+  color: #252525;
+  background-color: #f7f7f7;
+  font-weight: lighter;
+  font-family: monospace,"Lucida Console", "Consolas";
+  padding:   0.6em;
+  margin:  0.1em;
+  white-space: pre;
+  font-size: 100%;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+}
 .sourceCode code > span.kw { color: #5c9a1b; font-weight: normal; }
 .sourceCode code > span.dt { color: #4070a0; }
 .sourceCode code > span.dv { color: #007020; }
