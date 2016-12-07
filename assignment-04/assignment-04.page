@@ -63,10 +63,10 @@ In this assignment, we reduce the set concept even more. A `pool` (or `bag`)
 is a set that does not remove and return a *specified* element in its
 `get` operation, but *any* element.
 
-Expression      | Synopsis
---------------- | ------------------------------------------------------------
-`p.insert(e)   `| Adds element `e` to the pool, error if `e` is already in `p`
-`p.take() -> e `| Removes and returns any element `e` from the pool.
+Expression         | Synopsis
+------------------ | ------------------------------------------------------------
+`p.release(e)     `| Adds element `e` to the pool, error if `e` is already in `p`
+`p.acquire() -> e `| Removes and returns any element `e` from the pool.
 
 
 Pools are essential to parallel applications but not specified in the STL.
