@@ -6,7 +6,7 @@ LDFLAGS=-lpthread -L${GTEST_BASE}/lib -lgtest
 INCLUDES=-I${GTEST_BASE}/include -I../
 
 OBJS = testsuite.o \
-			 black_friday_test.o
+			 pool_test.o
 
 .DEFAULT: all
 all: $(OBJS) testsuite.bin
