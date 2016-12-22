@@ -80,7 +80,8 @@ double range_acc(Iter first, Iter last, int depth = 0)
 
   LOG_SYNC(std::string(depth * 2, ' ') << "split ... ");
   std::future<double> acc_fut = std::async(std::launch::async,
-                                           range_acc<Iter>, pivot, last, depth+1);
+                                           range_acc<Iter>,
+                                             pivot, last, depth+1);
 
   double acc_loc = range_acc(first, pivot, depth+1);
   double acc_otr = acc_fut.get();

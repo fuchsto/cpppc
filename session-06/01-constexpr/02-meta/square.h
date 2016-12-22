@@ -18,3 +18,8 @@ T square(T val) { return x * x; }
 // Q: Is this allowed?
 //
 // int sq3 = square_ce(atoi(argv[0]));
+
+constexpr int factorial(int n)
+{
+    return n <= 1? 1 : (n * factorial(n - 1));
+}
