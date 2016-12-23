@@ -17,7 +17,7 @@ int main()
   cpppc::vector<int> v3 { 9, 0, 1, 2 };
 
   // 
-  // "... try this trick, and spin it, yeah ..."
+  // "You try this trick, and spin it, yeah ..."
   //
   std::cout << "instantiate vector_sum:" << std::endl;
   auto vsum = v1 + v2;
@@ -26,14 +26,16 @@ int main()
   // "Your op will collapse, 'cause there's nothing in it, and
   //  you ask yourself: where is my sum?"
   //
-
   std::cout << "assign vector_sum:" << std::endl;
+
+  //
+  // "There is my sum, there is my sum, theeeere is my sum ...
+  //
   v3 = vsum;
 
   //
-  // "There is my sum, there is my sum, theeeere is my sum ..."
+  //  log it out, on the stream, see it streamin' ...
   //
-
   for (auto e : v3) { std::cout << e << " "; }
   std::cout << std::endl;
 
