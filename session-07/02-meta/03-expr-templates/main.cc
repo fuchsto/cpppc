@@ -20,6 +20,7 @@ int main()
   // "You try this trick, and spin it, yeah ..."
   //
   std::cout << "instantiate vector_sum:" << std::endl;
+  // ,--- cpppc::vector_sum<int>
   auto vsum = v1 + v2;
 
   //

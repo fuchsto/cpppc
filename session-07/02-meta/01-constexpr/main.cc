@@ -1,3 +1,5 @@
+#include <iostream>
+
 
 // See: http://en.cppreference.com/w/cpp/concept/LiteralType
 class Point {
@@ -17,17 +19,20 @@ template <long N>
 struct fibonacci_tpl {
   static const long value = fibonacci_tpl<N-1>::value +
                             fibonacci_tpl<N-2>::value;
-}
+};
 
 template <>
 struct fibonacci_tpl<1> {
   static const long value = 1;
-}
+};
 
 template <>
 struct fibonacci_tpl<2> {
   static const long value = 1;
-}
+};
+
+// const int f = fibonacci_tpl<40>::value;
+
 
 // Q: Could we use float or double here?
 //
@@ -35,7 +40,7 @@ struct fibonacci_tpl<2> {
 //    different from the FPU at the system the program is run?
 //
 constexpr long fibonacci(long i) {
-  return (i <= 1u) ? i : (fibonacci(i-1) + fibonacci(i-2));
+  return (i <= 1l) ? i : (fibonacci(i-1) + fibonacci(i-2));
 }
 
 
@@ -52,6 +57,8 @@ int main(int argc, char * argv[])
   constexpr Point p { 23, 42 };
   constexpr int py = p.y();
   double darr[py] {};
+
+  std::cout << sizeof(darr) << std::endl;
 
   // Q: This is identical to instance p. Can the compiler memoize it?
   constexpr Point p2 { 23, 42 };
