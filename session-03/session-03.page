@@ -40,21 +40,26 @@ In C99, the only way to avoid duplicate code is to use a macro like this:
 // ... and so on ...
 ~~~
 
-Templates in C++ *in principle* realize the same mechanism.
-In addition to plain code generation and different from C macros, C++ templates
-closely interact with the type system.
+Templates in C++ *in principle* realize the same mechanism. For some compiler
+errors from templates, it helps to keep the code generation aspects in mind.
 
 The overall procedure of template instantiation in C++ involes several stages of
 symbolic (rather than lexical) operations, but you can refer to the macro-based
 variant as a mental model.
 
+But this is just mechanics.
+
+Conceptually, templates are well-defined formal constructs and an essential part
+of the C++ type system.
+
+Templates should be considered as functions that return types.
 
 
 ### Class Templates in C++
 
 In C++, the "code generation" of fully qualified types like `Vector_int` and
-`Vector_float` is a built-in compiler function that is accessible with the
-template syntax.
+`Vector_float` from the C examples above is a built-in compiler function that is
+accessible with the template syntax.
 
 Example: 
 
@@ -78,10 +83,12 @@ private:
 };
 ~~~
 
-In the macro-variant above, `Vector` is not a type, as it is not fully qualified. \
-It is, however, a concept: all types specialized from the `Vector` template have
-identical methods with identical semantics defined, independent from the concrete
-element type.
+In the macro-variant above, `Vector` is not a usable type, as it is not fully
+qualified.
+
+It is, however, usable as a concept: all types created from the `Vector`
+template have identical methods with identical semantics defined, independent from
+the concrete element type.
 
 The concrete definitions `Vector_int` and `Vector_float` are actual type names that
 a programmer can use in code. To the compiler, a type `Vector` simply does not
@@ -95,7 +102,8 @@ If two classes are named `Foo_string` and `Foo_double`, you would expect that th
 separate implementations.
 
 And in fact, the implementations of `Foo<int>` and `Foo<double>` might be totally
-different just as well.
+different just as well, just like functions `Foo(int)` and `Foo(double)` may have
+specific implementations.
 
 
 ### Data Structure vs. Container Concept
@@ -112,12 +120,20 @@ Example:
   data in memory
 - A *Set* is a *Container* that could be based on a *Data Structure* like a tree
 
-But a *Set* could also be based on a dynamic array, a list ...
+But a *Set* could also be based on a dynamic array or a list.
 
-Changing the underlying data structure does not affect semantics of the Container.
-
+Changing the underlying data structure does not affect semantics of the container.
 Of course, the underlying data structure typically affects the complexity of the
 container's methods, but computational complexity has no effect on semantics.
+
+This conceptual separation can be observed in the STL in many places:
+
+- the class template `std::stack` is not a container, it is a container wrapper
+  that provides adapter methods (push and pop, obviously); \
+  the underlying data structure is specified as template parameter
+- the C++ standard does not specify which data structure should be used to implement
+  STL containers, it only gives recommendations and specifies constraints on
+  computational complexity of operations on containers
 
 
 # The Importance of new and delete
@@ -125,7 +141,7 @@ container's methods, but computational complexity has no effect on semantics.
 We discussed the definitions of *Allocation*, *Initialization* and *Instantiation*
 in the last session.
 
-In C, we used `malloc` and `free` to *allocate* memory, and called an initialization
+In C, you used `malloc` and `free` to *allocate* memory, and called an initialization
 function to fill the allocated memory range with meaningful values (see `vector__new`
 in the last assignment). \
 In C++, these function should be considered as non-existing. There is no valid reason
@@ -140,6 +156,21 @@ initializes the object by calling a constructor.
 
 Likewise, the `delete` operator first calls the object's destructor before deallocating
 its memory.
+
+
+# The Importance to avoid new and delete
+
+The `new` and `delete` operations should never appear in application code.
+
+There are many good and widely accepted reasons for this guideline that we will
+discuss in upcoming sessions. For now, you only have to be aware of one reason:
+Whenever a resource is acquired in an application, it must be released at some point.
+Now, an armada of additional, non-trivial problems arise: ownership of the resource
+must be well-defined, and the resource must not be released if its is still referenced
+by some part of the program, and so on.
+
+Luckily, the alternatives to `new` and `delete` are straight-forward and conveniently
+apply to resource management in general, like file handles and mutex locks.
 
 
 # Rule of Zero and RAII
@@ -169,13 +200,15 @@ It is worth mentioning that `malloc/free` and `new/delete` are incompatible mech
 memory allocated with `malloc` cannot be deallocated using `delete` and calling
 `free` on memory reserved with `new` yields undefined behavior.
 
+Luckily you don't have to care as you won't use either of them.
+
 But what about `realloc`? What is the equivalent operation in C++?
 
-It's simple, actually. **Use `std::vector`**. \
+It's simple: **Use `std::vector`**. \
 It provides the best optimized, all-purpose RAII-encapsulation of dynamic memory
 managment and it is nearly impossible to break.
 
-In fact, you also should try to avoid `new/delete` and use `std::vector` instead
+For the same reason you also should avoid `new/delete` and use `std::vector` instead 
 whenever you can.
 
 Consider this example:
