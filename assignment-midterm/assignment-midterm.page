@@ -22,8 +22,73 @@ What is your objection to this? How would you change the interface of class
 `DateParser`?
 
 
-
 ## 1.2
+
+Given the following implementation of class `SemanticSurprise`:
+
+```c++
+class SemanticSurprise {
+public:
+
+  SemanticSurprise(int value)
+  : _value(value) { }
+
+  SemanticSurprise(const SemanticSurprise & other)
+  : _value(other._value) { } 
+
+  bool operator==(const SemanticSurprise & other) const {
+    return _value == other._value;
+  }
+
+  int value() {
+    return _value;
+  }
+
+private:
+  int _value;
+};
+```
+
+- Are there compiler errors? If so: why?
+- Name the method/operation on `SemanticSurprise` in every line marked with
+  `Op?`, including those that lead to compiler errors.
+- Which values are returned in the lines marked with `value?` (given the line
+  does not lead to a compiler error).
+  Explain why these values are returned.
+- How can this implementation be simplified? What is the requirement for
+  this simplification?
+
+```c++
+SemanticSurprise s1;          // <-- Op?
+s1.value();                   // <-- value?
+
+SemanticSurprise s2(4);       // <-- Op?
+s2.value();                   // <-- value?
+
+SemanticSurprise s3 = s2;     // <-- Op?
+s3.value();                   // <-- value?
+
+SemanticSurprise s4(s3);      // <-- Op?
+s4 == s3;                     // <-- value?
+s2 != s3;                     // <-- value?
+```
+
+Given the implementation of `SemanticSurprise` above, the following use
+case leads to a compiler error:
+
+```c++
+void print_surprise(const SemanticSurprise & s) {
+  std::cout << "SemanticSurprise.value: " << s.value() << std::endl;
+}
+
+print_surprise(SemanticSurprise(10));
+```
+
+- Explain the compiler error and how the implementation of `SemanticSurprise`
+  has to be corrected.
+
+
+## 1.3
 
 Consider the following use case:
 
@@ -36,14 +101,11 @@ if (condition) {
 // ...
 ```
 
-Judging from its usage illustrated above: which rule must be satisfied in the
-implementation of class `LogFileReader` (or one of its members)?
-Name a popular technique in resource management that depends on this rule, and
-briefly explain its principle.
+- Judging from its usage illustrated above: which rule must be satisfied in
+  the implementation of class `LogFileReader` (or one of its members)?
+- Name a popular technique in resource management that depends on this rule,
+  and briefly explain its principle.
 
-
-
-## 1.3
 
 
 # 2. Container Types, Class Template Basics
