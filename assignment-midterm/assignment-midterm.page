@@ -111,6 +111,7 @@ if (condition) {
 # 2. Container Types, Class Template Basics
 
 
+
 # 3. Iterators
 
 The following algorithm dereferences and returns a given iterator's successor
@@ -127,13 +128,59 @@ Value next_value_or_default(Iterator it, Iterator end, Value default) {
 }
 ```
 
-# 4. Algorithms, Function Templates, Type Deduction
+
+# 4. Debugging
+
+Use gdb to debug the program implemented in the attached source file
+`a-midterm/debug.cc`. Running the program leads to a segfault.
+
+- Use gdb to determine the source code location (stack trace) of the
+  statement that causes the segmentation violation fault. Attach a
+  screenshot or plaintext copy of gdb's output.
 
 
-# 5. Sequence Containers
+
+# 5. Algorithms, Function Templates, Type Deduction
 
 
-# 6. Thread-Safety
+# 6. STL-Compatible Sequence Containers
 
-## 6.1 Parallel operations on STL Containers
+
+# 7. Thread-Safety
+
+## 7.1 Parallelism and STL Containers
+
+Given the following operations on an instance of `std::vector`, consider
+operations in the same table row to be executed by multiple threads in
+parallel:
+
+```c++
+// Shared vector instance accessed by thread A and thread B:
+std::vector<int> v;
+
+// thread A:                    | thread B:
+// =============================|==============================
+   std::vector<int> a;          | std::vector<int> b;
+// -----------------------------+------------------------------
+   int xa = v[3];               | int xb = v[4];
+// -----------------------------+------------------------------
+   v[3] = 123;                  | v[4] = 345;
+// -----------------------------+------------------------------
+   v[3] = 123;                  | int xb = v[3];
+// -----------------------------+------------------------------
+   v.push_back(24);             | v.size();
+// -----------------------------+------------------------------
+   v.back();                    | v.push_back(54);
+// -----------------------------+------------------------------
+   v.begin();                   | v.push_back(34);
+// -----------------------------+------------------------------
+   v.back();                    | v.pop_back();
+// -----------------------------+------------------------------
+```
+
+- For every pair of operation on the same table row, give a brief
+  explanation on the guarantees with respect to thread-safety according to
+  the C++ standard.
+
+
 
