@@ -37,7 +37,8 @@ Selected Talks:
   ... and why your C++ code is more efficient than performance-tuned C 
 - [Jason Turner - "Practical Performance Practices"](https://www.youtube.com/watch?v=uzF4u9KgUWI) \
   The talk also gives a great and compact recapitulation of
-  construction semantics (copy, move, assign).
+  construction semantics (copy, move, assign). Jason also explains that constexpr is
+  actually not needed in many cases (something I learned from this talk)
 - [Greg Law - “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg) \
   Pinky swear: learning GDB basics takes 30 minutes and will change your understanding
   of code and your machine for life - without effort
