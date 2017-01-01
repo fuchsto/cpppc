@@ -16,7 +16,7 @@ title: Midterm Assignment
 
 # 1. Types, Classes, Objects and their State
 
-## 1.1
+## 1.1 Object Definition
 
 Assuming you are confronted with a class that supports the following
 use case:
@@ -32,7 +32,7 @@ What is your objection to this? How would you change the interface of class
 `DateParser`?
 
 
-## 1.2
+## 1.2 Standard Object Semantics
 
 Given the following implementation of class `SemanticSurprise`:
 
@@ -98,7 +98,7 @@ print_surprise(SemanticSurprise(10));
   has to be corrected.
 
 
-## 1.3
+## 1.3 Resource Ownership
 
 Consider the following use case:
 
@@ -124,7 +124,7 @@ if (condition) {
 
 # 3. Iterators
 
-# 3.1
+# 3.1 Algorithm Basics
 
 The following algorithm dereferences and returns a given iterator's successor
 unless the successor's referenced value matches some condition. The algorithm
@@ -141,7 +141,7 @@ Value next_value_or_default(Iterator it, Iterator end, Value default) {
 }
 ```
 
-# 3.2
+# 3.2 Container Wrapper
 
 The STL's `std::vector` guarantess that its elements are stored in a
 contiguous memory region and is therefore compatible to C-style arrays.
