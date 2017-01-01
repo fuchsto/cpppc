@@ -6,3 +6,11 @@ category: course notes, cpppc
 
 [Code Examples for Session 05](/session-05/)
 
+
+# Demystifying the Sparse Array Implementation
+
+The full implementation of the sparse array container from assignment 03 can be found
+[here](/assignment-03/s-03/solution/sparse_array.h).
+
+It only has about 300 lines, but only a few code sections are actually relevant.
+
