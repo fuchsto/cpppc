@@ -46,8 +46,10 @@ briefly explain its principle.
 ## 1.3
 
 
+# 2. Container Types, Class Template Basics
 
-# 2.  Iterators
+
+# 3. Iterators
 
 The following algorithm dereferences and returns a given iterator's successor
 unless the successor's referenced value matches some condition. The algorithm
@@ -63,5 +65,13 @@ Value next_value_or_default(Iterator it, Iterator end, Value default) {
 }
 ```
 
+# 4. Algorithms, Function Templates, Type Deduction
 
-# 3. STL Algorithms
+
+# 5. Sequence Containers
+
+
+# 6. Thread-Safety
+
+## 6.1 Parallel operations on STL Containers
+
