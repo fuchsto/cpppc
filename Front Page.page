@@ -22,16 +22,39 @@ title: Advanced C++ - Winter Term 2016/2017
 - [Session 06](/session-06/session-06)
     - [Midterm Assignment](assignment-midterm/assignment-midterm) - **mandatory! - due 18. January**
 
+
 Selected Talks:
 
+**Drastically Recommended for the Midterm Assignment:**
+
+- [Jason Jurecka - "Game engine using STD C++ 11"](https://www.youtube.com/watch?v=8AjRD6mU96s) \
+  A broad overview of language features that make C++ 11 the industry's favorite for code that matters
+- [Chandler Carruth - "High Performance Code 201: Hybrid Data Structures"](https://www.youtube.com/watch?v=vElZc6zSIXM&t=132s) \
+  Why custom data structures are key - and how easy it is to implement them
+- [Ben Deane - "Using Types Effectively"](https://www.youtube.com/watch?v=ojZbFIQSdl8) \
+  A gentle introduction to the benefits of a Turing-complete type system
+- [Marshall Clow - "STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ) \
+  ... and why your C++ code is more efficient than performance-tuned C 
+- [Jason Turner - "Practical Performance Practices"](https://www.youtube.com/watch?v=uzF4u9KgUWI) \
+  The talk also gives a great and compact recapitulation of
+  construction semantics (copy, move, assign). Jason also explains that constexpr is
+  actually not needed in many cases (something I learned from this talk)
+- [Greg Law - “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg) \
+  Pinky swear: learning GDB basics takes 30 minutes and will change your understanding
+  of code and your machine for life - without effort
+
+**Lecturer's Personal Picks:**
+
+- [Chandler Carruth "Efficiency with Algorithms, Performance with Data Structures"](https://www.youtube.com/watch?v=fHNmRkzxHWs)
 - [The Blaze High Performance Math Library](https://www.youtube.com/watch?v=w-Y22KrMgFE)
-- [Ben Deane - “Using Types Effectively"](https://www.youtube.com/watch?v=ojZbFIQSdl8)
-- [Marshall Clow - “STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ)
-- [Greg Law - “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg)
-- [Fedor Pikus - “The speed of concurrency (is lock-free faster?)"](https://www.youtube.com/watch?v=9hJkWwHDDxs)
+- [Patrick Niedzielski - "Building and Extending the Iterator Hierarchy in a Modern, Multicore World"](https://www.youtube.com/watch?v=N80hpts1SSk)
+- [Fedor Pikus - "The speed of concurrency (is lock-free faster?)"](https://www.youtube.com/watch?v=9hJkWwHDDxs)
 - ["Making C++ better for games, embedded and financial developers"](https://www.youtube.com/watch?v=dMupATOJKWc)
-- [Jason Jurecka - “Game engine using STD C++ 11"](https://www.youtube.com/watch?v=8AjRD6mU96s)
 - [Andrei Alexandrescu - "Variadic Templates are Funadic"](https://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Variadic-Templates-are-Funadic)
+- [Stephan T. Lavavej - "Don't help the compiler."](https://www.youtube.com/watch?v=AKtHxKJRwp4)
+- [Jason Turner "Practical Performance Practices"](https://www.youtube.com/watch?v=uzF4u9KgUWI&t=580s)
+- [Michael Caisse - "Asynchronous IO Using Boost.Asio"](https://www.youtube.com/watch?v=UUiM-KNH69E)
+- [Odin Holmes - "Ranges v3 and microcontrollers, a revolution"](https://www.youtube.com/watch?v=dxRDWgLIAZg)
 
 Guidelines:
 

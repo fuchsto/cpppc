@@ -145,6 +145,37 @@ For example:
   requires random access iterators.
 
 
+How algorithms check iterator categories at compile time:
+
+> Yes, looks insane, but it's actually not as complicated as it looks at first
+
+~~~c++
+// Iterator class provides public type `iterator_category`:
+template <typename Something>
+class MyIterator {
+public:
+   using iterator_category = std::forward_iterator_tag;
+// ...
+};
+
+// Algorithm uses `std::enable_if` (or tag dispatching, in earlier days):
+template <typename FwdIter>
+std::enable_if<
+  // condition:
+  std::is_same< std::iterator_traits<FwdIter>::iterator_category,
+                std::forward_iterator_tag >,
+  // return value if condition is met:
+  FwdIter >::type
+my_algorithm(FwdIter first, FwdIter last) {
+  // ...
+}
+~~~
+
+Further references:
+
+- [Tag dispatching with iterator traits](http://en.cppreference.com/w/cpp/iterator/iterator_tags)
+- [std::enable_if examples](http://en.cppreference.com/w/cpp/types/enable_if)
+
 # Template Parameter Deduction
 
 - Template parameters deduced from parameter types
@@ -156,9 +187,10 @@ For example:
 Most custom containers require custom iterators that comply to the STL's iterator
 concept.
 
-We discussed the example `BucketHeap` [(source)](/session-04/03-container-template/02-custom-iterators/bucket_heap.h) in session 4.
-
-This container implements an [Unrolled List](https://en.wikipedia.org/wiki/Unrolled_linked_list) in principle.
+We discussed the example `BucketHeap`
+[(source)](/session-04/03-container-template/02-custom-iterators/bucket_heap.h)
+which implements an
+[Unrolled List](https://en.wikipedia.org/wiki/Unrolled_linked_list) in principle.
 
 - All STL algorithms are compatible, no need to reinvent +50 algorithms for the
   user-defined class template `BucketVector`
