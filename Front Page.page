@@ -55,6 +55,7 @@ Selected Talks:
 - [Jason Turner "Practical Performance Practices"](https://www.youtube.com/watch?v=uzF4u9KgUWI&t=580s)
 - [Michael Caisse - "Asynchronous IO Using Boost.Asio"](https://www.youtube.com/watch?v=UUiM-KNH69E)
 - [Michael Wong - "A lock-free concurrent toolkit for hazard pointers"](https://www.youtube.com/watch?v=mHwU0TMuwgc)
+- ["A lock-free concurrency toolkit for deferred reclamation and optimistic speculation"](https://www.youtube.com/watch?v=uhgrD_B1RhQ)
 - [Odin Holmes - "Ranges v3 and microcontrollers, a revolution"](https://www.youtube.com/watch?v=dxRDWgLIAZg)
 
 Guidelines:
