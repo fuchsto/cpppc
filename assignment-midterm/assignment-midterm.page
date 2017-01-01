@@ -114,11 +114,14 @@ if (condition) {
 
 # 3. Iterators
 
+# 3.1
+
 The following algorithm dereferences and returns a given iterator's successor
 unless the successor's referenced value matches some condition. The algorithm
 is semantically correct but does not compile for iterators of some containers.
-Which containers? Briefly explain why the algorithm does not work for these
-and how it has to be changed.
+
+- Which containers? Briefly explain why the algorithm does not work for these
+  and how it has to be changed.
 
 ```c++
 template <typename Iterator, typename Value = typename Iterator::value_type>
@@ -127,6 +130,72 @@ Value next_value_or_default(Iterator it, Iterator end, Value default) {
   return it[1];
 }
 ```
+
+# 3.2
+
+The STL's `std::vector` guarantess that its elements are stored in a
+contiguous memory region and is therefore compatible to C-style arrays.
+The member function `.data()` returns a pointer to the vector's underlying
+raw memory.
+
+For many hardware-tuning techniques, data is accessed in chunks.
+Assuming a `std::vector<uint32_t>` and 64 bytes per cache line, for example,
+vector elements could be loaded in chunks of 64/(32/8) = 16 elements.
+
+- Write a container wrapper \
+    
+      `cpppc::chunks<B, T, Container>`
+
+  that provides a sequential container interface on elements in `Container`
+  in chunks of maximum size `B` bytes.
+
+
+The template signature is derived from `std::stack`, a similar wrapper
+type defined in the STL:
+
+<http://en.cppreference.com/w/cpp/container/stack>
+
+You only need to implement a minimum interface like constructors and
+`begin()`, `end()`, however.
+
+Example use case:
+
+```c++
+std::vector<uint16_t> v_us;
+
+//                                    ,-- wrapped container
+//                                    |
+cpppc::chunks<128, uint16t_t, std::vector<uint16_t>> v_chunks(v_us);
+//             |      |
+//             |      '-- element type
+//             |
+//             '-- maximum size of a
+//                 single chunk in bytes
+
+// Iterate chunks:
+auto first_chunk = v_chunks.begin();
+auto chunk_size  = std::distance(v_chunks.begin(), v_chunks.end());
+                   // --> 128/(16/8) = 64
+
+// Iterators on elements in a chunk:
+uint16_t first_chunk_elem = *first_chunk.begin();
+uint16_t third_chunk_elem = first_chunk[2];
+
+// Pointer to data in second chunk:
+uint16_t chunk_1_data = v_chunks[1].data();
+// Pointer to data in third chunk (= end pointer of data in second chunk):
+uint16_t chunk_2_data = v_chunks[2].data();
+```
+
+Note that you need two iterator types:
+
+- `cpppc::chunks<...>::iterator` for iterating chunks; it references
+  `cpppc::chunks<...>::value_type` (= type of single chunks)
+- and another iterator type to access chunk elements.
+
+It might be best if you use existing STL containers like  `std::vector<T>`
+or `std::array<T, ChunkSize>` as chunk type: these would already provide
+the sequence container interface to chunk elements you need.
 
 
 # 4. Debugging
