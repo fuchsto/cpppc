@@ -27,11 +27,17 @@ Selected Talks:
 
 **Drastically Recommended:**
 
-- [Jason Jurecka - “Game engine using STD C++ 11"](https://www.youtube.com/watch?v=8AjRD6mU96s)
-- [](https://www.youtube.com/watch?v=vElZc6zSIXM&t=132s)
-- [Ben Deane - “Using Types Effectively"](https://www.youtube.com/watch?v=ojZbFIQSdl8)
-- [Marshall Clow - “STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ)
-- [Greg Law - “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg)
+- [Jason Jurecka - “Game engine using STD C++ 11"](https://www.youtube.com/watch?v=8AjRD6mU96s) \
+  A broad overview of language features that make C++ 11 the industry's favorite for code that matters
+- [Chandler Carruth - “High Performance Code 201: Hybrid Data Structures"](https://www.youtube.com/watch?v=vElZc6zSIXM&t=132s) \
+  Why custom data structures are key - and how easy it is to implement them
+- [Ben Deane - “Using Types Effectively"](https://www.youtube.com/watch?v=ojZbFIQSdl8) \
+  A gentle introduction to the benefits of a Turing-complete type system
+- [Marshall Clow - “STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ) \
+  ... and why your C++ code is more efficient than performance-tuned C 
+- [Greg Law - “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg) \
+  Pinky swear: learning GDB basics takes 30 minutes and will change your understanding
+  of code and your machine for life - without effort
 
 **Lecturer's Personal Picks:**
 
