@@ -15,9 +15,25 @@ Dimensions:
 
 # Application-Driven
 
+## Bookmarklet Web Server
+
+- Web server providing only a single application to organize URLs (and possibly
+  uploaded files) semantically, similar to the soup.io bookmarklet
+
+
+## Natural Language (text-only) Processing
+
+- As discussed here: <https://www.youtube.com/watch?v=bCJw4hQkPj4>
+
+## Locality Plotter (SVG)
+
 ## Parallel Unit Testing
 
 ## HPC Benchmark Framework
+
+## Technical Chart Analysis / Backtester
+
+## Real-Time Remote Communication (2D-Shooter?)
 
 
 # Leveraging the STL

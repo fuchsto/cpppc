@@ -23,3 +23,7 @@ fa.pop_filter().pop_filter(); // or: fa.clear_filters()
 
 - Allocators
 
+
+# Session 06
+
+- Traits

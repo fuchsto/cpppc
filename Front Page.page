@@ -3,6 +3,10 @@ format: Markdown
 title: Advanced C++ - Winter Term 2016/2017
 ...
 
+
+**Call me! (Skype): tobias.w.h.fuchs**
+
+
 - [Session 01](/session-01/session-01)
 - [Session 02](/session-02/session-02)
     - [Assignment 01](/assignment-01/assignment-01)
@@ -15,10 +19,11 @@ title: Advanced C++ - Winter Term 2016/2017
     - [Solution 03](/assignment-03/s-03/)
 - [Session 05](/session-05/session-05)
     - [Assignment 04](/assignment-04/assignment-04) ([zip](/assignment-04/a-04.zip)) - due 8. December
-
+- [Session 06](/session-06/session-06)
 
 Selected Talks:
 
+- [The Blaze High Performance Math Library](https://www.youtube.com/watch?v=w-Y22KrMgFE)
 - [Patrick Niedzielski - “Building and Extending the Iterator Hierarchy in a Modern, Multicore World"](https://www.youtube.com/watch?v=N80hpts1SSk)
 - [Ben Deane - “Using Types Effectively"](https://www.youtube.com/watch?v=ojZbFIQSdl8)
 - [Marshall Clow - “STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ)
@@ -32,9 +37,13 @@ Guidelines:
 
 - [ISO C++ Library Design Guidelines](https://isocpp.org/wiki/library_design_guidelines/library-design-guidelines)
 
-Further Resources:
+Selected Articles:
 
+- [C++ Ranges are Pure Monadic Goodness](https://bartoszmilewski.com/2014/10/17/c-ranges-are-pure-monadic-goodness/)
 - [The "Double-Checked Locking is Broken" Declaration](https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html)
+
+
+Further Resources:
 
 - [C++ Language Standard (official working draft)](http://www.open-std.org/Jtc1/sc22/wg21/docs/papers/2013/n3797.pdf), great index on the last pages!
 
