@@ -142,13 +142,12 @@ For many hardware-tuning techniques, data is accessed in chunks.
 Assuming a `std::vector<uint32_t>` and 64 bytes per cache line, for example,
 vector elements could be loaded in chunks of 64/(32/8) = 16 elements.
 
-- Write a container wrapper \
+-   Write a container wrapper
     
-      `cpppc::chunks<B, T, Container>`
-
-  that provides a sequential container interface on elements in `Container`
-  in chunks of maximum size `B` bytes.
-
+        cpppc::chunks<B, T, Container>
+    
+    that provides a sequential container interface on elements in `Container`
+    in chunks of maximum size `B` bytes.
 
 The template signature is derived from `std::stack`, a similar wrapper
 type defined in the STL:
@@ -196,6 +195,13 @@ Note that you need two iterator types:
 It might be best if you use existing STL containers like  `std::vector<T>`
 or `std::array<T, ChunkSize>` as chunk type: these would already provide
 the sequence container interface to chunk elements you need.
+
+**Optional:**
+
+If you want to implement more sophisticated type size calculations like alignment
+requirements, refer to the C++ type support utilities:
+
+<http://en.cppreference.com/w/cpp/types>
 
 
 # 4. Debugging
