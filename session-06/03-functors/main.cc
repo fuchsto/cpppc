@@ -18,7 +18,8 @@ using namespace std::chrono;
  * Functions are first-class types, so they can be
  * ... passed as function arguments (they should be equivalent to data
  *     anyways, remember)
- * ... returned as the result of functions and methods.
+ * ... returned as the result of callables
+ *     that is: functions and methods, or anything implementing operator()
  *
  * Q: What's the difference between a function and a method again?
  *

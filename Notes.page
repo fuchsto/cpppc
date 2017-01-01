@@ -16,3 +16,10 @@ fa.push_filter([](int v) { return v < 4; });
 fa.pop_filter().pop_filter(); // or: fa.clear_filters()
 //  { 1, 2, 3, 4, 5, 30, 45, 40, 23, 4 }
 ~~~
+
+- Thread-safe map/multimap
+
+- Thread-safe IO
+
+- Allocators
+

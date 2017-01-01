@@ -1,78 +1,128 @@
-# Skip List
+---
+format: Markdown
+title: Assignment 4: Thread Safety
+categories: cpppc, teaching
+...
+
+**C++ Programming Course, Winter Term 2016**
 
 
-# 1: The ordered_set\<T,C\> Class Template
-
-Implement a class template `ordered_set<T,C>` that represents a set container with
-elements of type `T` ordered by a comparison function `C`.
-
-In a set, every value is only present once (different from a multiset).
-
-The `ordered_set` type is a sequential container. That is: its elements can be
-iterated in a sequential fashion and methods `begin()` and `end()` define the iteration
-space of the container elements.
-
-You can refer to the specification of `std::set` for detailed semantics:
-[http://en.cppreference.com/w/cpp/container/set]()
+[Source Code](/assignment-04/a-04/)
 
 
-Usage example: 
+# 4-0: Standardese: Thread-Safety of STL Containers
+
+Briefly put: **Modifying operations** on STL containers are not thread safe.
+And with good reason:
+
+Thread safety drastically increases the complexity of even the most
+fundamental operations on containers. Already a "simple" thread-safe
+implementation of `std::list.pop_back` easily spans over dozens of lines of code.
+
+
+Extending the C++ standard library by thread-safe container alternatives is
+not feasible either, as concurrent behavior is impossible to generalize (and
+thus, standardize) in a comprehensible way.
+
+To give a plain example:
+What is the correct behavior when a thread calls `std::list.pop_back` on an
+empty, concurrent list?
+
+- Return `std::list.end()`? Of course! Otherwise it would not comply to the
+  regular `std::list`!
+
+- Or: wait for a `std::list.push`? Of course! Otherwise it would be useless for
+  nearly all use cases for concurrent lists!
+
+
+For the forseeable future, we will have to implement concurrent data
+structures ourselves once in a while, at least if we want to maximize
+performance for a specific use case.
+
+However, the C++ standard specifies guarantees to thread safety for *some*
+operations. Read the subsection *Thread Safety* on this page **thoroughly**:
+
+- <http://en.cppreference.com/w/cpp/container>
+
+Be not afraid.
+
+Find examples for every item in the article to illustrate use cases where
+thread safety is guaranteed, and those that may lead to race conditions
+according to the C++ standard.
+
+The text might be overwhelming and alienating at first, but the more
+examples you write down, the better your eyes will adapt to the blinding
+light of the "standardese" phrasing.
+
+
+
+# 4-1: Lock-based Pool
+
+The most basic container specified in the STL is `std::set`.
+In this assignment, we reduce the set concept even more. A `pool` (or `bag`)
+is a set that does not remove and return a *specified* element in its
+`get` operation, but *any* element.
+
+Expression      | Synopsis
+--------------- | ------------------------------------------------------------
+`p.insert(e)   `| Adds element `e` to the pool, error if `e` is already in `p`
+`p.take() -> e `| Removes and returns any element `e` from the pool.
+
+
+Pools are essential to parallel applications but not specified in the STL.
+A pool is neither sequential (i.e. no `begin`, `end`) nor associative (i.e.
+no `at`, `find`, ...).
+
+Implement a thread-safe container `lpool` using lock-based synchronization
+such as `std::mutex` and related constructs like `std::lock_guard`.
+
+- <http://en.cppreference.com/w/cpp/thread/mutex>
+- <http://en.cppreference.com/w/cpp/thread/lock_guard>
+
+
+# 4-2: Lock-free Pool
+
+Implement a variant of the thread-safe pool container `apool` with identical
+behavior, but based on atomic operations using `std::atomic`.
+
+- <http://en.cppreference.com/w/cpp/atomic/atomic>
+
+Only the methods listed at the bottom are relevant, the interface of the atomic
+concept is tiny and unsurprising:
 
 ~~~c++
-ordered_set<int, std::less<int>()> iset;
-iset.insert(60);
-iset.insert(10);
-iset.insert(40);
-iset.insert(20);
+std::atomic<int> a_int;
 
-iset.at(40) = 100; // position of element changes!
+// ...
 
-for (auto it = iset.begin(); it != iset.end(); ++it) {
-  std::cout << *it << " ";
+void increment(std::atomic<int> & a) {
+  // no mutex required: operator++ is available
+  // as atomic operation for int
+  while (some_condition) ++a;
 }
-std::cout << std::endl;
+
+std::thread t0(increment, std::ref(a_int));
+std::thread t1(increment, std::ref(a_int));
+
+t0.join();
+t1.join();
 ~~~
 
-Output:
+A correct solution is surprisingly simple - but not trivial!
+In fact, one would invest three pages in a master's thesis to discuss it.
 
-~~~
-10 20 60 100
-~~~
 
-Definition of the `OrderedSet` concept:
+**Hints / Spoilers:**
 
-Signature               | Synopsis
------------------------ | --------------------------------------------------------------
-`begin()          -> i` | returns iterator referencing the first element in the set, \
-                          or `.end()` if the set is empty
-`end()            -> i` | returns iterator past the final element in the set
-`insert(v)        -> i` | insert value `v` in the list at in-order position if not \
-                          present in the set \
-                          returns iterator referencing the element with value `v`
-`at(v)            -> i` | returns iterator referencing the element with value `v` or \
-                          `.end()` if value is not contained in the set
-`size()           -> n` | total number of elements `n` in the set
-`remove(i)            ` | removes element referenced by iterator `i` from the set
+You can download the thesis [here](http://www.mnm-team.org/~fuchst/master_thesis_tobias_fuchs.pdf) (pp. 25-28).
+
+The C++ container collection in the excellent Siemens EMBB library provides
+lock- and wait-free pools. For compatibility reasons, these are not based on `std::atomic` of "modern C++", however.
+
+Try to understand their basic principle and port it to `C++11`:
+
+- [Siemens EMBB](https://github.com/siemens/embb/tree/master/containers_cpp/include/embb/containers)
+- [EMBB experimental containers](https://github.com/fuchsto/embb/tree/benchmark/containers_cpp/include/embb/containers)
 
 
 
-# 2: More Policies
-
-## 2-1: Iteration Policy for Tree\<T\>
-
-Implement **depth-first search** and **breadth-first-search** as policies used in
-`Tree::iterator` types.
-
-
-## 2-2: Allocation Policy for Tree\<T\>
-
-## 2-3: Lazy Evaluation: List Comprehension
-
-- See [this article on Wikipedia](https://en.wikipedia.org/wiki/List_comprehension#C.2B.2B)
-- Specify series of values as lambda depending on arbitrary parameters and previous
-  elements in the series
-
-## 2-X: Cache-Optimized Allocation
-
-Allocation policy where sub-trees of a specific size are stored in blocks of
-contiguous memory.

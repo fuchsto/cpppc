@@ -59,6 +59,46 @@ std::fill(stl_lst.begin(), stl_lst.end(), 4.56);
 Iterators are classified into categories as illustrated
 [in this overview](http://en.cppreference.com/w/cpp/iterator#Iterator_categories).
 
+Don't let the formal vocabulary confuse you, it is actually really simple:
+
+When you write an algorithm that operates on iterators, you have to consider
+which methods of an iterator you actually require to call.
+The operations you can always rely on are those in the `InputIterator` category:
+
+
+Operation    | Name                                         | Category
+------------ | -------------------------------------------- | ---------------
+`++it`       | prefix increment                             | InputIterator
+`(void)it++` | postfix increment (with unused return value) | InputIterator
+`*it`        | dereference                                  | InputIterator
+`it->m`      | member dereference                           | InputIterator
+`it != it2`  | inequality comparison                        | InputIterator
+
+[full reference](http://en.cppreference.com/w/cpp/concept/InputIterator)
+
+So if your code doesn't use operations apart from these: great! Your code will
+work with just any iterator.
+
+The next category is `ForwardIterator`. It includes all operations of the
+`InputIterator` category and also provides:
+
+Operation   | Name                   | Category
+----------- | ---------------------- | ----------------
+`it++`      | postfix increment      | ForwardIterator
+`*it++`     | dereference            | ForwardIterator
+
+[full reference](http://en.cppreference.com/w/cpp/concept/ForwardIterator)
+
+... and so on. Note that `it += n` or `it[n]` are still missing. These
+are only defined in the most 'powerful' `RandomAccessIterator` category.
+
+So instead of writing `it += 2` in your algorithm, it is better to use
+`++(++it)` as it this operation would work for any iterator.
+
+Even better, use `std::advance`. It always resolves to the most effcient 
+increment operation for any iterator.
+
+
 **Some examples:**
 
 The container `std::list` provides iterators in the `BidirectionalIterator`

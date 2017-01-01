@@ -17,19 +17,19 @@ using std::endl;
 
 #define NElem 10000000
 
-template<typename Iter>
-void range_inc(Iter first, Iter last, double d)
+template<typename Iter, typename ValueT>
+void range_inc(Iter first, Iter last, ValueT d)
 {
   for (auto it = first; it != last; ++it) {
     *it += d;
   }
 }
 
-template<typename Iter>
-void range_acc(Iter first, Iter last, std::atomic<double> & ref)
+template<typename Iter, typename ValueT>
+void range_acc(Iter first, Iter last, ValueT & ref)
 {
   for (auto it = first; it != last; ++it) {
-    ref.fetch_add(1);
+    ref += *it;
   }
 }
 
@@ -53,10 +53,8 @@ int main(int argc, char * argv[])
   wno_unused_(argc);
   wno_unused_(argv);
 
-  typedef double                        val_t;
+  typedef long                          val_t;
   typedef std::vector<val_t>::iterator  vec_iterator;
-
-//  cout.sync_with_stdio(true);
 
   int n_threads = 4;
 
@@ -65,11 +63,11 @@ int main(int argc, char * argv[])
 
   // ------------------------------------------------------------------------
 
-  std::fill(vec.begin(), vec.end(), 0);
+  std::fill(vec.begin(), vec.end(), 1);
   for (int t = 0; t < n_threads; t++) {
     threads.push_back(
       std::thread(
-        range_inc<vec_iterator>, vec.begin(), vec.end(), 1.0
+        range_inc<vec_iterator, val_t>, vec.begin(), vec.end(), 1
       ));
   }
   for (auto & thread : threads) {
@@ -78,45 +76,30 @@ int main(int argc, char * argv[])
   threads.clear();
 
   cout << "sum: "
-       << static_cast<int>(
+       << static_cast<val_t>(
             std::accumulate(vec.begin(), vec.end(), 0, std::plus<val_t>()))
        << endl;
 
+  return EXIT_SUCCESS;
+
   // ------------------------------------------------------------------------
 
-  std::atomic<double> acc;
-  std::fill(vec.begin(), vec.end(), 0);
+  val_t acc = 0;
+  std::fill(vec.begin(), vec.end(), 1);
   for (int t = 0; t < n_threads; t++) {
     threads.push_back(
       std::thread(
-        range_acc<vec_iterator>, vec.begin(), vec.end(), std::ref(acc)
+        range_acc<vec_iterator, val_t>, vec.begin(), vec.end(), std::ref(acc)
       ));
   }
-
   for (auto & thread : threads) {
     thread.join();
   }
   threads.clear();
 
   cout << "acc: "
-       << static_cast<int>(acc)
+       << static_cast<val_t>(acc)
        << endl;
-
-  // ------------------------------------------------------------------------
-
-#if 0
-  for (int t = 0; t < n_threads; t++) {
-    threads.push_back(
-      std::thread(
-        print_msg, t, "Mary had a little wombat. "
-      ));
-  }
-  for (auto & thread : threads) {
-    thread.join();
-  }
-  threads.clear();
-  cout << endl;
-#endif
 
   return EXIT_SUCCESS;
 }

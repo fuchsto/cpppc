@@ -202,7 +202,7 @@ Anatomy of an assignment by example:
   //   '- cvr
 ~~~
 
-CVR is short for the qualifier category "const, volatile, reference".
+CVR is short for the qualifier category "const, volatile, restrict".
 
 ~~~c++
   int value = 100;

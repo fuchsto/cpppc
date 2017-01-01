@@ -1,0 +1,49 @@
+---
+format: Markdown
+title: Student Projects
+...
+
+
+Dimensions:
+
+- Parallelism
+- Containers
+- Real-Time
+- Concept Mapping
+  (combining and wrapping representation models)
+
+
+# Application-Driven
+
+## Parallel Unit Testing
+
+## HPC Benchmark Framework
+
+
+# Leveraging the STL
+
+## Sparse Containers
+
+## Multi-Index Structures for Hardware Topologies
+
+## Multi-Index Structures for Multi-Dimensional Containers
+
+
+# Real-Time and Embedded
+
+## Visualization of Real-Time Data (EMBB, TBB)
+
+## Dataflow Concepts for Audio Signal Synthesis (EMBB, TBB)
+
+
+# Formal Abstractions
+
+## Distance Concept
+
+
+# Programming Models
+
+## Task Parallelism (EMBB, TBB, HPX)
+
+## Algorithmic Skeletons (STAPL)
+

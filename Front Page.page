@@ -12,6 +12,10 @@ title: Advanced C++ - Winter Term 2016/2017
     - [Solution 02](/assignment-02/s-02/)
 - [Session 04](/session-04/session-04)
     - [Assignment 03](/assignment-03/assignment-03) ([zip](/assignment-03/a-03.zip)) - due 1. December
+    - [Solution 03](/assignment-03/s-03/)
+- [Session 05](/session-05/session-05)
+    - [Assignment 04](/assignment-04/assignment-04) ([zip](/assignment-04/a-04.zip)) - due 8. December
+
 
 Selected Talks:
 
@@ -29,6 +33,10 @@ Guidelines:
 - [ISO C++ Library Design Guidelines](https://isocpp.org/wiki/library_design_guidelines/library-design-guidelines)
 
 Further Resources:
+
+- [The "Double-Checked Locking is Broken" Declaration](https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html)
+
+- [C++ Language Standard (official working draft)](http://www.open-std.org/Jtc1/sc22/wg21/docs/papers/2013/n3797.pdf), great index on the last pages!
 
 - [C++ Language Overview](http://en.cppreference.com/w/cpp/language)
 - [Peter Gottschling's Modern C++ Examples](https://github.com/petergottschling/discovering_modern_cpp)
