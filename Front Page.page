@@ -36,8 +36,8 @@ Selected Talks:
 - [Marshall Clow - "STL Algorithms - why you should use them, and how to write your own"](https://www.youtube.com/watch?v=h4Jl1fk3MkQ) \
   ... and why your C++ code is more efficient than performance-tuned C 
 - [Jason Turner - "Practical Performance Practices"](https://www.youtube.com/watch?v=uzF4u9KgUWI) \
-  Most important for you: the talk gives a great and compact recapitulation of
-  construction semantics (copy, move, assign). You want to see this talk.
+  The talk also gives a great and compact recapitulation of
+  construction semantics (copy, move, assign).
 - [Greg Law - “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg) \
   Pinky swear: learning GDB basics takes 30 minutes and will change your understanding
   of code and your machine for life - without effort
