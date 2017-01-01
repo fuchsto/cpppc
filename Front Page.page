@@ -45,6 +45,8 @@ Selected Talks:
   The talk also gives a great and compact recapitulation of
   construction semantics (copy, move, assign). Jason also explains that constexpr is
   actually not needed in many cases (something I learned from this talk)
+- [Ivan Cukic - "Functional reactive programming in C++"](https://www.youtube.com/watch?v=a2MmURgc6cU) \
+  All you need to know (for now) about functional programming in C++
 - [Greg Law - “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg) \
   Pinky swear: learning GDB basics takes 30 minutes and will change your understanding
   of code and your machine for life - without effort
