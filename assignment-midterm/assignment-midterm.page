@@ -123,7 +123,7 @@ Have a look at this example code from the lecture
 
 <https://github.com/uchicago-cs/cmsc12300/blob/master/examples/cpp/ff/main.cpp>
 
-- Do you have any objections?
+- Do you have any objections? Improve the implementation.
 - Also: what is the most important guideline on the use of `new` and `delete`
   that comes to your mind? (hint: session 02)
 
