@@ -267,5 +267,51 @@ std::vector<int> v;
   explanation on the guarantees with respect to thread-safety according to
   the C++ standard.
 
+## 7.2 Producer-Consumer Problem
 
+Simply put, one thread is producing goods and another thread is consuming goods.
+We want the consumer thread to wait using a condition variable, and we want
+`goods.push(i)` to be mutually exclusive to `goods.pop()`.
 
+We are letting c++ and c-- be surrogates for this mutual exclusion, since we can
+easily check if we correctly end up with 0 in the end.
+
+Run the code as it is, and you will see that the net value is way off:
+
+```c++
+#include <iostream>
+#include <thread>
+#include <condition_variable>
+#include <mutex>
+#include <chrono>
+#include <queue>
+using namespace std;
+
+int main() {
+    int c = 0;
+    bool done = false;
+    queue<int> goods;
+
+    thread producer([&]() {
+        for (int i = 0; i < 500; ++i) {
+            goods.push(i);
+            c++;
+        }
+
+        done = true;
+    });
+
+    thread consumer([&]() {
+        while (!done) {
+            while (!goods.empty()) {
+                goods.pop();
+                c--;
+            }
+        }
+    });
+
+    producer.join();
+    consumer.join();
+    cout << "Net: " << c << endl;
+}
+```
