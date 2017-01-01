@@ -20,10 +20,16 @@ title: Advanced C++ - Winter Term 2016/2017
 - [Session 05](/session-05/session-05)
     - [Assignment 04](/assignment-04/assignment-04) ([zip](/assignment-04/a-04.zip)) - due 8. December
 - [Session 06](/session-06/session-06)
-    - [Midterm Assignment](assignment-midterm/assignment-midterm) - **mandatory! - due 18. January**
+    - [Assignment 05](/assignment-05/assignment-05) ([zip](/assignment-05/a-05.zip)) - due 23. December
+
+- **[Midterm Assignment](assignment-midterm/assignment-midterm) - mandatory! - due 18. January**
 
 
 Selected Talks:
+
+- [Talk on the common problems of how C++ is typically taught at uni](https://www.youtube.com/watch?v=N5wOrhL4ew8)
+
+
 
 **Drastically Recommended for the Midterm Assignment:**
 
@@ -54,6 +60,8 @@ Selected Talks:
 - [Stephan T. Lavavej - "Don't help the compiler."](https://www.youtube.com/watch?v=AKtHxKJRwp4)
 - [Jason Turner "Practical Performance Practices"](https://www.youtube.com/watch?v=uzF4u9KgUWI&t=580s)
 - [Michael Caisse - "Asynchronous IO Using Boost.Asio"](https://www.youtube.com/watch?v=UUiM-KNH69E)
+- [Michael Wong - "A lock-free concurrent toolkit for hazard pointers"](https://www.youtube.com/watch?v=mHwU0TMuwgc)
+- ["A lock-free concurrency toolkit for deferred reclamation and optimistic speculation"](https://www.youtube.com/watch?v=uhgrD_B1RhQ)
 - [Odin Holmes - "Ranges v3 and microcontrollers, a revolution"](https://www.youtube.com/watch?v=dxRDWgLIAZg)
 
 Guidelines:
