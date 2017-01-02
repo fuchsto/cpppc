@@ -1,10 +1,16 @@
 ---
 format: Markdown
-title: Session 06
+title: Session 06 (09. Dec. 2016)
 category: course notes, cpppc
 ...
 
 [Code Examples for Session 06](/session-06/)
+
+
+# Functional Programming in C++
+
+Recommended talk: [Ivan Cukic: Functional reactive programming in C++](https://www.youtube.com/watch?v=a2MmURgc6cU)
+
 
 
 # Introduction to the C++11 Thread Support Library

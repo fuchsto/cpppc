@@ -116,6 +116,17 @@ if (condition) {
 - Name a popular technique in resource management that depends on this rule,
   and briefly explain its principle.
 
+## 1.X Bonus
+
+Have a look at this example code from the lecture
+"CMSC 12300 - Computer Science with Applications 3" at University of Chicago:
+
+<https://github.com/uchicago-cs/cmsc12300/blob/master/examples/cpp/ff/main.cpp>
+
+- Do you have any objections? Improve the implementation.
+- Also: what is the most important guideline on the use of `new` and `delete`
+  that comes to your mind? (hint: session 02)
+
 
 
 # 2. Container Types, Class Template Basics
