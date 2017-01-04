@@ -247,8 +247,22 @@ Use gdb to debug the program implemented in the attached source file
     - prints the base 10 logarithm of the value's square root if it is a floating point
       value
 
+- Implement a function interface `void print_walk(T begin, T end)` that accepts a range
+  of iterators of type `T` and prints all values in the range. In this, the iteration
+  order depends on the iterator type:
+
+    - for random-access iterators, tha order should be (pseudo) random but every element
+      in the range must only be printed once
+    - for input iterators, elements are printed in order from `begin` to `end-1`
+    - for bidirectional iterators, elements are printed in reverse order from `end-1` to
+      `begin`
+
 
 # 6. STL-Compatible Sequence Containers
+
+## 6.1. Lazy Sequence Container
+
+
 
 
 # 7. Thread-Safety
