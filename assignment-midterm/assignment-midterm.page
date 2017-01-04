@@ -238,6 +238,15 @@ Use gdb to debug the program implemented in the attached source file
 
 # 5. Algorithms, Function Templates, Type Deduction
 
+## 5.1 Defining Functions
+
+- Implement a function interface `void log10(X)` that accepts a numeric value of type `X`
+  and:
+
+    - prints the base 10 logarithm of the value if it is an integer
+    - prints the base 10 logarithm of the value's square root if it is a floating point
+      value
+
 
 # 6. STL-Compatible Sequence Containers
 
