@@ -147,7 +147,7 @@ is semantically correct but does not compile for iterators of some containers.
 ```c++
 template <typename Iterator, typename Value = typename Iterator::value_type>
 Value next_value_or_default(Iterator it, Iterator end, Value default) {
-  if (it == end) { return default; }
+  if (it == end || it+1 == end) { return default; }
   return it[1];
 }
 ```
