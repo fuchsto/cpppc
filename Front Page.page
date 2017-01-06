@@ -20,7 +20,12 @@ title: Advanced C++ - Winter Term 2016/2017
 - [Session 05](/session-05/session-05)
     - [Assignment 04](/assignment-04/assignment-04) ([zip](/assignment-04/a-04.zip)) - due 8. December
 - [Session 06](/session-06/session-06)
-    - [Midterm Assignment](assignment-midterm/assignment-midterm) - **mandatory! - due 18. January**
+    - [Assignment 05](/assignment-05/assignment-05) ([zip](/assignment-05/a-05.zip)) - due 23. December
+
+- [Session 07](/session-07/session-07)
+
+
+- **[Midterm Assignment](assignment-midterm/assignment-midterm) - mandatory! - due 18. January**
 
 
 Selected Talks:
@@ -39,6 +44,8 @@ Selected Talks:
   The talk also gives a great and compact recapitulation of
   construction semantics (copy, move, assign). Jason also explains that constexpr is
   actually not needed in many cases (something I learned from this talk)
+- [Ivan Cukic - "Functional reactive programming in C++"](https://www.youtube.com/watch?v=a2MmURgc6cU) \
+  All you need to know (for now) about functional programming in C++
 - [Greg Law - “GDB - A Lot More Than You Knew"](https://www.youtube.com/watch?v=-n9Fkq1e6sg) \
   Pinky swear: learning GDB basics takes 30 minutes and will change your understanding
   of code and your machine for life - without effort
@@ -54,6 +61,8 @@ Selected Talks:
 - [Stephan T. Lavavej - "Don't help the compiler."](https://www.youtube.com/watch?v=AKtHxKJRwp4)
 - [Jason Turner "Practical Performance Practices"](https://www.youtube.com/watch?v=uzF4u9KgUWI&t=580s)
 - [Michael Caisse - "Asynchronous IO Using Boost.Asio"](https://www.youtube.com/watch?v=UUiM-KNH69E)
+- [Michael Wong - "A lock-free concurrent toolkit for hazard pointers"](https://www.youtube.com/watch?v=mHwU0TMuwgc)
+- ["A lock-free concurrency toolkit for deferred reclamation and optimistic speculation"](https://www.youtube.com/watch?v=uhgrD_B1RhQ)
 - [Odin Holmes - "Ranges v3 and microcontrollers, a revolution"](https://www.youtube.com/watch?v=dxRDWgLIAZg)
 
 Guidelines:
@@ -62,6 +71,7 @@ Guidelines:
 
 Selected Articles:
 
+- [Resumable Functions: aync, await](http://meetingcpp.com/index.php/br/items/resumable-functions-async-and-await.html)
 - [C++ Ranges are Pure Monadic Goodness](https://bartoszmilewski.com/2014/10/17/c-ranges-are-pure-monadic-goodness/)
 - [The "Double-Checked Locking is Broken" Declaration](https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html)
 

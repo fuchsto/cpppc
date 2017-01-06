@@ -4,9 +4,19 @@ title: Midterm Assignment
 ...
 
 
+**Important Notes**
+
+- All of you are capable to submit a brillant solution to this assignment if you take it
+  seriously. 
+- All information you need is in this wiki! ([full article / file index here](/_index))
+- The talks listed on the [front page](/) should be very helpful
+- Begin working on your solutions *today*
+- Call me (tobias.w.h.fuchs) and/or send me code via mail for review!
+
+
 # 1. Types, Classes, Objects and their State
 
-## 1.1
+## 1.1 Object Definition
 
 Assuming you are confronted with a class that supports the following
 use case:
@@ -22,7 +32,7 @@ What is your objection to this? How would you change the interface of class
 `DateParser`?
 
 
-## 1.2
+## 1.2 Standard Object Semantics
 
 Given the following implementation of class `SemanticSurprise`:
 
@@ -88,7 +98,7 @@ print_surprise(SemanticSurprise(10));
   has to be corrected.
 
 
-## 1.3
+## 1.3 Resource Ownership
 
 Consider the following use case:
 
@@ -106,6 +116,17 @@ if (condition) {
 - Name a popular technique in resource management that depends on this rule,
   and briefly explain its principle.
 
+## 1.X Bonus
+
+Have a look at this example code from the lecture
+"CMSC 12300 - Computer Science with Applications 3" at University of Chicago:
+
+<https://github.com/uchicago-cs/cmsc12300/blob/master/examples/cpp/ff/main.cpp>
+
+- Do you have any objections? Improve the implementation.
+- Also: what is the most important guideline on the use of `new` and `delete`
+  that comes to your mind? (hint: session 02)
+
 
 
 # 2. Container Types, Class Template Basics
@@ -114,7 +135,7 @@ if (condition) {
 
 # 3. Iterators
 
-# 3.1
+# 3.1 Algorithm Basics
 
 The following algorithm dereferences and returns a given iterator's successor
 unless the successor's referenced value matches some condition. The algorithm
@@ -126,12 +147,12 @@ is semantically correct but does not compile for iterators of some containers.
 ```c++
 template <typename Iterator, typename Value = typename Iterator::value_type>
 Value next_value_or_default(Iterator it, Iterator end, Value default) {
-  if (it == end) { return default; }
+  if (it == end || it+1 == end) { return default; }
   return it[1];
 }
 ```
 
-# 3.2
+# 3.2 Container Wrapper
 
 The STL's `std::vector` guarantess that its elements are stored in a
 contiguous memory region and is therefore compatible to C-style arrays.
@@ -142,13 +163,12 @@ For many hardware-tuning techniques, data is accessed in chunks.
 Assuming a `std::vector<uint32_t>` and 64 bytes per cache line, for example,
 vector elements could be loaded in chunks of 64/(32/8) = 16 elements.
 
-- Write a container wrapper \
+-   Write a container wrapper
     
-      `cpppc::chunks<B, T, Container>`
-
-  that provides a sequential container interface on elements in `Container`
-  in chunks of maximum size `B` bytes.
-
+        cpppc::chunks<B, T, Container>
+    
+    that provides a sequential container interface on elements in `Container`
+    in chunks of maximum size `B` bytes.
 
 The template signature is derived from `std::stack`, a similar wrapper
 type defined in the STL:
@@ -196,6 +216,13 @@ Note that you need two iterator types:
 It might be best if you use existing STL containers like  `std::vector<T>`
 or `std::array<T, ChunkSize>` as chunk type: these would already provide
 the sequence container interface to chunk elements you need.
+
+**Optional:**
+
+If you want to implement more sophisticated type size calculations like alignment
+requirements, refer to the C++ type support utilities:
+
+<http://en.cppreference.com/w/cpp/types>
 
 
 # 4. Debugging
@@ -251,5 +278,51 @@ std::vector<int> v;
   explanation on the guarantees with respect to thread-safety according to
   the C++ standard.
 
+## 7.2 Producer-Consumer Problem
 
+Simply put, one thread is producing goods and another thread is consuming goods.
+We want the consumer thread to wait using a condition variable, and we want
+`goods.push(i)` to be mutually exclusive to `goods.pop()`.
 
+We are letting c++ and c-- be surrogates for this mutual exclusion, since we can
+easily check if we correctly end up with 0 in the end.
+
+Run the code as it is, and you will see that the net value is way off:
+
+```c++
+#include <iostream>
+#include <thread>
+#include <condition_variable>
+#include <mutex>
+#include <chrono>
+#include <queue>
+using namespace std;
+
+int main() {
+    int c = 0;
+    bool done = false;
+    queue<int> goods;
+
+    thread producer([&]() {
+        for (int i = 0; i < 500; ++i) {
+            goods.push(i);
+            c++;
+        }
+
+        done = true;
+    });
+
+    thread consumer([&]() {
+        while (!done) {
+            while (!goods.empty()) {
+                goods.pop();
+                c--;
+            }
+        }
+    });
+
+    producer.join();
+    consumer.join();
+    cout << "Net: " << c << endl;
+}
+```
