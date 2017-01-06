@@ -1,10 +1,11 @@
-
+// vim: ft=text
 #include <iostream>
 
 
 int yaba() { return 100; }
 int daba() { return 110; }
 int doo()  { return 011; }
+int dodo() { return 0x0; }
 
 
 int main() {
@@ -22,11 +23,12 @@ int main() {
   cout << "you don't get it, hm??! ... "
           "ah, no worries, just enjoy the show." << endl;
   
-  cout << (5[doodedoo]) << endl;
+  cout << (5[doodeedoo]) << endl;
 
   cout << (yaba(),daba(),doo()) << endl;
 
-  if (cin>>x,x&2,x<4) { cout << "okee" << endl; }
+  int in;
+  if (cin>>in,in&2,in<4) { cout << "okee" << endl; }
 
   if (int ret = dodo()) {
     cout << "dodo! " << ret << endl;
