@@ -217,12 +217,29 @@ It might be best if you use existing STL containers like  `std::vector<T>`
 or `std::array<T, ChunkSize>` as chunk type: these would already provide
 the sequence container interface to chunk elements you need.
 
-**Optional:**
+**Note**
+
+The `cpppc::chunks` container adapter can (and should) be implemented without
+copying elements of the underlying vector. It only realizes a *view* or *range* on
+the vector elements but does not have own storage.
+
+The documentation of the boost Range library provides a comprehensive
+introduction to the range concept:
+
+<http://www.boost.org/doc/libs/1_63_0/libs/range/doc/html/range/concepts.html>
+
+
+## 3.X Bonus
 
 If you want to implement more sophisticated type size calculations like alignment
 requirements, refer to the C++ type support utilities:
 
 <http://en.cppreference.com/w/cpp/types>
+
+Or make yourself familiar with the boost Align library (brace for impact):
+
+http://www.boost.org/doc/libs/1_63_0/doc/html/align.html
+
 
 
 # 4. Debugging
