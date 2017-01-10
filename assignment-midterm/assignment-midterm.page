@@ -279,7 +279,36 @@ Use gdb to debug the program implemented in the attached source file
 
 ## 6.1. Lazy Sequence Container
 
+Implement a sequence container `LazySequence` that is initialized with its size and
+a generator function. The container does not store any elements, instead the generator
+function is used to create container elements only when they are accessed.
 
+Example:
+
+```c++
+  LazySequence<int> seq(10,
+                        [](int i) {
+                          return (100 + i * i);
+                        });
+
+  // `seq` does not contain any elements at this point, but it satisfies the
+  // STL Sequence Container concept:
+
+  std::cout << "sequence size: " << seq.size() << '\n';
+
+  auto it = seq.begin();
+  // still nothing computed
+
+  int first = *it; // <-- returns value from generator(it._pos)
+
+  for (auto e : seq) {
+    // generates values one by one:
+    std::cout << e << " ";
+  }
+  std::cout << std::endl;
+  // prints:
+  // 100 101 104 109 116 125 136 149 164 181
+```
 
 
 # 7. Thread-Safety
