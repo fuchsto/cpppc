@@ -245,7 +245,8 @@ http://www.boost.org/doc/libs/1_63_0/doc/html/align.html
 # 4. Debugging
 
 Use gdb to debug the program implemented in the attached source file
-`a-midterm/debug.cc`. Running the program leads to a segfault.
+[a-midterm/debug.cc](/assignment-midterm/a-midterm/debug.cc).
+Running the program leads to a segfault.
 
 - Use gdb to determine the source code location (stack trace) of the
   statement that causes the segmentation violation fault. Attach a
