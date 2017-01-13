@@ -15,4 +15,5 @@ category: course notes, cpppc
   <https://github.com/dash-project/dash/blob/feat-191-lranges/dash/include/dash/View.h>
 
 
-- In this session, let's specify a formal abstraction and make it scale
+- In this session, let's specify a formal abstraction and make it scale: \
+  Operator overloading for range expressions
