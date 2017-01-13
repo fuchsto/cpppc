@@ -9,6 +9,77 @@
 #include <random>
 
 
+/* -----------------------------------------------------------------------
+ *
+ *                 Well, here you are, all grown up and
+ *                 learning about move semantics.
+ *                 Welcome to the top 10% C++ coders!
+ *
+ * -----------------------------------------------------------------------
+ *
+ *    Let's recap what we discussed about value categories.
+ *
+ *      MyType x = make_crispy_data(1024);
+ *             
+ *                  ^
+ *                  '---- what do you assume about the
+ *                        return type of this function?
+ *                        rvalue? lvalue?
+ * 
+ *
+ *    Now let's pretend you just started a new job at
+ *    WormCan Tech Inc. and you find this code snippet
+ *    in their codebase:
+ *
+ *    <
+ *    > // Making it const so the reference
+ *    > // cannot be redirected:
+ *    < Schwifty & const shwing; <--.
+ *    > -.-.-.-.     ,^             |
+ *    >             /     ^     .---'-----------------.
+ *                  :     '-----| does this cause you |
+ *                  \           | pain? Describe your |
+ *                   '----------| pain. Where does it |
+ *                              | hurt most?          |
+ *                              '---------------------'
+ *
+ *
+ *
+ *           .-------------------------.
+ *           | I did not make this up. |
+ *           '----------------.--------'
+ *                            \
+ *                             '-.
+ *             .------------------`--------.
+ *             | They kept asking me why I |
+ *             | was shouting in furious   |
+ *             | anger.                    |
+ *             `--------.                  '-------.
+ *                      | "It's just a definition  |
+ *                      |  of a variable!" he said |
+ *                  .---' ...                      |
+ *                  | That is the last thing I     |
+ *                  | remember before the sirens.  |
+ *                  '------------------------------'
+ *
+ *
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 template <class Iter>
 std::ostream & operator<<(
   std::ostream                & os,
