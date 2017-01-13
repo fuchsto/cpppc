@@ -131,7 +131,7 @@ Have a look at this example code from the lecture
 
 # 2. Container Types, Class Template Basics
 
-
+[ Optional, to be discussed next Friday ]
 
 # 3. Iterators
 
@@ -217,18 +217,36 @@ It might be best if you use existing STL containers like  `std::vector<T>`
 or `std::array<T, ChunkSize>` as chunk type: these would already provide
 the sequence container interface to chunk elements you need.
 
-**Optional:**
+**Note**
+
+The `cpppc::chunks` container adapter can (and should) be implemented without
+copying elements of the underlying vector. It only realizes a *view* or *range* on
+the vector elements but does not have own storage.
+
+The documentation of the boost Range library provides a comprehensive
+introduction to the range concept:
+
+<http://www.boost.org/doc/libs/1_63_0/libs/range/doc/html/range/concepts.html>
+
+
+## 3.X Bonus
 
 If you want to implement more sophisticated type size calculations like alignment
 requirements, refer to the C++ type support utilities:
 
 <http://en.cppreference.com/w/cpp/types>
 
+Or make yourself familiar with the boost Align library (brace for impact):
+
+<http://www.boost.org/doc/libs/1_63_0/doc/html/align.html>
+
+
 
 # 4. Debugging
 
 Use gdb to debug the program implemented in the attached source file
-`a-midterm/debug.cc`. Running the program leads to a segfault.
+[a-midterm/debug.cc](/assignment-midterm/a-midterm/debug.cc).
+Running the program leads to a segfault.
 
 - Use gdb to determine the source code location (stack trace) of the
   statement that causes the segmentation violation fault. Attach a
@@ -238,8 +256,60 @@ Use gdb to debug the program implemented in the attached source file
 
 # 5. Algorithms, Function Templates, Type Deduction
 
+## 5.1 Defining Functions
+
+- Implement a function interface `void log10(X)` that accepts a numeric value of type `X`
+  and:
+
+    - prints the base 10 logarithm of the value if it is an integer
+    - prints the base 10 logarithm of the value's square root if it is a floating point
+      value
+
+- Implement a function interface `void print_walk(T begin, T end)` that accepts a range
+  of iterators of type `T` and prints all values in the range. In this, the iteration
+  order depends on the iterator type:
+
+    - for random-access iterators, tha order should be (pseudo) random but every element
+      in the range must only be printed once
+    - for input iterators, elements are printed in order from `begin` to `end-1`
+    - for bidirectional iterators, elements are printed in reverse order from `end-1` to
+      `begin`
+
 
 # 6. STL-Compatible Sequence Containers
+
+## 6.1. Lazy Sequence Container
+
+Implement a sequence container `LazySequence` that is initialized with its size and
+a generator function. The container does not store any elements, instead the generator
+function is used to create container elements only when they are accessed.
+
+Example:
+
+```c++
+  LazySequence<int> seq(10,
+                        [](int i) {
+                          return (100 + i * i);
+                        });
+
+  // `seq` does not contain any elements at this point, but it satisfies the
+  // STL Sequence Container concept:
+
+  std::cout << "sequence size: " << seq.size() << '\n';
+
+  auto it = seq.begin();
+  // still nothing computed
+
+  int first = *it; // <-- returns value from generator(it._pos)
+
+  for (auto e : seq) {
+    // generates values one by one:
+    std::cout << e << " ";
+  }
+  std::cout << std::endl;
+  // prints:
+  // 100 101 104 109 116 125 136 149 164 181
+```
 
 
 # 7. Thread-Safety
