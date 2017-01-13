@@ -17,3 +17,5 @@ category: course notes, cpppc
 
 - In this session, let's specify a formal abstraction and make it scale: \
   Operator overloading for range expressions
+
+- Revealing dirty secrets: The hidden agenda of this course
