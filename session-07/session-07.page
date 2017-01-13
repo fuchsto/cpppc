@@ -13,3 +13,6 @@ category: course notes, cpppc
 
 - Recent type traits added in DASH: 
   <https://github.com/dash-project/dash/blob/feat-191-lranges/dash/include/dash/View.h>
+
+
+- In this session, let's specify a formal abstraction and make it scale
