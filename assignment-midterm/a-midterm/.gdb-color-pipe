@@ -1,0 +1,9 @@
+No stack.
+Starting program: /home/cpppc/workspaces/cpppc.git/assignment-midterm/a-midterm/main.a 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/i386-linux-gnu/libthread_db.so.1".
+[New Thread 0xb7bfdb40 (LWP 3342)]
+
+Thread 2 "main.a" received signal SIGSEGV, Segmentation fault.
+[Switching to Thread 0xb7bfdb40 (LWP 3342)]
+0x80001e7b in std::__cxx11::list<int, std::allocator<int> >& drop<std::__cxx11::list<int, std::allocator<int> >, main::{lambda()#2}::operator()() const::{lambda(int)#1}>(main::{lambda()#2}::operator()() const::{lambda(int)#1}, main::{lambda()#2}::operator()() const::{lambda(int)#1}) ()

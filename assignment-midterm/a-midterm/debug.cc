@@ -13,6 +13,7 @@ SeqContainer & drop(SeqContainer & c, UnaryPred condition) {
       c.erase(i);
     }
   }
+  return c;
 }
 
 int main() {
@@ -22,7 +23,7 @@ int main() {
   int x = 100;
   std::generate_n(
     std::back_inserter(l), 23,
-    [&]() -> int { return ++x; }
+    [&]() { return ++x; }
   );
 
   for (auto e : l) {
@@ -32,7 +33,7 @@ int main() {
 
   auto f = std::async(
               std::launch::async,
-              [&]() -> auto { 
+              [&]() { 
                 return drop(l, [](int x) -> bool {
                   return x % 3 == 0;
                 });
