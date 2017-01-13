@@ -351,13 +351,24 @@ std::vector<int> v;
 ## 7.2 Producer-Consumer Problem
 
 Simply put, one thread is producing goods and another thread is consuming goods.
-We want the consumer thread to wait using a condition variable, and we want
+We want the consumer thread to wait **using a condition variable**, and we want
 `goods.push(i)` to be mutually exclusive to `goods.pop()`.
 
 We are letting c++ and c-- be surrogates for this mutual exclusion, since we can
 easily check if we correctly end up with 0 in the end.
 
 Run the code as it is, and you will see that the net value is way off:
+
+
+> **Note:**
+>
+> I know there is an easier solutioon and using the more complicated
+> approach hurts while you are typing it.\
+> But you learn best through pain, remember?
+? 
+> Also, the condition variable thechnique is more efficient in many
+> cases and not as commonly known as it should.
+
 
 ```c++
 #include <iostream>
