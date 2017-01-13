@@ -10,3 +10,6 @@ category: course notes, cpppc
 
 - Very gentle and friendly (and correct) recap of lvalues vs. rvalues: \
   <https://www.youtube.com/watch?v=UTUdhjzws5g>
+
+- Recent type traits added in DASH: 
+  <https://github.com/dash-project/dash/blob/feat-191-lranges/dash/include/dash/View.h>
