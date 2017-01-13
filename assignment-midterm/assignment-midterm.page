@@ -360,12 +360,12 @@ easily check if we correctly end up with 0 in the end.
 Run the code as it is, and you will see that the net value is way off:
 
 
-> **Note:**
+> `Note: `
 >
 > I know there is an easier solutioon and using the more complicated
-> approach hurts while you are typing it.
+> approach hurts while you are typing it. \
 >
-> But you learn best through pain, remember?
+> But you learn best through pain, remember? \
 >
 > Also, the condition variable thechnique is more efficient in many
 > cases and not as commonly known as it should.
