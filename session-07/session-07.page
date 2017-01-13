@@ -19,3 +19,8 @@ category: course notes, cpppc
   Operator overloading for range expressions
 
 - Revealing dirty secrets: The hidden agenda of this course
+
+- Code literacy and formal modeling competence are closely related:
+
+    - <https://github.com/electronicarts/EASTL>
+    - <https://github.com/ericniebler/range-v3/blob/master/include/range/v3/view_facade.hpp>
