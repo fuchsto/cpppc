@@ -175,7 +175,7 @@ type defined in the STL:
 
 <http://en.cppreference.com/w/cpp/container/stack>
 
-You only need to implement a minimum interface like constructors and
+You only need to implement a minimal interface like constructors and
 `begin()`, `end()`, however.
 
 Example use case:
@@ -367,7 +367,7 @@ Run the code as it is, and you will see that the net value is way off:
 >
 > But you learn best through pain, remember? \
 >
-> Also, the condition variable thechnique is more efficient in many
+> Also, the condition variable technique is more efficient in many
 > cases and not as commonly known as it should.
 
 
