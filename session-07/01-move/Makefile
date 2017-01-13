@@ -1,9 +1,9 @@
 
 CC=g++
-CFLAGS=--std=c++11 -Wall -Wextra -pedantic
+CFLAGS=--std=c++11 -Wall -Wextra -pedantic -O0
 LDFLAGS=-lrt
 
-OBJS = main.o
+OBJS = main.o array_maker.o
 
 .DEFAULT: all
 all: $(OBJS) main.a
