@@ -30,8 +30,9 @@ title: Advanced C++ - Winter Term 2016/2017
 
 Selected Talks:
 
-- Everone should now that double-checked locking is fubar (it's still taught in some
-  courses): <https://youtu.be/lVBvHbJsg5Y?t=13m28s>
+- Everone should now that 
+  [double-checked locking is fubar](https://youtu.be/lVBvHbJsg5Y?t=13m28s)
+   (it's still taught to students in some courses)
 
 **Drastically Recommended for the Midterm Assignment:**
 
