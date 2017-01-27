@@ -13,7 +13,8 @@ title: Advanced C++ - Winter Term 2016/2017
     - [Assignment 01](/assignment-01/assignment-01)
     - [Solution 01](/assignment-01/s-01/)
 
-- [Session 03](/session-03/session-03)
+- [Session 03](/session-03/session-03) \
+    Introduction to C++ Templates
     - [Assignment 02](/assignment-02/assignment-02) ([zip](/assignment-02/a-02.zip))
     - [Solution 02](/assignment-02/s-02/)
 
@@ -35,9 +36,11 @@ title: Advanced C++ - Winter Term 2016/2017
 - [Session 08](/session-08/session-08) \
     Introduction to Move Semantics
 
-- [Session 09](/session-09/session-09)
+- [Session 09](/session-09/session-09) \
+    Midterm Assignment Recap
 
-- [Session 10](/session-10/session-10)
+- [Session 10](/session-10/session-10) \
+    More Move Semantics, Smart Pointers, Expressions
     - [Assignment 06](/assignment-06/assignment-06) ([zip](/assignment-06/a-06.zip)) - due 03. February
 
 
