@@ -21,6 +21,14 @@ to another owner or shared between objects.
 
 # Smart Pointers
 
+## unique_ptr
+
+`std::unique_ptr` maintains exclusive ownership semantics.
+A non-null `std::unique_ptr` always owns what it points to. Consequently, copying it
+must be forbidden as all owners would assume exclusive access to the encapsulated
+object.
+It is therefore a move-only type: moving a `std::unique_ptr` transfers ownership
+from the source pointer to the destination pointer.
 
 # Full-Throttle Expressions
 
