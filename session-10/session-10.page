@@ -3,6 +3,17 @@ format: Markdown
 title: Session 10 (27. Jan 2016)
 ...
 
+> C++ has indeed become too “expert friendly” at a time where the degree of
+> effective formal education of the average software developer has declined.
+> However, the solution is not to dumb down the programming languages but to
+> use a variety of programming languages and educate more experts. There has
+> to be languages for those experts to use–and C++ is one of those languages.
+> \
+> \
+> -- Bjarne Stroustrup
+> ([Interview: The Problem with Programming](https://www.technologyreview.com/s/406923/the-problem-with-programming/))
+
+
 # Move Semantics
 
 ## Move-only Types
@@ -30,5 +41,13 @@ object.
 It is therefore a move-only type: moving a `std::unique_ptr` transfers ownership
 from the source pointer to the destination pointer.
 
+
 # Full-Throttle Expressions
+
+
+# Type Idioms - Patterns for the Sophisticated
+
+## Policies
+
+## Curiously Recurring Pattern Template
 
