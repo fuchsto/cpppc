@@ -11,7 +11,7 @@ You perhaps (hopefully) remember a fact that has been overstated in Session-02 a
 Session-01 in this course: C++ is a paradigm-agnostic language.
 
 The increasing relevance of functional programming in C++ has become evident in
-in numerous aspects discussed in the recent sessions.
+numerous aspects discussed in the recent sessions.
 Along the way, we found that even pure functions can be defined as expressions
 that can be calculated at compile-time.
 
