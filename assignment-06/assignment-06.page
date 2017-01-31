@@ -31,7 +31,10 @@ These fundamental functions are:
 - concat
 
 Their implementation in C++11, along with some additional common functions like
-`head` and `tail`, is attached to this assignment.
+`head` and `tail`, is attached to this assignment:
+
+[/assignment-06/a-06/]()
+
 The original code is part of the DASH, a research project of our chair, and can
 be found
 [here](https://github.com/dash-project/dash/tree/feat-191-lranges/dash/include/dash/util).
