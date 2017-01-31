@@ -35,8 +35,8 @@ Their implementation in C++11, along with some additional common functions like
 
 [/assignment-06/a-06/]()
 
-The original code is part of the DASH, a research project of our chair, and can
-be found
+The original code is part of the [DASH](http://www.dash-project.org), a research
+project of our chair et al., and can be found
 [here](https://github.com/dash-project/dash/tree/feat-191-lranges/dash/include/dash/util).
 
 Study the code and try to reason about these function definitions from what you
