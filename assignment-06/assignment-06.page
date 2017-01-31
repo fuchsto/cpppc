@@ -21,7 +21,7 @@ archangel of functional programming, against compile-time capabilities of C++.
 Lisp provides some fundamental functions that suffice to express any algorithm on
 value sequences. In C++, we use `std::array` as an equivalent.
 
-Q: `std::array` is a static data structure. Could we benefit from `std::vector`?
+> **Q:** `std::array` is a static data structure. Could we benefit from `std::vector`?
 
 These fundamental functions are:
 
