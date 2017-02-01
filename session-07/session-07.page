@@ -7,3 +7,24 @@ category: course notes, cpppc
 [Code Examples for Session 07](/session-07/)
 
 - <http://advancedcplusplus.com/lazy-map/>
+
+
+- Very gentle and friendly (and correct) recap of lvalues vs. rvalues: \
+
+    - <https://www.youtube.com/watch?v=cO1lb2MiDr8>
+    - <https://www.youtube.com/watch?v=UTUdhjzws5g>
+
+- Recent type traits added in DASH: 
+  <https://github.com/dash-project/dash/blob/feat-191-lranges/dash/include/dash/View.h>
+
+
+- In this session, let's specify a formal abstraction and make it scale: \
+  Operator overloading for range expressions
+
+- Revealing dirty secrets: The hidden agenda of this course
+
+- Code literacy and formal modeling competence are closely related:
+
+    - <https://github.com/electronicarts/EASTL>
+    - <https://github.com/ericniebler/range-v3/blob/master/include/range/v3/view_facade.hpp>
+

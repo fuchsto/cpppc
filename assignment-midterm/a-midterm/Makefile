@@ -1,14 +1,14 @@
 
 CC=g++
-CFLAGS=--std=c++11 -Wall -Wextra -pedantic -O0
-LDFLAGS=-lrt
+CFLAGS=--std=c++11 -Wall -Wextra -pedantic -g -Og
+LDFLAGS=-lrt -pthread
 
-OBJS = main.o array_maker.o
+OBJS = debug.o
 
 .DEFAULT: all
 all: $(OBJS) main.a
 
-run: main.a
+run: main.a 
 	clear
 	./main.a
 

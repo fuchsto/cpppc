@@ -7,29 +7,58 @@ title: Advanced C++ - Winter Term 2016/2017
 **Call me! (Skype): tobias.w.h.fuchs**
 
 
-- [Session 01](/session-01/session-01)
-- [Session 02](/session-02/session-02)
+- [Session 01](/session-01/session-01) \
+    Formal Foundations, Value Semantics, Object-oriented C
+
+- [Session 02](/session-02/session-02) \
+    Types and Concepts, Ownership, Container Basics
     - [Assignment 01](/assignment-01/assignment-01)
     - [Solution 01](/assignment-01/s-01/)
-- [Session 03](/session-03/session-03)
+
+- [Session 03](/session-03/session-03) \
+    Introduction to C++ Templates
     - [Assignment 02](/assignment-02/assignment-02) ([zip](/assignment-02/a-02.zip))
     - [Solution 02](/assignment-02/s-02/)
-- [Session 04](/session-04/session-04)
+
+- [Session 04](/session-04/session-04) \
+    Container- and Iterator Concepts, STL Algorithms
     - [Assignment 03](/assignment-03/assignment-03) ([zip](/assignment-03/a-03.zip)) - due 1. December
     - [Solution 03](/assignment-03/s-03/)
-- [Session 05](/session-05/session-05)
+
+- [Session 05](/session-05/session-05) \
+    Custom Containers, Sparse Array Implementation
     - [Assignment 04](/assignment-04/assignment-04) ([zip](/assignment-04/a-04.zip)) - due 8. December
-- [Session 06](/session-06/session-06)
+
+- [Session 06](/session-06/session-06) \
+    Functional Programming, Thread Library Basics
     - [Assignment 05](/assignment-05/assignment-05) ([zip](/assignment-05/a-05.zip)) - due 23. December
-- [Session 07](/session-07/session-07)
+
 - [Session WAT](/session-wats/session-wats)
 
-- **[Midterm Assignment](assignment-midterm/assignment-midterm) - mandatory! - due 18. January**
+- [Session 07](/session-07/session-07) \
+    Expression Templates and constexpr
+    - **[Midterm Assignment](assignment-midterm/assignment-midterm) - due 18. January - mandatory!**
+
+- [Session 08](/session-08/session-08) \
+    Introduction to Move Semantics
+
+- [Session 09](/session-09/session-09) \
+    Midterm Assignment Recap
+
+- [Session 10](/session-10/session-10) \
+    More Move Semantics, Smart Pointers, Expressions
+    - [Assignment 06](/assignment-06/assignment-06) ([zip](/assignment-06/a-06.zip)) - due 03. February
 
 
-Selected Talks:
+# Selected Talks:
 
-**Drastically Recommended for the Midterm Assignment:**
+- Everone should now that 
+  [double-checked locking is fubar](https://youtu.be/lVBvHbJsg5Y?t=13m28s)
+   (it's still taught to students in some courses)
+
+## Drastically Recommended for the Midterm Assignment
+
+- <https://www.youtube.com/watch?v=ihCl_IYjrFg>
 
 - [Jason Jurecka - "Game engine using STD C++ 11"](https://www.youtube.com/watch?v=8AjRD6mU96s) \
   A broad overview of language features that make C++ 11 the industry's favorite for code that matters
@@ -49,7 +78,7 @@ Selected Talks:
   Pinky swear: learning GDB basics takes 30 minutes and will change your understanding
   of code and your machine for life - without effort
 
-**Lecturer's Personal Picks:**
+## Lecturer's Personal Picks
 
 - [Chandler Carruth "Efficiency with Algorithms, Performance with Data Structures"](https://www.youtube.com/watch?v=fHNmRkzxHWs)
 - [The Blaze High Performance Math Library](https://www.youtube.com/watch?v=w-Y22KrMgFE)
@@ -64,18 +93,25 @@ Selected Talks:
 - ["A lock-free concurrency toolkit for deferred reclamation and optimistic speculation"](https://www.youtube.com/watch?v=uhgrD_B1RhQ)
 - [Odin Holmes - "Ranges v3 and microcontrollers, a revolution"](https://www.youtube.com/watch?v=dxRDWgLIAZg)
 
-Guidelines:
+# Some Useful References
+
+## Real Life C++:
+
+- [Meeting C++](http://meetingcpp.com/)
+- [How To Submit a Proposal for the C++ Standard Library](https://isocpp.org/std/submit-a-proposal)
+
+## Guidelines:
 
 - [ISO C++ Library Design Guidelines](https://isocpp.org/wiki/library_design_guidelines/library-design-guidelines)
 
-Selected Articles:
+## Selected Articles:
 
 - [Resumable Functions: aync, await](http://meetingcpp.com/index.php/br/items/resumable-functions-async-and-await.html)
 - [C++ Ranges are Pure Monadic Goodness](https://bartoszmilewski.com/2014/10/17/c-ranges-are-pure-monadic-goodness/)
 - [The "Double-Checked Locking is Broken" Declaration](https://www.cs.umd.edu/~pugh/java/memoryModel/DoubleCheckedLocking.html)
 
 
-Further Resources:
+## Technical References
 
 - [C++ Language Standard (official working draft)](http://www.open-std.org/Jtc1/sc22/wg21/docs/papers/2013/n3797.pdf), great index on the last pages!
 
