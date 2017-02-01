@@ -36,7 +36,17 @@ We usually specify:
 ## Concept
 
 Similar the *Ideon* in Platon's terminology, a concept (lat. *conceptum* - sth. perceived) is an abstract idea representing fundamental characteristics.
-In C++, concepts are used to define an ontology of types.
+
+To illustrate Platon's definition of an *abstract object*, let's assume two strangers,
+maybe foreigners, talk about dogs. The mental model of both will diverge, but
+they have is no problem to have conversation because the characteristics associated
+with the general *concept* "dog" are compliant.
+
+Similarily, concepts are used in C++ to define an ontology of types.
+Specifying algorithm variants for every single type is impossible but the
+the unlimited set of types can be reduced to a small set of common characteristics.
+
+In the STL, the most prominent concept is *iterators*.
 
 
 # References
