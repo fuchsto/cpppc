@@ -34,8 +34,28 @@ from the source pointer to the destination pointer.
 # Full-Throttle Expressions
 
 
-# Type Idioms - Patterns for the Sophisticated
+# Idioms - Patterns for the Sophisticated
+
+Much like design patterns, idioms are common techniques that have been proven
+beneficial for common situations.
+We already discussed several idioms along the way, but there are just way too
+many to cover all of them in a single semester.
+
+Some idioms we encountered so far: 
+
+- Tag dispatching
+- Iterator pairs
+- [Metafunctions](http://www.artima.com/cppsource/metafunctions.html) / Type Generators
+
+[Others](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Generic_Container_Idioms), 
+mostly those related to allocation, have been intentionally skipped.
+
+The following related idioms have not been discussed so far and deserve an explicit
+mention.
+
 
 ## Policies
 
 ## Curiously Recurring Pattern Template
+
+
