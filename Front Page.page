@@ -46,9 +46,11 @@ title: Advanced C++ - Winter Term 2016/2017
     Midterm Assignment Recap
 
 - [Session 10](/session-10/session-10) \
-    More Move Semantics, Smart Pointers, Expressions
-    - [Assignment 06](/assignment-06/assignment-06) ([zip](/assignment-06/a-06.zip)) - due 03. February
+    Fundamental Formal Definitions Revisited
+    - [Assignment 06](/assignment-06/assignment-06) ([zip](/assignment-06/a-06.zip)) - due 03. February, optional
 
+- [Session 11](/session-11/session-11) \
+    More Move Semantics, Smart Pointers, Expressions
 
 # Selected Talks:
 
