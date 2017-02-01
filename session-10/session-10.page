@@ -16,6 +16,7 @@ title: Session 10 (27. Jan 2016)
 
 # Fundamental Formal Definitions Revisited
 
+
 ## Semantics
 
 Originating from linguistics, semantics is the study of meaning.
@@ -49,6 +50,10 @@ Specifying algorithm variants for every single type is impossible but the
 the unlimited set of types can be reduced to a small set of common characteristics.
 
 In the STL, the most prominent concept is *iterators*.
+
+
+## Categories
+
 
 
 # References
