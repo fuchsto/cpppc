@@ -45,7 +45,8 @@ Some idioms we encountered so far:
 
 - Tag dispatching
 - Iterator pairs
-- [Metafunctions](http://www.artima.com/cppsource/metafunctions.html) / Type Generators
+- [Metafunctions](http://www.artima.com/cppsource/metafunctions.html), Type Generators
+  and [Type Selection](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Type_Selection)
 
 [Others](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Generic_Container_Idioms), 
 mostly those related to allocation, have been intentionally skipped.
