@@ -39,7 +39,6 @@ public:
         "*** --- create " << _name);
   }
 
-#if 1
   // move constructor
   ArrayWrapper(self_t && other)
       : _data(other._data),
@@ -50,7 +49,6 @@ public:
     other._data = NULL;
     other._size = 0;
   }
-#endif
 
   // copy constructor
   ArrayWrapper(const self_t & other)
@@ -68,7 +66,8 @@ public:
 
   ~ArrayWrapper() {
     LOG("~ArrayWrapper()",
-        "xxx --- destroy " << _name);
+        "xxx --- destroy " << _name << (
+          ((NULL != _data) ? " and free data" : " and go home")));
     delete[] _data;
   }
 

@@ -18,7 +18,7 @@ int
 accept_array_by_value(
   ArrayWrapper<int> a)
 {
-  ArrayWrapper<int> mine(a);
+  ArrayWrapper<int> mine(std::move(a));
 
   mine.begin()[0] = 345;
 

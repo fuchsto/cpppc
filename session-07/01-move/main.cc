@@ -20,6 +20,20 @@
  *    Let's recap what we discussed about value categories.
  *
  *      MyType x = make_crispy_data(1024);
+ *
+ *
+ *      const T & operator[](int) const
+ *      T & operator[](int)
+ *
+ * -------------------------
+ *
+ *      T & operator[](int) const
+ * 
+ *      int x = myinst[3];
+ *      myinst[3] = 30;
+ *
+ *
+ *
  *             
  *                  ^
  *                  '---- what do you assume about the
@@ -136,7 +150,7 @@ int main()
   fill_rand(40, m.begin(), m.end());
   LOG("main", std::make_tuple(m.begin(), m.begin()+7));
   LOG("main", "-------------------------------------"); 
-  
+
   LOG("main", "*PFWOOOHFFF* -> " <<
       accept_array_by_value(
         return_array_by_value(234, "X")
