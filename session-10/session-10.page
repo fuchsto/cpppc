@@ -39,9 +39,10 @@ Similar the *Ideon* in Platon's terminology, a concept (lat. *conceptum* - sth. 
 
 To illustrate Platon's definition of an *abstract object*, let's assume two strangers,
 maybe foreigners, talk about dogs.
-The concrete visual rendition in the mental model of both will diverge, but
-they have is no problem to have conversation because the characteristics associated
-with the general *concept* "dog" are compliant.
+The concrete visual rendition in the mental model of both will diverge.
+But they there is no need to negotiate definitions to have a conversation
+about dogs because the characteristics associated with the general *concept* "dog"
+do not conflict.
 
 Similarily, concepts are used in C++ to define an ontology of types.
 Specifying algorithm variants for every single type is impossible but the
