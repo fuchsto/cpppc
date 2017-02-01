@@ -16,4 +16,29 @@ title: Session 10 (27. Jan 2016)
 
 # Fundamental Formal Definitions Revisited
 
+## Semantics
 
+Originating from linguistics, semantics is the study of meaning.
+Formal means to represent semantics is a necessity as intuitive reasoning is obviously
+biased and may drastically differ between individuals.
+
+In the context of this course, and actually computer science in general, formal
+semantics describe the effect of operations and their interoperability and
+interdependency with respect to the scope of their invocation.
+
+We usually specify:
+
+- Preconditions
+- Invariants
+- Postconditions
+
+
+## Concept
+
+Similar the *Ideon* in Platon's terminology, a concept (lat. *conceptum* - sth. perceived) is an abstract idea representing fundamental characteristics.
+In C++, concepts are used to define an ontology of types.
+
+
+# References
+
+- [*What is Meaning? Fundamentals of Format Semantics*. Paul H. Portner](https://yanjianghk.files.wordpress.com/2014/09/paul-portner-what-is-meaning-fundamentals-of-formal-semantics-fundamentals-of-linguistics-2005.pdf)
