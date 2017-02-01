@@ -48,6 +48,9 @@ Some idioms we encountered so far:
 - [Metafunctions](http://www.artima.com/cppsource/metafunctions.html), Type Generators
   and [Type Selection](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Type_Selection)
 - [RAII](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Resource_Acquisition_Is_Initialization), of course
+- Just recently, [Computational Constructors](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Computational_Constructor)
+
+... and many more.
 
 [Others](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms/Generic_Container_Idioms), 
 mostly those related to allocation, have been intentionally skipped.
