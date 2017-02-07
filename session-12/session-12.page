@@ -3,6 +3,50 @@ format: Markdown
 title: Session-12
 ...
 
+# System Models
+
+
+
+
+## Identifying Logical Components
+
+Describe the system in simple statements, for example:
+  
+  > "The ADC measures surface voltage"
+
+Now identify the following roles in your description.
+In the most simple case, you can directly derive:
+
+  - Subjects: Components ("ADC")
+  - Predicates: Operations, Actions ("measures")
+  - Objects: Message payload, operation arguments ("surface voltage")
+
+## System Interfaces
+
+  In principle, you are looking for senders and recipients of messages.
+  So for example:
+
+  > "The heartbeat detection emits an event if a QRS complex has been found in
+  >  a voltage data window"
+
+  - Component: Heartbeat detection
+  - In: voltage data
+  - Out: QRS event
+
+## Identifying Subsystems
+
+Every system has an interface consisting of its ingres and egres connections.
+Just like a function interface: `double component(int n, complex c)`.
+
+Group components by functional categories into subsystems, for example
+
+  - ADC, Gyroscope -> Sensor Subsystem
+  - Heartbeat detection -> Feature Extraction Subsystem
+
+A subsystems input is the union of its component inputs.
+
+
+
 # Technical Interviews
 
 The basics:
