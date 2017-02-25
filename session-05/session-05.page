@@ -13,5 +13,75 @@ The full implementation of the sparse array container from assignment 03 can be 
 [here](/assignment-03/s-03/solution/sparse_array.h).
 
 It only has about 300 lines, but only a few code sections are actually relevant.
+Let's implement it it step by step.
+
+We start by defining the container interface and do not care about its implementation
+for now.
+The template parameters are specified already, and obviously the container has to
+define `iterator` and `const_iterator` types. As mentioned in the assignment, you can
+copy the interface of `std::array` for a starting point.
+As `sparse_array` satisfies the `std::array` interface, the method signatures must
+be identical anyways.
+
+This section only discusses the non-trivial aspects of the implementation that differ
+from `std::array`.
+
+~~~c++
+template <class T, std::size_t N>
+class sparse_array
+{
+public:
+  typedef detail::sparse_array_iterator<self_t>              iterator;
+  typedef detail::sparse_array_iterator<const self_t>  const_iterator;
+
+  typedef T       &       reference;
+  typedef const T & const_reference;
+
+  /**
+   * Non-modifying access for expressions:
+   *
+   *   T value = sparse_array[i]
+   */
+  const_reference operator[](const size_t pos) const;
+
+  /**
+   * Modifying access for expressions:
+   *
+   *   sparse_array[i] = value;
+   */
+  reference operator[](const size_t pos);
+
+  iterator       begin();
+  const_iterator begin() const;
+
+  iterator       end();
+  const_iterator end() const;
+};
+~~~
+
+The method interface is very concise. Arrays are static containers so the only
+essential operations are:
+
+- Iterating container elements: the usual `begin` and `end` methods
+- Element access: `operator[]`
+
+Both must be defined in `const` and non-`const` variants to specialize read- and
+write access operations.
+
+For `sparse_array`, these are the crucial part. The non-const variant of
+`operator[]` must be capable to detect element write access:
+
+~~~c++
+// Value to return for unspecified elements:
+double default_val = 3.1415
+// No data in array yet, container size only has logical relevance:
+sparse_array<double, 102400000> sarray(defaul_val);
+// Return default value if element at offset is unspecified:
+double val_a = sarray[1240]; // -> 3.1415
+// Add one element to array at specified logical offset:
+sarray[3463] = 1.234;
+// Return the registered value:
+double val_b = sarray[3463];
+~~~
 
 

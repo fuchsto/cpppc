@@ -193,8 +193,6 @@ inline void swap(sparse_array_proxy_ref<T1> &&first,
 
 template <class T, std::size_t N>
 class sparse_array {
-  // Just a suggestion:
-
   typedef sparse_array<T, N> self_t;
   typedef detail::sparse_array_proxy_ref<self_t> proxy_reference;
   typedef int                                    index_t;
