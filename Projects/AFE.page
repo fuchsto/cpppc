@@ -4,6 +4,8 @@
 
 # Beat Detection
 
+- My own demo implementation: [drool: 3D projection of online audio signal features](https://www.youtube.com/watch?v=GOnMNUO3uPA) available from this [git repo](https://github.com/fuchsto/drool) (Haskell)
+
 - [Beautiful visualization of FFT-based beat detection](https://www.youtube.com/watch?v=RETFT_w4khM)
 
 - [Project demo](https://www.youtube.com/watch?v=MErowxk77Gk) [*[via](https://eecs4life.wordpress.com/overview/)*]
