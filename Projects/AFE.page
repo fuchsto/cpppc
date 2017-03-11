@@ -2,6 +2,10 @@
 
 - [MIT RES.6.007 Signals and Systems](https://www.youtube.com/watch?v=KJnAy6hzetw)
 
+# Audio Sampling (= Input) and Playback (= Output)
+
+- [Video demonstrating SDL2 audio features](https://www.youtube.com/watch?v=-MPb96cg38g)
+
 # Beat Detection
 
 - My own demo implementation: [drool: 3D projection of online audio signal features](https://www.youtube.com/watch?v=GOnMNUO3uPA) available from this [git repo](https://github.com/fuchsto/drool) (Haskell)
