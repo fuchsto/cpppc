@@ -7,6 +7,11 @@
 
 - [Video demonstrating SDL2 audio features](https://www.youtube.com/watch?v=-MPb96cg38g)
 
+# FFTW
+
+- http://www2.math.uu.se/~figueras/Other/text/fftw_tutorial.pdf
+
+
 # Beat Detection
 
 - My own demo implementation: [drool: 3D projection of online audio signal features](https://www.youtube.com/watch?v=GOnMNUO3uPA) available from this [git repo](https://github.com/fuchsto/drool) (Haskell)
