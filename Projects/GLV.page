@@ -4,3 +4,15 @@ title: GL Video Player
 ...
 
 Student: Jakob Schneider
+
+# Remarks
+
+- JTimedIterationManager: In TimedEvent umbauen:
+
+    ~~~c++
+    template <class CallbackFun>
+    struct TimedEvent {
+       TimedEvent(int ms_period, const CallbackFun & cb);
+       ...
+    }; 
+    ~~~
