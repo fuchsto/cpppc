@@ -18,3 +18,6 @@ Student: Jakob Schneider
     ~~~
 
 - C-style function pointers to member functions via [std::bind](http://de.cppreference.com/w/cpp/utility/functional/bind)
+
+
+![System Diagram](/OpenGLVideoPlayer.svg)
