@@ -5,7 +5,7 @@ title: WAT Session
 
 
 > Modern C++ offers a powerful formal feature set that allows to specify well-defined,
-> stable semantics that facilitate intuitive interfaces that follow the principle of
+> stable semantics that facilitate intuitive interfaces and follow the principle of
 > least astonishment. \
 > \
 > When mastering the full spectrum of its formal expressiveness, you are capable of
