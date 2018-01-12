@@ -58,8 +58,6 @@ Peter Gottschling, 2016](http://ptgmedia.pearsoncmg.com/images/9780134383583/sam
 
 # Selected Talks:
 
-- <https://www.youtube.com/watch?v=ihCl_IYjrFg>
-
 - [Jason Jurecka - "Game engine using STD C++ 11"](https://www.youtube.com/watch?v=8AjRD6mU96s) \
   A broad overview of language features that make C++ 11 the industry's favorite for code that matters
 - [Chandler Carruth - "High Performance Code 201: Hybrid Data Structures"](https://www.youtube.com/watch?v=vElZc6zSIXM&t=132s) \
@@ -94,6 +92,7 @@ Peter Gottschling, 2016](http://ptgmedia.pearsoncmg.com/images/9780134383583/sam
 - [Odin Holmes - "Ranges v3 and microcontrollers, a revolution"](https://www.youtube.com/watch?v=dxRDWgLIAZg)
 - [Double-checked locking is fubar](https://youtu.be/lVBvHbJsg5Y?t=13m28s)
    (it's still taught to students elsewhere around the globe)
+- [The Term Paper](https://www.youtube.com/watch?v=ihCl_IYjrFg)
 
 # Some Useful References
 
