@@ -24,15 +24,16 @@ VM system is headless (without GUI), so you should login via SSH:
 
 Note: only accessible from a login node at the CIP pool.
 
-|          | ` ` 
-| -------- | ---------------
-| IP       | `10.153.212.151`
-| Login    | `cpp<last 2 digits of your matr. number>`
-| Password | `crunch<last 2 digits of your matr. number><first letter of family name>`
+
+| *\ *      | *\ *
+| --------- | ---------------
+| IP        | `10.153.212.151`
+| Login     | `cpp<last 2 digits of your matr. number>`
+| Password  | `crunch<last 2 digits of your matr. number><first letter of family name>`
 
 Example: User "Tobias Fuchs", matr no. 123456:
 
-|          | ` `
+| *\ *      | *\ *
 | -------- | ---------------
 | Login    | `cpp56`
 | Password | `crunch56f`
