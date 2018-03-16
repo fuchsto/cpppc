@@ -78,32 +78,53 @@ to specify them correctly. Compilers got better at detecting "code smells", but
 compiler warnings - if created on a Turing machine - will never help in non-trivial
 cases for well-known reasons.
 
-A practicable solution to this is the definition of types as a unseperable coupling
-of *operations* and *states*.
-In C++, these definitions are called `concepts`.
+
+
+## The Tao of Concepts
+
+A practicable solution to this is the definition of types as a unseperable
+coupling of *operations* and *states*.
+In C++, a **category of types** that satisfy common semantics is called `concept`,
+an essential term with specific connotation in C++.
 A concept definition consists of:
 
-Signatures
-: A set of operations that are provided for a type
+
+Valid Expressions
+: A set of syntactically defined interactions that have common behaviour for any
+  type of this concept, for example `(a+b)` for numerals
 
 Semantics
-: Pre-conditions, invariants and post-conditions of these operations with respect
+: Pre-conditions, invariants and post-conditions of these expressions with respect
   to objects (= states) of the type 
 
 Dependent Types
 : Types provided by a base type that are visible to the user;
   A list container, for example, must provide a dependent type like `element_type`
-  as the programmer needs to know the type of values returned by operations like
-  `head(list)` 
+  as the programmer needs a way to determine the type of values returned by
+  operations like `head(list)`
+
+
+Note that there is no mention of "interface" (in the Java sense), "methods" or
+"class members". Concepts are not about function signatures as you know them
+from API documentations. Signatures are a technical necessity, not a formal
+description.
+
+When reasoning about C++ concepts, you should tune your mind set to the fundamentals
+of category theory. This sounds like obscenely acamedic formalese, but have a
+second look at the first paragraph in this section.
+
+For example, the concrete types `list` and `array` are equivalent in several
+aspects but also exhibit peculiar differences.
+
 
 
 # A String Class in C
 
-Enough with the formal boilerplate: what does *coupling states and operations in type
-definitions* actually mean in code?
+Enough with the formal boilerplate: what does *coupling states and operations in
+type definitions* actually mean in code?
 
-Considering the string example above, we learned that the three steps towards a valid
-state of a string should be combined in a single operation.
+Considering the string example above, we learned that the three steps towards a
+valid state of a string should be combined in a single operation.
 
 In C++, such "unified" operations are constructors. They make it already
 *syntactically* impossible to create an object with an invalid state.

@@ -24,15 +24,15 @@ VM system is headless (without GUI), so you should login via SSH:
 
 Note: only accessible from a login node at the CIP pool.
 
-|          |  
+|          | ` ` 
 | -------- | ---------------
 | IP       | `10.153.212.151`
 | Login    | `cpp<last 2 digits of your matr. number>`
 | Password | `crunch<last 2 digits of your matr. number><first letter of family name>`
 
-Example: User "Tobias Fuchs", matr.nr. 123456:
+Example: User "Tobias Fuchs", matr no. 123456:
 
-|          |  
+|          | ` `
 | -------- | ---------------
 | Login    | `cpp56`
 | Password | `crunch56f`
@@ -57,17 +57,17 @@ $ /opt/init-home.sh
 
 # Informal Definitions
 
-object (general)
+Object (general)
 :   location in memory with a value of a specific type, (usually) referenced by a named identifier
 
-type
+Type
 :   a classification of data used to communicate the intention of its usage towards the compiler
 
-class
+Class
 :   specifies a type of objects with their data members and operations (methods) that transfer
     these objects from one well-defined state to another
 
-instance / class object / object (OOCP)
+Instance / Class Object / Object (OOCP)
 :   an object is called an instance of a class if it has been created by a constructor of
     the class
 
@@ -174,7 +174,31 @@ for sound concept definitions than you might have been told so far
 (see *Composition over Inheritance*).
 
 
-## A Special Kind of Data
+## States and Side-effects
+
+The notion of *side-effects* is common in the functional programming mind set.
+In the conventional mathematical interpretation of the function concept, a
+function call is a *static* mapping between value spaces. As a consequence
+in functional programming, any function call could be replaced by its result.
+Functions that satisfy this property named **referential transparency**
+are called **pure**.
+
+Any persistent, observable effect of a function call would violate referential
+transparency. For example, calls of `printf` could not be replaced by their
+returned result (usually 0) as this would eliminate the intended side-effect
+on the console.
+
+Unfortunately, every operation on a physical computational machine does have
+side-effects. At the very least, the CPU instruction counter is changed.
+Functional programming languages like Haskell therefore classify some
+side-effects as negligible.
+
+Typically, a functional programming runtime environment aims at hiding
+side-effects from the programmer by means of mechanisms like garbage collection.
+Allocating data on the heap is definitely a side-effect, but considered
+irrelevant to functional semantics.
+
+
 
 ~~~c
 typedef struct {
@@ -187,7 +211,7 @@ Vector * vector__new    ();
 void     vector__push   (Vector * _this, double value);
 double   vector__pop    (Vector * _this);
 double   vector__at     (Vector * _this, int index);
-size_t   vector__size   (Vector * _this);
+unsigned vector__size   (Vector * _this);
 double   vector__sum    (Vector * _this);
 ~~~
 
@@ -208,7 +232,7 @@ double dummy() {
 
 What's the problem with this function?
 
-### The Rule of Three
+### Value Semantics and the (classical) Rule of Three
 
 Class objects that maintain ownership of a resource need special definitions
 in their behaviour. The crucial aspects are:
@@ -227,28 +251,28 @@ void     vector__delete (Vector * _this);
 Vector * vector__assign (Vector * _this, Vector * other);
 ~~~
 
-## Standard Semantics
+## Standard Object Semantics
 
-allocation
-: reserves memory for an object
+**Allocation**
+  : reserves memory for an object
 
-initialization
+**Initialization**
 : writes initial values to instance members in previously allocated memory
 
-construction, instantiation
+**Construction, Instantiation**
 : allocation and initialization; construction is a public operation, allocation and
-  initialization should not be accessible as separate operations
+  initialization should not be directly accessible as separate operations
 
-copy
+**Copy**
 : special case of construction / instantiation where instance members are initialized
   with another object's state instead of default values
 
-assignment
+**Assignment**
 : operation performed at a left-hand side (lhs) object such that its state is updated
   to a right-hand side (rhs) object; after assignment, equality comparison of lhs and rhs
   must return true.
 
-destruction
+**Destruction**
 : Free instance members and release resources
 
 
