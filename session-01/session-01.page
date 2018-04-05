@@ -279,3 +279,16 @@ Vector * vector__assign (Vector * _this, Vector * other);
 : Free instance members and release resources
 
 
+
+# Anecdotal Advice: There is no sustain pedal for concepts
+
+Not too long ago, I started to learn to play the piano. In this, I noticed a
+specific challenge for adult learners. As adults, we are mentally capable to
+fully understand concepts and mechanisms before we achieve the competence to
+apply them correctly. It is not a challenge to understand the principle of a
+simple C major chord progression. But it will take weeks of daily exercise to
+transfer this knowledge to muscle memory and making a technique second nature.
+
+Likewise, there is mental muscle memory for modeling and programming.
+Take course assignments seriously even if the related concepts seem painfully
+evident.
