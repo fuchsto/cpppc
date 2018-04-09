@@ -94,7 +94,7 @@ Type * method(const Type * obj, ... parameters ...);
 For example:
 
 ~~~c
-Collection * collection__add_elem(Collection * c, const Element * e);
+Collection * collection__add_elem(const Collection * c, const Element * e);
 
 Collection * c = collection__add(
                    collection_add(collection__new(), 123),
@@ -121,6 +121,9 @@ collection__add_elem(c, 456);
 
 Both functional and imperative style illustrated above are object-oriented, they
 just differ in the representation of "state".
+
+Likewise, both notations are **procedural** as the operations in either variant
+take effect in the order they have been stated.
 
 
 # Object-Oriented C
