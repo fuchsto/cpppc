@@ -58,7 +58,7 @@ $ /opt/init-home.sh
 ~~~
 
 
-# Informal Definitions
+# Semi-formal Definitions
 
 Object (general)
 :   location in memory with a value of a specific type, (usually) referenced by a named identifier
@@ -71,8 +71,8 @@ Class
     these objects from one well-defined state to another
 
 Instance / Class Object / Object (OOCP)
-:   an object is called an instance of a class if it has been created by a constructor of
-    the class
+:   an object is called an *instance* if and only if its type is a class and it has
+    been created by a constructor defined in the class
 
 
 # Object Oriented Programming: Simplified Models
