@@ -3,10 +3,6 @@ format: Markdown
 title: Advanced C++ - Winter Term 2016/2017
 ...
 
-> "I am sitting in a garden with a philosopher. Pointing to a nearby tree he says:
-> 'I know that THIS is a tree'! To another man passing by, overhearing this
-> statement, I explain: 'Oh no, he is not insane, we are just philosophing'".\
-> -- Wittgenstein. Über Gewißheit. 1951.
 
 - [Session 01](/session-01/session-01) \
     Formal Foundations, Value Semantics, Object-oriented C
