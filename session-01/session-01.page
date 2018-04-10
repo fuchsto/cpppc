@@ -24,13 +24,16 @@ Object (general)
 Type
 :   a classification of data used to communicate the intention of its usage towards the compiler
 
-Class
+Class (mathematical)
+:   A collection of objects that is defined by the objects' common properties.
+
+Class (technical)
 :   specifies a type of objects with their data members and operations (methods) that transfer
     these objects from one well-defined state to another
 
 Instance / Class Object / Object (OOCP)
-:   an object is called an *instance* if and only if its type is a class and it has
-    been created by a constructor defined in the class
+:   in this course, we use the term *instance* for an object if and only if its type is a
+    class (structured).
 
 
 # Object Oriented Programming: Simplified Models
