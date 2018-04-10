@@ -135,6 +135,21 @@ auto found_42 = std::find(sa.begin(), sa.end(), 42);
   underlying array (as it doesn't exist) so method `data()` is not provided.
 
 
+# 3-3: Sequence Iterators: Bresenham's Line Algorithm
+
+~~~c++
+raster_image img(width, height);
+raster_point p_from(x0, y0);
+raster_point p_to(x1, y1);
+
+raster_line_seq = raster_line_sequence(raster_image, p_from, p_to);
+
+for (auto line_point : raster_line_seq) {
+  img[line_point].color = black;
+}
+~~~
+
+
 # 3-X: Challenges
 
 
