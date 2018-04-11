@@ -250,13 +250,16 @@ Vector * vector__assign (Vector * _this, Vector * other);
 : Free instance members and release resources
 
 
-# Functions vs. Operators
+# Developing Conceptual Perfect Pitch
 
-Operator
+We discussed *Function* vs. *Method* already, a closer look at *Operator* vs. *Operation*
+is highly revealing as well:
+
+Operator (mathematical)
 : A mapping that acts on elements of a space and produces elements of the
   same space.
 
-Some implications:
+Do you see the implications?
 
 Note how the choice of words in this definition sounds suspiciously uncommon.
 This is because it carefully tries to avoids assumptions on how an operator
@@ -268,6 +271,16 @@ could actually work.
 
 Différance!
 (Jacques Derrida: the *difference* of words hidden in their "deference" in a given context)
+
+
+Operation (mathematical)
+: A calculation from zero or more input values (operands) to an output value
+
+The choice of words is very specific here: "value", "calculation", "input" ...
+
+- **Q: Doesn't this sound notably familiar? How is this different from a function?**
+- **Q: Give examples for operators that are not operations**
+
 
 
 
