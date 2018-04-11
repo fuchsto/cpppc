@@ -34,13 +34,16 @@ Class (mathematical)
 :   A collection that is defined based on common properties of its elements.
 
 Class (technical)
-:   specifies a type of objects with their data members and operations (methods) that transfer
-    these objects from one well-defined state to another
+:   specifies a type of objects with their data members and operations (methods) 
+    that transfer these objects from one well-defined state to another
 
 Instance / Class Object / Object (OOCP)
 :   in this course, we use the term *instance* for an object if its type is a
     class (structured), *class object* is a synonym that emphasizes the
     class-based mechanisms of an instance
+
+**Q: What is the purpose of formal definitions? How are mathematical definitions
+     and the skill to interpret them related to software engineering?**
 
 
 # Object Oriented Programming: Simplified Models
