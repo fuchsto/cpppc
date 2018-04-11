@@ -15,6 +15,12 @@ categories: cpppc, teaching
 
 
 
+# This course is not about C++
+
+- [Base-level course that is about C++](http://www.cis.uni-muenchen.de/kurse/max/C++/aufgaben/cpp-skript.pdf)
+- [Code example of what this course is about](https://github.com/ericniebler/range-v3/blob/master/include/range/v3/view_facade.hpp)
+
+
 
 # Semi-formal Definitions
 
