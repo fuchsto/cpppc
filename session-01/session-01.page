@@ -31,7 +31,7 @@ Type
 :   a classification of data used to communicate the intention of its usage towards the compiler
 
 Class (mathematical)
-:   A collection of objects that is defined by the objects' common properties.
+:   A collection that is defined based on common properties of its elements.
 
 Class (technical)
 :   specifies a type of objects with their data members and operations (methods) that transfer
