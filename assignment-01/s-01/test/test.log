@@ -1,0 +1,102 @@
+rm -f *.o
+rm -f *.a
+rm -f *.bin
+rm -f ../solution/*.o
+rm -f ../solution/*.a
+clang++ --std=c++11 -Wall -Wextra -pedantic -I/home/cpppc/opt/gtest/include -I../ -c testsuite.cc -o testsuite.o
+clang++ --std=c++11 -Wall -Wextra -pedantic -I/home/cpppc/opt/gtest/include -I../ -c vector_test.cc -o vector_test.o
+clang++ --std=c++11 -Wall -Wextra -pedantic -I/home/cpppc/opt/gtest/include -I../ -c deque_test.cc -o deque_test.o
+clang++ --std=c++11 -Wall -Wextra -pedantic -I/home/cpppc/opt/gtest/include -I../ -c stack_test.cc -o stack_test.o
+clang++ --std=c++11 -Wall -Wextra -pedantic -I/home/cpppc/opt/gtest/include -I../ -c ../solution/vector.c -o ../solution/vector.o
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+clang++ --std=c++11 -Wall -Wextra -pedantic -I/home/cpppc/opt/gtest/include -I../ -c ../solution/deque.c -o ../solution/deque.o
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+clang++ --std=c++11 -Wall -Wextra -pedantic -I/home/cpppc/opt/gtest/include -I../ -c ../solution/stack.c -o ../solution/stack.o
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated
+clang++ testsuite.o vector_test.o deque_test.o stack_test.o ../solution/vector.o ../solution/deque.o ../solution/stack.o -o testsuite.bin -lpthread -L/home/cpppc/opt/gtest/lib -lgtest
+./testsuite.bin
+[==========] Running 6 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 2 tests from VectorTest
+[ RUN      ] VectorTest.StandardConcept
+[=   LOG  =]            vector_test.h :  12 | Opening test suite: VectorTest 
+[=   LOG  =]           vector_test.cc :  14 | VectorTest.StandardConcept: vector__new 
+[=   LOG  =]           vector_test.cc :  18 | VectorTest.StandardConcept: vector__equals 
+[=   LOG  =]           vector_test.cc :  26 | VectorTest.StandardConcept: vector__assign 
+[=   LOG  =]           vector_test.cc :  31 | VectorTest.StandardConcept: vector__copy 
+[=   LOG  =]            vector_test.h :  16 | Closing test suite: VectorTest 
+[       OK ] VectorTest.StandardConcept (0 ms)
+[ RUN      ] VectorTest.VectorConcept
+[=   LOG  =]            vector_test.h :  12 | Opening test suite: VectorTest 
+[=   LOG  =]           vector_test.cc :  43 | VectorTest.VectorConcept: vector__new 
+[=   LOG  =]           vector_test.cc :  49 | VectorTest.VectorConcept: vector__begin, vector__end 
+[=   LOG  =]           vector_test.cc :  53 | VectorTest.VectorConcept: vector__push_back(56) 
+[=   LOG  =]           vector_test.cc :  55 | VectorTest.VectorConcept: vector__push_back(78) 
+[=   LOG  =]           vector_test.cc :  57 | VectorTest.VectorConcept: vector__push_back(90) 
+[=   LOG  =]           vector_test.cc :  62 | VectorTest.VectorConcept: vector__at 
+[=   LOG  =]           vector_test.cc :  71 | VectorTest.VectorConcept: v[0] : 56 
+[=   LOG  =]           vector_test.cc :  71 | VectorTest.VectorConcept: v[1] : 78 
+[=   LOG  =]           vector_test.cc :  71 | VectorTest.VectorConcept: v[2] : 90 
+[=   LOG  =]           vector_test.cc :  74 | VectorTest.VectorConcept: vector__push_front(34) 
+[=   LOG  =]           vector_test.cc :  76 | VectorTest.VectorConcept: vector__push_front(12) 
+[=   LOG  =]           vector_test.cc :  81 | VectorTest.VectorConcept: v[0] : 12 
+[=   LOG  =]           vector_test.cc :  81 | VectorTest.VectorConcept: v[1] : 34 
+[=   LOG  =]           vector_test.cc :  81 | VectorTest.VectorConcept: v[2] : 56 
+[=   LOG  =]           vector_test.cc :  81 | VectorTest.VectorConcept: v[3] : 78 
+[=   LOG  =]           vector_test.cc :  81 | VectorTest.VectorConcept: v[4] : 90 
+[=   LOG  =]           vector_test.cc :  84 | VectorTest.VectorConcept: vector__at 
+[=   LOG  =]           vector_test.cc :  91 | VectorTest.VectorConcept: vector__copy 
+[=   LOG  =]           vector_test.cc :  94 | VectorTest.VectorConcept: vector__begin, vector__end 
+[=   LOG  =]           vector_test.cc : 102 | VectorTest.VectorConcept: vector__at 
+[=   LOG  =]           vector_test.cc : 107 | VectorTest.VectorConcept: vector__assign(v_empty) 
+[=   LOG  =]            vector_test.h :  16 | Closing test suite: VectorTest 
+[       OK ] VectorTest.VectorConcept (0 ms)
+[----------] 2 tests from VectorTest (0 ms total)
+
+[----------] 2 tests from DequeTest
+[ RUN      ] DequeTest.StandardConcept
+[=   LOG  =]             deque_test.h :  12 | Opening test suite: DequeTest 
+[=   LOG  =]            deque_test.cc :  14 | DequeTest.StandardConcept: deque__new 
+[=   LOG  =]            deque_test.cc :  18 | DequeTest.StandardConcept: deque__equals 
+[=   LOG  =]            deque_test.cc :  26 | DequeTest.StandardConcept: deque__assign 
+[=   LOG  =]            deque_test.cc :  31 | DequeTest.StandardConcept: deque__copy 
+[=   LOG  =]             deque_test.h :  16 | Closing test suite: DequeTest 
+[       OK ] DequeTest.StandardConcept (0 ms)
+[ RUN      ] DequeTest.DequeConcept
+[=   LOG  =]             deque_test.h :  12 | Opening test suite: DequeTest 
+[=   LOG  =]            deque_test.cc :  43 | DequeTest.DequeConcept: deque__new 
+[=   LOG  =]            deque_test.cc :  49 | DequeTest.DequeConcept: deque__push_back(56) 
+[=   LOG  =]            deque_test.cc :  51 | DequeTest.DequeConcept: deque__push_back(78) 
+[=   LOG  =]            deque_test.cc :  53 | DequeTest.DequeConcept: deque__push_back(90) 
+[=   LOG  =]            deque_test.cc :  59 | DequeTest.DequeConcept: deque__push_front(34) 
+[=   LOG  =]            deque_test.cc :  61 | DequeTest.DequeConcept: deque__push_front(12) 
+[=   LOG  =]            deque_test.cc :  67 | DequeTest.DequeConcept: deque__assign(d_empty) 
+[=   LOG  =]            deque_test.cc :  75 | DequeTest.DequeConcept: deque__delete 
+[=   LOG  =]             deque_test.h :  16 | Closing test suite: DequeTest 
+[       OK ] DequeTest.DequeConcept (0 ms)
+[----------] 2 tests from DequeTest (0 ms total)
+
+[----------] 2 tests from StackTest
+[ RUN      ] StackTest.StandardConcept
+[=   LOG  =]             stack_test.h :  12 | Opening test suite: StackTest 
+[=   LOG  =]            stack_test.cc :  14 | StackTest.StandardConcept: stack__new 
+[=   LOG  =]            stack_test.cc :  18 | StackTest.StandardConcept: stack__equals 
+[=   LOG  =]            stack_test.cc :  26 | StackTest.StandardConcept: stack__assign 
+[=   LOG  =]            stack_test.cc :  31 | StackTest.StandardConcept: stack__copy 
+[=   LOG  =]             stack_test.h :  16 | Closing test suite: StackTest 
+[       OK ] StackTest.StandardConcept (0 ms)
+[ RUN      ] StackTest.StackConcept
+[=   LOG  =]             stack_test.h :  12 | Opening test suite: StackTest 
+[=   LOG  =]            stack_test.cc :  43 | StackTest.StackConcept: stack__new 
+[=   LOG  =]            stack_test.cc :  49 | StackTest.StackConcept: stack__push(56) 
+[=   LOG  =]            stack_test.cc :  51 | StackTest.StackConcept: stack__push(78) 
+[=   LOG  =]            stack_test.cc :  53 | StackTest.StackConcept: stack__push(90) 
+[=   LOG  =]            stack_test.cc :  59 | StackTest.StackConcept: stack__assign(s_empty) 
+[=   LOG  =]            stack_test.cc :  67 | StackTest.StackConcept: stack__delete 
+[=   LOG  =]             stack_test.h :  16 | Closing test suite: StackTest 
+[       OK ] StackTest.StackConcept (0 ms)
+[----------] 2 tests from StackTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 3 test cases ran. (1 ms total)
+[  PASSED  ] 6 tests.

@@ -1,0 +1,28 @@
+
+# Anatomy of a Function Call
+
+The common mental model of the mechanism behind a function call is a jump to
+a subroutine with function arguments on the stack.
+Using a simple C function to illustrate:
+
+~~~c
+int mean(int a, int b) {
+    return (a + b) / 2;
+}
+~~~
+
+~~~asm
+    push $a             // put a on stack
+    push $b             // put b on stack
+    push $ip + 2        // put return address on stack
+    call mean(int,int)  // call subroutine
+
+mean(int,int):
+    pop $r0             // get b from stack
+    pop $r1             // get a from stack
+    add $r1 $r0 $r0     // a + b
+    rsh $r0 2 $prl      // / 2
+    pop $ret            // get return address
+    jmp $ret            // jump back to return address
+~~~
+

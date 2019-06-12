@@ -20,14 +20,16 @@ title: Session 10 (27. Jan 2016)
 ## Semantics
 
 Originating from linguistics, semantics is the study of meaning.
-Formal means to represent semantics is a necessity as intuitive reasoning is obviously
-biased and may drastically differ between individuals.
+Formal means to represent semantics is a necessity as intuitive
+reasoning is obviously biased and may drastically differ between
+individuals.
 
-In the context of this course, and actually computer science in general, formal
-semantics describe the effect of operations and their interoperability and
-interdependency with respect to the scope of their invocation.
+In the context of this course, and actually computer science in
+general, formal semantics describe the effect of operations and their
+interoperability and interdependency with respect to the scope of their
+invocation.
 
-We usually specify:
+We usually define semantics of an operation by specifiying:
 
 - Preconditions
 - Invariants
@@ -36,25 +38,27 @@ We usually specify:
 
 ## Concept
 
-Similar the *Ideon* in Platon's terminology, a concept (lat. *conceptum* - sth. perceived) is an abstract idea representing fundamental characteristics.
+Similar the *Ideon* in Platon's terminology, a concept
+(lat. *conceptum* - sth. perceived) is an abstract idea representing
+fundamental characteristics.
 
-To illustrate Platon's definition of an *abstract object*, let's assume two strangers,
-maybe foreigners, talk about dogs.
+To illustrate Platon's definition of an *abstract object*, let's assume
+two strangers, maybe foreigners, talk about dogs.
 The concrete visual rendition in the mental model of both will diverge.
-But they there is no need to negotiate definitions to have a conversation
-about dogs because the characteristics associated with the general *concept* "dog"
-do not conflict.
+But they there is no need to negotiate definitions to have a
+conversation about dogs because the characteristics associated with the
+general *concept* "dog" do not conflict.
 
 Similarily, concepts are used in C++ to define an ontology of types.
-Specifying algorithm variants for every single type is impossible but the
-the unlimited set of types can be reduced to a small set of common characteristics.
+Specifying algorithm variants for every single type is impossible but
+the the unlimited set of types can be reduced to a small set of common
+characteristics.
 
-In the STL, the most prominent concept is *iterators*.
+In the STL, a prominent concept is the *Iterator*.
 
-
-## Categories
-
-
+The iterator concept (and its subcategories) serves as a minimal
+abstraction to communicate access to data elements between algorithms
+and containers.
 
 # References
 
