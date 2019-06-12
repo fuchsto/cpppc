@@ -1,0 +1,15 @@
+---
+format: Markdown
+title: Project: Natural Language Text Processing
+...
+
+# References
+
+- <http://blog.algorithmia.com/introduction-natural-language-processing-nlp/>
+- <https://www.youtube.com/watch?v=nfoudtpBV68>
+
+- [Boost Spirit](http://boost-spirit.com/)
+
+# Interesting Use Cases
+
+- Sentiment analysis

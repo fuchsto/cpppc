@@ -1,0 +1,25 @@
+# Introduction to Digital Signal Processing
+
+- [MIT RES.6.007 Signals and Systems](https://www.youtube.com/watch?v=KJnAy6hzetw)
+- [Nice example of technical audio visualization](https://www.youtube.com/watch?v=cHJGQf-6XCE)
+
+# Audio Sampling (= Input) and Playback (= Output)
+
+- [Video demonstrating SDL2 audio features](https://www.youtube.com/watch?v=-MPb96cg38g)
+
+# FFTW
+
+- <http://www2.math.uu.se/~figueras/Other/text/fftw_tutorial.pdf>
+
+
+# Beat Detection
+
+- My own demo implementation: [drool: 3D projection of online audio signal features](https://www.youtube.com/watch?v=GOnMNUO3uPA) available from this [git repo](https://github.com/fuchsto/drool) (Haskell)
+
+- [Beautiful visualization of FFT-based beat detection](https://www.youtube.com/watch?v=RETFT_w4khM)
+
+- [Project demo](https://www.youtube.com/watch?v=MErowxk77Gk) [*[via](https://eecs4life.wordpress.com/overview/)*]
+- [C++ algorithm demo](https://www.youtube.com/watch?v=jZoQ1S73Bac) [*[via](http://codes-sources.commentcamarche.net/source/view/53536/1257948)*]
+- [FFT-based implementation](http://blog.hzldv.com/beat_detection)
+
+- Also, [the most simple test case I can think of](https://www.youtube.com/watch?v=t87WtYtyiU8)

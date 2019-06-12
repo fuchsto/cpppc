@@ -1,0 +1,11 @@
+---
+format: Markdown
+title: Web Socket Communication Server
+...
+
+
+- <https://github.com/socketio/socket.io-client-cpp/blob/master/src/sio_socket.cpp>
+- <http://www.mnm-team.org/~fuchst/master_thesis_tobias_fuchs.pdf>
+- <http://www.wangafu.net/~nickm/libevent-book/01_intro.html>
+- <https://github.com/siemens/embb>
+- <http://www.boost.org/doc/libs/1_63_0>
